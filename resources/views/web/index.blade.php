@@ -1422,7 +1422,7 @@ function wait(ms) {
                                 <table width="100%">
                                     <tbody><tr style="background-color:white;">
                                         <td width="60%">
-                                        <input  type="text"  value="Retailer:- Demo[PTW100012]" readonly="" class="form-control" style="font-weight:400 !important; color:black; border:#262626 solid 1px; width:100% !important; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:white; margin-bottom:2px; text-align:center;">
+                                        <input  type="text"  value="Retailer:- PTW{{$user->id}}" readonly="" class="form-control" style="font-weight:400 !important; color:black; border:#262626 solid 1px; width:100% !important; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:white; margin-bottom:2px; text-align:center;">
                                         </td>
                                         <td width="40%">
                                         <input type="text" value="Points: 473" onmouseover="this.type='text'" onmouseout="this.type='password'" class="form-control" style="font-weight:400 !important; color:black; text-align:center; border:#262626 solid 1px; width:100% !important; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:white; margin-bottom:2px;" readonly="">

@@ -31,8 +31,6 @@ use App\Http\Controllers\WebController;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\WebController::class, 'index'])->name('home');
-
 
 Route::get('/demo', [App\Http\Controllers\WebController::class, 'demo']);
 
@@ -40,8 +38,8 @@ Route::post('/ajaxfortime', [App\Http\Controllers\WebController::class, 'ajaxfor
 Route::get('/checkkwinn', [App\Http\Controllers\WebController::class, 'checkkwinn'])->name('checkkwinn');
 Route::post('/checkresulttt', [App\Http\Controllers\WebController::class, 'checkresulttt'])->name('checkresulttt');
 Route::get('/result_refresh', [App\Http\Controllers\WebController::class, 'result_refresh'])->name('result_refresh');
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('admin');
-
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('login');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);

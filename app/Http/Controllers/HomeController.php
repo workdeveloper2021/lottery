@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\State;
+use App\Models\User;
 use App\Models\Cities;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
-
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -26,7 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if(Auth::user()->type == 'admin'){
+         
         return view('home');
+        }else{
+        $user = User::where('id',Auth::user()->id)->first();
+        return view('web.index',compact('user'));
+        }
     }
 
     public function fetchvendorsList(Request $request) {
