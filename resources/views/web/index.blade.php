@@ -1425,7 +1425,7 @@ function wait(ms) {
                                         <input  type="text"  value="Retailer:- PTW{{$user->id}}" readonly="" class="form-control" style="font-weight:400 !important; color:black; border:#262626 solid 1px; width:100% !important; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:white; margin-bottom:2px; text-align:center;">
                                         </td>
                                         <td width="40%">
-                                        <input type="text" value="Points: 473" onmouseover="this.type='text'" onmouseout="this.type='password'" class="form-control" style="font-weight:400 !important; color:black; text-align:center; border:#262626 solid 1px; width:100% !important; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:white; margin-bottom:2px;" readonly="">
+                                        <input type="text" value="Points: {{$wallet}}" onmouseover="this.type='text'" onmouseout="this.type='password'" class="form-control" style="font-weight:400 !important; color:black; text-align:center; border:#262626 solid 1px; width:100% !important; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:white; margin-bottom:2px;" readonly="">
                                         </td>
                                     </tr>
                                 </tbody></table>
@@ -4074,8 +4074,8 @@ function wait(ms) {
                                     <input type="hidden" id="tickseriesabasev" value="1000">
                                     <input type="hidden" id="tickseriesbbasev" value="3000">
                                     <input type="hidden" id="tickseriescbasev" value="5000">
-                                    <input type="hidden" id="useriddd" value="12">
-                                    <input type="hidden" id="tickpriceid" value="2">
+                                    <input type="hidden" id="useriddd" value="{{$user->id}}">
+                                    <input type="hidden" id="tickpriceid" value="{{ DB::table('buytickets')->count()+1 }}">
                                     <input type="hidden" id="zindexvalue" value="30">
                                                                         <tr width="100%">
                                         <th width="6%"><input id="qntrow0" oninput="if(this.value<0)this.value=this.min;calcuqar(this.id,0,event)" onkeyup="if(this.value<0)this.value=this.min;if((event.keyCode==37) || (event.keyCode==38) || (event.keyCode==39) || (event.keyCode==40)){ calcuqar(this.id,0,event) }" type="number" autocomplete="off" pattern="/^-?\d+\.?\d*$/" onkeypress="if(this.value.length==3) return false;" style="width:100%; border: none;color:red;background-color:#686ccf; font-weight: bold; border:#000 solid 1px; border-radius:1px;" class="third" onfocus="$(this).select();" min="0"></th>
@@ -4378,9 +4378,15 @@ function wait(ms) {
     <tr>
       <td width="10%" style="">
         <center>
-          <a href="../logins.php">
-            <button class="btn-hover color-19" style="padding:4px 2px !important;">Log Out</button>
-          </a>
+            <a  href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+          <button class="btn-hover color-19" style="padding:4px 2px !important;">Log Out</button>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+        </a>
+         
           <center></center>
         </center>
       </td>
@@ -5115,7 +5121,6 @@ function wait(ms) {
 
             },
             success: function(datas) {
-                //  alert(datas);
                 if (datas.trim() == "") {
                     document.getElementById("buystop").innerHTML =
                         '<i class="fa fa-spinner fa-pulse font-size-24" style="color:red"></i>';
@@ -5161,15 +5166,15 @@ function wait(ms) {
                                 advancegamess: advancegames
                             },
                             success: function(data) {
-                                // alert(data);
+                               console.log(data);
                                 if (data.trim() == "") {
                                     document.getElementById("buybutton").innerHTML =
                                         '<i class="fa fa-spinner fa-pulse font-size-24" style="color:red"></i>';
                                 } else {
                                     var id_numbers = JSON.parse(data);
-                                    var sizenum = id_numbers.length;
+                                    var sizenum = 1;
                                     // alert(id_numbers[0]);
-                                    window.location.replace("buy_reciept.php?id=" + id_numbers +
+                                    window.location.replace("buy_reciept?id=" + id_numbers +
                                         "&length=" + sizenum + "&returnhousee=" +
                                         returnhousee);
                                     // window.location.reload(true);
@@ -29529,7 +29534,7 @@ function wait(ms) {
                     success: function(data) {
                         //  alert(data);
                        // document.getElementById("resultrefreshid").innerHTML = "";
-                        document.getElementById("resultrefreshid").innerHTML = data;
+                        // document.getElementById("resultrefreshid").innerHTML = data;
 
                     }
                 });
@@ -29559,7 +29564,7 @@ function wait(ms) {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: "POST",
-            url: "ajaxfortime",
+            url: "{{ URL('/') }}/ajaxfortime",
             data: {
 
             },
@@ -29573,7 +29578,7 @@ function wait(ms) {
 
 
                 document.getElementById('transaction_time').value =
-                    h + ":" + m + ":" + s + newtime;
+                    h + ":" + m + ":" + s ;
 
 
 
@@ -29656,17 +29661,17 @@ function wait(ms) {
                                         advancegamess: advancegames
                                     },
                                     success: function(data) {
-                                        //  alert(data);
+                                         alert(data);
                                         if (data.trim() == "") {
                                             document.getElementById("buybutton")
                                                 .innerHTML =
                                                 '<i class="fa fa-spinner fa-pulse font-size-24" style="color:red"></i>';
                                         } else {
                                             var id_numbers = JSON.parse(data);
-                                            var sizenum = id_numbers.length;
+                                            var sizenum = 1;
                                             // alert(id_numbers[0]);
                                             window.location.replace(
-                                                "buy_reciept.php?id=" +
+                                                "buy_reciept?id=" +
                                                 id_numbers +
                                                 "&length=" + sizenum +
                                                 "&returnhousee=" +

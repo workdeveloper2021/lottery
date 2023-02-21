@@ -22,11 +22,11 @@ class User extends Authenticatable
         'email',
         'password',
         'contact',
-        'address',
-        'shopname',
         'status',
-        'name',
-        'bannerimage',
+        'panno',
+        'gst',
+        'username',
+        'address',
         'type'
     ];
 

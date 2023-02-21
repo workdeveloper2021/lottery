@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Uom extends Model
+class Transaction extends Model
 {
     use HasFactory;
 
@@ -15,6 +15,6 @@ class Uom extends Model
      * @var array
      */
     protected $fillable = [
-        'name','status'
+        'user_id', 'points', 'description', 'type'
     ];
 }

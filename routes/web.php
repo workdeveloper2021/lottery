@@ -32,14 +32,17 @@ use App\Http\Controllers\WebController;
 Auth::routes();
 
 
-Route::get('/demo', [App\Http\Controllers\WebController::class, 'demo']);
+Route::get('/demo', [WebController::class, 'demo']);
 
-Route::post('/ajaxfortime', [App\Http\Controllers\WebController::class, 'ajaxfortime'])->name('ajaxfortime');
-Route::get('/checkkwinn', [App\Http\Controllers\WebController::class, 'checkkwinn'])->name('checkkwinn');
-Route::post('/checkresulttt', [App\Http\Controllers\WebController::class, 'checkresulttt'])->name('checkresulttt');
-Route::get('/result_refresh', [App\Http\Controllers\WebController::class, 'result_refresh'])->name('result_refresh');
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('login');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/ajaxfortime', [WebController::class, 'ajaxfortime'])->name('ajaxfortime');
+Route::get('/checkkwinn', [WebController::class, 'checkkwinn'])->name('checkkwinn');
+Route::post('/checkresulttt', [WebController::class, 'checkresulttt'])->name('checkresulttt');
+Route::get('/result_refresh', [WebController::class, 'result_refresh'])->name('result_refresh');
+Route::get('/buy_reciept', [WebController::class, 'buy_reciept'])->name('buy_reciept');
+Route::post('/ajaxforrrtime', [WebController::class, 'ajaxforrrtime'])->name('ajaxforrrtime');
+Route::post('/buytickets', [WebController::class, 'buytickets'])->name('buytickets');
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);

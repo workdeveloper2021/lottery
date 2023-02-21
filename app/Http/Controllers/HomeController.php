@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Cities;
+use App\Models\Transaction;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 use Auth;
@@ -31,7 +31,8 @@ class HomeController extends Controller
         return view('home');
         }else{
         $user = User::where('id',Auth::user()->id)->first();
-        return view('web.index',compact('user'));
+        $wallet = Transaction::where('user_id',Auth::user()->id)->sum('points');
+        return view('web.index',compact('user','wallet'));
         }
     }
 

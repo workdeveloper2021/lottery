@@ -12,18 +12,10 @@ use Spatie\Permission\Models\Role;
 class UserController extends Controller
 {
     
-    function __construct()
-    {
-         $this->middleware('permission:user-list|user-create|user-edit|user-delete', ['only' => ['index','store']]);
-         $this->middleware('permission:user-create', ['only' => ['create','store']]);
-         $this->middleware('permission:user-edit', ['only' => ['edit','update']]);
-         $this->middleware('permission:user-delete', ['only' => ['destroy']]);
-    }
-
    
     public function index(Request $request)
     {
-        $data = User::where('type','user')->orderBy('id', 'desc')->paginate(5);
+        $data = User::where('type','user')->orderBy('id', 'desc')->get();
         
         return view('users.index', compact('data'));
     }
@@ -40,15 +32,16 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|confirmed',
-            'roles' => 'required'
+            'password' => 'required|confirmed'
         ]);
     
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
-    
+        $user = User::count();
+        $user = $user+1;
+        $input['username'] ='PWT1001'.$user;
+        $input['tye'] ='user';
         $user = User::create($input);
-        $user->assignRole($request->input('roles'));
     
         return redirect()->route('users.index')
             ->with('success', 'User created successfully.');
@@ -77,8 +70,7 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
-            'password' => 'confirmed',
-            'roles' => 'required'
+            'password' => 'confirmed'
         ]);
     
         $input = $request->all();
@@ -92,12 +84,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->update($input);
 
-        DB::table('model_has_roles')
-            ->where('model_id', $id)
-            ->delete();
-    
-        $user->assignRole($request->input('roles'));
-    
+     
         return redirect()->route('users.index')
             ->with('success', 'User updated successfully.');
     }

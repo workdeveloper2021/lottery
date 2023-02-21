@@ -39,26 +39,25 @@
                     <table id="exportexample1" class="table-bordered text-nowrap mb-0 table table-bordered border-t0 key-buttons text-nowrap w-100" >
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>Retailer Id</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Roles</th>
+                                <th>GST No.</th>
+                                <th>PAN No.</th>
+                                <th>Address</th>
                                 <th width="280px">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach ($data as $key => $user)
                             <tr>
-                                <td>{{ $user->id }}</td>
+                                <td>{{ $user->shop_id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>
-                                    @if(!empty($user->getRoleNames()))
-                                        @foreach($user->getRoleNames() as $val)
-                                            <label class="badge badge-dark">{{ $val }}</label>
-                                        @endforeach
-                                    @endif
-                                </td>
+                                <td>{{ $user->gst }}</td>
+                                <td>{{ $user->panno }}</td>
+                                <td>{{ $user->address }}</td>
+                               
                                 <td>
                                     <!-- <a class="btn btn-success" href="{{ route('users.show',$user->id) }}">Show</a> -->
                                     @can('user-edit')
