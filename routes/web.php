@@ -32,19 +32,28 @@ use App\Http\Controllers\WebController;
 Auth::routes();
 
 
-Route::get('/demo', [WebController::class, 'demo']);
-
-Route::post('/ajaxfortime', [WebController::class, 'ajaxfortime'])->name('ajaxfortime');
-Route::get('/checkkwinn', [WebController::class, 'checkkwinn'])->name('checkkwinn');
-Route::post('/checkresulttt', [WebController::class, 'checkresulttt'])->name('checkresulttt');
-Route::get('/result_refresh', [WebController::class, 'result_refresh'])->name('result_refresh');
-Route::get('/buy_reciept', [WebController::class, 'buy_reciept'])->name('buy_reciept');
-Route::post('/ajaxforrrtime', [WebController::class, 'ajaxforrrtime'])->name('ajaxforrrtime');
-Route::post('/buytickets', [WebController::class, 'buytickets'])->name('buytickets');
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
+   
+
+    Route::get('/demo', [WebController::class, 'demo']);
+
+    Route::post('/ajaxfortime', [WebController::class, 'ajaxfortime'])->name('ajaxfortime');
+    Route::get('/checkkwinn', [WebController::class, 'checkkwinn'])->name('checkkwinn');
+    Route::post('/checkresulttt', [WebController::class, 'checkresulttt'])->name('checkresulttt');
+    Route::get('/result_refresh', [WebController::class, 'result_refresh'])->name('result_refresh');
+    Route::get('/buy_reciept', [WebController::class, 'buy_reciept'])->name('buy_reciept');
+    Route::post('/ajaxforrrtime', [WebController::class, 'ajaxforrrtime'])->name('ajaxforrrtime');
+    Route::post('/buytickets', [WebController::class, 'buytickets'])->name('buytickets');
+    Route::post('/change-update', [WebController::class, 'change_password'])->name('change-update');
+    Route::get('/cancelled_ticket', [WebController::class, 'cancelled_ticket'])->name('cancelled_ticket');
+    Route::get('/previous_result', [WebController::class, 'previous_result'])->name('previous_result');
+    Route::get('/reports', [WebController::class, 'reports'])->name('reports');
+    Route::get('/reprint', [WebController::class, 'reprint'])->name('reprint');
+
+
     Route::resource('users', UserController::class);
     Route::resource('roles', RoleController::class);
     Route::resource('permissions', PermissionController::class);

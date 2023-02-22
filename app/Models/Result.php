@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Buyticket extends Model
+class Result extends Model
 {
     use HasFactory;
 
@@ -16,11 +15,6 @@ class Buyticket extends Model
      * @var array
      */
     protected $fillable = [
-        'pId','sId','tickpriceids','useriddds','orderid','status'
+        'no1', 'no2', 'no3', 'no4', 'no5', 'no6', 'no7', 'no8', 'no9', 'no10',  'resultdate'	
     ];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'useriddds', 'id');
-    }
 }

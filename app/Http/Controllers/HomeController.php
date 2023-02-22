@@ -32,7 +32,7 @@ class HomeController extends Controller
         }else{
         $user = User::where('id',Auth::user()->id)->first();
         $wallet = Transaction::where('user_id',Auth::user()->id)->sum('points');
-        return view('web.index',compact('user','wallet'));
+        return view('web.demo',compact('user','wallet'));
         }
     }
 

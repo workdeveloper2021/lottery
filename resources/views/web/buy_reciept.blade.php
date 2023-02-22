@@ -318,8 +318,8 @@ p{
                             {{date('d-m-Y H:i:s',strtotime($data[0]->created_at))}}                        </p>
                                                 <p style="margin-top:0px;">Order ID: {{$data[0]->orderid}}</p>
                         <p style="margin-bottom:8px;">Shop: PWT{{$data[0]->useriddds}} </p>
-                        <center><?= $barcode; ?>
-                        </center>
+                        <div><img src="data:image/png;base64,<?= $barcode; ?>"> 
+                        </div>
                         <center><h7 style="font-size:8px; margin-top:5px;">Powered By:- Lucky4Lotto</h7></center>
                         <hr style="border-top: 1px dashed #000; margin-top: 0rem;">
                         

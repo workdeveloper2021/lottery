@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html class="loading fuuyhqin idc0_345" lang="en" data-textdirection="ltr"><head>
+<html class="loading phzobnhzqd idc0_345" lang="en" data-textdirection="ltr"><head>
     <title>Play to Win Skill Game</title>
     <link rel="apple-touch-icon" href="assets/images/logo.png">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo.png">
@@ -10,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../app-assets/css/custom/custom.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,400;0,900;1,800&amp;display=swap" rel="stylesheet">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 <style>
 span {
     font-family: 'Fira Sans Extra Condensed', sans-serif;
@@ -20,7 +21,7 @@ font-weight: 500;
 </style><style>
 button {
     font-family: 'Fira Sans Extra Condensed', sans-serif;
-font-weight: 500 !important;
+font-weight: 500 !important;    
 letter-spacing: 1.2px;
 }
 
@@ -349,73 +350,73 @@ table.spaceUnder {
 }
 
 .btn-hover.color-2 {
-    background: #a0170e;
+    background: #000d85;
     border: #000 solid 1px;
 
 
 }
 
 .btn-hover.color-3 {
-    background: #006ba5;
+    background: #9c9c5e;
     border: #000 solid 1px;
 
 }
 
 .btn-hover.color-4 {
-    background: #3f008a;
+    background: #b9687b;
     border: #000 solid 1px;
 
 
 }
 
 .btn-hover.color-5 {
-    background: #3c620b;
+    background: #5a9c55;
     border: #000 solid 1px;
 
 }
 
 .btn-hover.color-6 {
-    background: #006e5c;
+    background: #b48a9e;
     border: #000 solid 1px;
 
 }
 .btn-hover.color-611 {
-    background: #831d00;
+    background: #8ab9a5;
     border: #000 solid 1px;
 
 }
 .btn-hover.color-622 {
-    background: #1f0058;
+    background: #9c9c5e;
     border: #000 solid 1px;
 
 }
 
 .btn-hover.color-7 {
-    background: #8a004b;
+    background: #8ab9a5;
     border: #000 solid 1px;
 
 }
 
 .btn-hover.color-8 {
-    background: #12207d;
+    background: #968772;
     border: #000 solid 1px;
 
 }
 
 .btn-hover.color-9 {
-    background: #884a00;
+    background: #1ea4bf;
     border: #000 solid 1px;
 
 }
 
 .btn-hover.color-10 {
-    background: #045a3b;
+    background: #a2b19a;
     border: #000 solid 1px;
 
 }
 
 .btn-hover.color-11 {
-    background: #000;
+    background: #261013;
     border: #000 solid 1px;
 
 }
@@ -433,7 +434,7 @@ table.spaceUnder {
 }
 
 .btn-hover.color-14 {
-    background-image: linear-gradient(to right, #cd4c00, #cd4c00);
+    background-image: linear-gradient(to right, #b9687b, #b9687b);
     border: #000 solid 1px;
 
 }
@@ -445,12 +446,12 @@ table.spaceUnder {
 }
 
 .btn-hover.color-15 {
-    background-image: linear-gradient(to right, #00910f, #00910f);
+    background-image: linear-gradient(to right, #5a9c55, #5a9c55);
     border: #000 solid 1px;
 }
 
 .btn-hover.color-16 {
-    background-color: #00536d;
+    background-color: #6a6ed0;
     border: #000 solid 1px;
 }
 
@@ -485,8 +486,9 @@ table.spaceUnder {
 }
 
 .btn-hover.color-17 {
-    background-image: linear-gradient(to right, #ff5c00, #ff5c00);
     border: #000 solid 1px;
+    color:black;
+    background-color: white;
 }
 
 .btn-hover.color-18 {
@@ -496,7 +498,7 @@ table.spaceUnder {
 }
 
 .btn-hover.color-19 {
-    background-image: linear-gradient(to right, #ff0101, #fe0702, #ff0101, #ff0202);
+    background-image: linear-gradient(to right, #7578d6, #7578d6, #7578d6, #7578d6);
     border: #000 solid 1px;
     border-radius: 2px;
 }
@@ -951,13 +953,13 @@ var currentdate = new Date();
 // alert(remainder);
 var balancetime = 0;
 // var hourssss=currentdate.getHours();
-hourssss = 14;
-var game_sessionss = 22;
+hourssss = 13;
+var game_sessionss = 17;
 // alert(game_sessionss);
 if (((hourssss >= 9) && (hourssss <= 22)) && (game_sessionss <= 52 && game_sessionss >= 0)) {
     // balancetime = 900 - ((parseInt(currentdate.getMinutes() * 60) + parseInt(currentdate.getSeconds())) % 900);
     // alert(balancetime);
-    balancetime = 142;
+    balancetime = 251;
     var nowmin = Math.floor(balancetime / 60);
     // alert(balancetime);
     var mins = nowmin;
@@ -1009,7 +1011,7 @@ function Decrement() {
                 //document.cookie = "tickpriceids = " + tickpriceids;
                 // $.ajax({
                 //     type: "GET",
-                //     url: "result_refresh",
+                //     url: "{{URL('/')}}/result_refresh",
                 //     data: {},
                 //     success: function(data) {
                 //         //  alert(data);
@@ -1055,7 +1057,7 @@ function Decrement() {
                 //     //document.cookie = "tickpriceids = " + tickpriceids;
                 //     $.ajax({
                 //         type: "GET",
-                //         url: "result_refresh",
+                //         url: "{{URL('/')}}/result_refresh",
                 //         data: {},
                 //         success: function(data) {
                 //             //  alert(data);
@@ -1067,7 +1069,7 @@ function Decrement() {
 
 
                 // }
-
+ 
             } else {
                if (secs <= 10) {
                     // document.getElementById("resultrefreshid").innerHTML =
@@ -1175,52 +1177,54 @@ function wait(ms) {
             <tbody><tr>
                 <td>
                     <table width="100% !important;" id="resultrefreshid" style="background-image: linear-gradient(#f9f9f9, #fdfdfd);">
-                                                <tbody><tr width="100%" id="resultdeclareid4" style="display: block;">
+                         <input type="hidden" value="2023-02-13-15-30-02" id="server_time">
+    <input type="hidden" value="3:45 pm" id="current_timeslot">
+                            <tbody><tr width="100%" id="resultdeclareid4" style="display: block;">
 
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">0018</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">0072</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">0154</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">0113</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">0211,0292</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">0266,0246</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">0343</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">0308</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">0496</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">0495</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">0582</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">0595</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">0653</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">0646</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">0754</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">0731</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">0885</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">0850</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">0990</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">0988</button>
                             </td>
                                                         <td width="10% !important;" style="0px !important;"></td>
                         </tr>
 
                         <tr class="" id="resultdeclareid1" style="display: block;">
 
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">1062</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">1098</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">1106,1168</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">1147</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">1271,1253</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">1251</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">1358</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">1340,1373</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">1429</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">1426,1440</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">1535</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">1544</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">1673</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">1688</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">1716</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">1754</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">1839</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">1804</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">1984</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">1926</button>
                             </td>
                                                         <td width="10% !important;" style="0px !important;"></td>
                             <td>
@@ -1228,25 +1232,25 @@ function wait(ms) {
 
                         <tr class="" id="resultdeclareid5" style="display:none">
 
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">2042</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">2082</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">2114,2199</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">2148</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">2238</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">2259</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">2394</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">2302</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">2472</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">2419</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">2542,2519</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">2530</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">2623</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">2605</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">2776</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">2732,2793</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">2879</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">2841</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">2969</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">2905,2936</button>
                             </td>
                                                         <td width="10% !important;" style="0px !important;"></td>
                             <td>
@@ -1255,50 +1259,50 @@ function wait(ms) {
 
                         <tr class="" id="resultdeclareid2" style="display:none">
 
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">3036</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">3098</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">3181,3117</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">3118,3147</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">3229,3207</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">3231</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">3345</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">3321</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">3424</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">3485</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">3593</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">3523,3557</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">3684</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">3611</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">3783</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">3756</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">3886</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">3803</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">3907</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">3963</button>
                             </td>
                                                         <td width="10% !important;" style="0px !important;"></td>
                             <td>
                         </td></tr>
                         <tr class="" id="resultdeclareid6" style="display:none">
 
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">4055</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">4084</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">4151</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">4178</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">4298</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">4223</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">4309</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">4315,4365</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">4406</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">4410</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">4521</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">4555</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">4607</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">4698</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">4727</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">4764,4702</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">4808</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">4831</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">4953,4949,4972</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">4957</button>
                             </td>
                                                         <td width="10% !important;" style="0px !important;"></td>
                             <td>
@@ -1307,25 +1311,25 @@ function wait(ms) {
 
                         <tr class="" id="resultdeclareid3" style="display:none">
 
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">5023,5016</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">5019</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">5194</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">5159,5106</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">5290</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">5271,5294</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">5397</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">5334</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">5483</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">5453</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">5566</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">5514</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">5674</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">5683</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">5748</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">5763</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">5817,5829</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">5842</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">5955</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">5938</button>
                             </td>
                                                         <td width="10% !important;" style="0px !important;"></td>
                             <td>
@@ -1333,25 +1337,25 @@ function wait(ms) {
 
                         <tr class="" id="resultdeclareid7" style="display:none">
 
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">6001</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">6073</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">6166,6119</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">6153,6128</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">6270</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">6269</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">6352</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">6365</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">6495</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">6491</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">6577,6504</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">6573</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">6653</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">6695</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">6754</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">6738</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">6878</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">6851,6881</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">6987</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">6903</button>
                             </td>
                                                         <td width="10% !important;" style="0px !important;"></td>
                             <td>
@@ -1359,25 +1363,25 @@ function wait(ms) {
 
                         <tr class="" id="resultdeclareid8" style="display:none">
 
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">7034</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">7018</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">7136,7159</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">7141</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">7240</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">7253,7277</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">7368,7333</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">7389</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">7407</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">7440,7488</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">7504</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">7575</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">7653</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">7670</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">7799</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">7775</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">7887</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">7896</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">7944</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">7946</button>
                             </td>
                                                         <td width="10% !important;" style="0px !important;"></td>
                             <td>
@@ -1387,23 +1391,23 @@ function wait(ms) {
 
                                                         <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">8062</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">8124</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">8113,8109</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">8219</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">8217</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">8323</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">8355</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">8422</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">8412</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">8563,8573</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">8542</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">8626</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">8621</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">8778</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">8717</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">8822</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">8805,8861</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">8972,8956</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">8975</button>
                             </td>
                                                         <td width="10% !important;" style="0px !important;"></td>
                             <td>
@@ -1411,25 +1415,25 @@ function wait(ms) {
 
                         <tr class="" id="resultdeclareid10" style="display:none">
 
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">9071,9034</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-2">9029</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">9163</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-3">9132</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">9232</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-4">9217,9209</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">9300</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-5">9349</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">9414</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-6">9491</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">9527,9520</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-7">9527,9510</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">9638</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-8">9654</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">9795</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-9">9733</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">9899</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-10">9864</button>
                             </td>
-                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">9914</button>
+                                                        <td width="10% !important;"><button style="font-size:20px !important;" class="btn-hover color-11">9993</button>
                             </td>
                                                         <td width="10% !important;" style="0px !important;"></td>
                             <td>
@@ -1442,7 +1446,7 @@ function wait(ms) {
                         <tbody><tr>
                         <td width="15%">
                                 <center>
-                                    <h2 style="margin-bottom:0px; color:red; text-shadow: 2px 2px #000; font-size:25px; margin-bottom:-7px;"><b>Play to Win
+                                    <h2 style="margin-bottom:0px; color:black; font-size:25px; margin-bottom:-7px;"><b>Play to Win
                                             <br>Skill Game</b></h2>
                                 </center>
                                 <center><h7 style="margin-bottom:0px; font-size:14px !important; margin-top:-5px;">(10 Series)</h7></center>
@@ -1451,20 +1455,20 @@ function wait(ms) {
                                 <table width="100%">
                                     <tbody><tr>
                                         <td width="60%">
-                                        <input type="text" value="Retailer:- Demo[PTW100012]" readonly="" class="form-control" style="font-weight:600 !important; color:#e20000; border:#262626 solid 1px; width:100% !important; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:#ffffff; margin-bottom:2px; text-align:center;">
+                                        <input type="text" value="Retailer:- {{Auth::user()->username}}" readonly="" class="form-control" style="font-weight:600 !important; color:black; border:#262626 solid 1px; width:100% !important; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:#ffffff; margin-bottom:2px; text-align:center;">
                                         </td>
                                         <td width="40%">
-                                        <input type="password" value="Points: 473" onmouseover="this.type='text'" onmouseout="this.type='password'" class="form-control" style="font-weight:600 !important; color:#e20000; text-align:center; border:#262626 solid 1px; width:100% !important; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:#ffffff; margin-bottom:2px;" readonly="">
+                                        <input type="text" value="Points: 711" onmouseover="this.type='text'" onmouseout="this.type='password'" class="form-control" style="font-weight:600 !important; color:black; text-align:center; border:#262626 solid 1px; width:100% !important; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:#ffffff; margin-bottom:2px;" readonly="">
                                         </td>
                                     </tr>
                                 </tbody></table>
                                 <table width="100%" style="margin-top:-3px;">
                                     <tbody><tr>
                                         <td width="35%">
-                                        <input type="text" value="Last Draw: 02:15 pm " class="form-control" style="font-weight:600 !important; color:#e20000; width:100% !important; text-align:center; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:#fff !important; border:#262626 solid 1px;" readonly="">
+                                        <input type="text" value="Last Draw: 03:30 pm " class="form-control" style="font-weight:600 !important; color:black; width:100% !important; text-align:center; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:#fff !important; border:#262626 solid 1px;" readonly="">
                                         </td>
                                         <td width="35%">
-                                        <input type="text" value="Current Draw: 02:30 pm " class="form-control" style="font-weight:600 !important; color:#e20000; width:100% !important; text-align:center; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:#fff !important; border:#262626 solid 1px;" readonly="">
+                                        <input type="text" value="Current Draw: 03:45 pm " class="form-control" style="font-weight:600 !important; color:black; width:100% !important; text-align:center; font-size:18px; height: calc(1.6em + .75rem + 2px) !important; border-radius:0px !important; background:#fff !important; border:#262626 solid 1px;" readonly="">
                                         </td>
                                         <td width="40%">
                                         <button type="submit" class="font2 btn-hover color-17" id="myBtn" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'; elementff = document.getElementById('advvinv');elementff.focus();" style="width:100%; font-size:19.5px; padding:5px !important;">Advance
@@ -1475,13 +1479,13 @@ function wait(ms) {
                             </td>
                             <td width="20%">
                                 <table width="100%;">
-                                    <tbody><tr>
+                                    <tbody><tr style="background-color: white;">
                                         <td width="100%;">
                                             <center>
-                                                <span class="fdfd" style="border: none;color:#1100c4; background-color:none; font-weight: bold; text-align:center">Wed,
-                                                    &nbsp;25-Jan-2023</span>&nbsp;<input id="transaction_time" type="text" style="border: none;color:#1100c4; width:100px; background:none; font-weight: bold !important; text-align:center" class="fdfd" readonly="">
+                                                <span class="fdfd" style="border: none;color:black; background-color:none; font-weight: 400; text-align:center">Wed,
+                                                    &nbsp;25-Jan-2023</span>&nbsp;<input id="transaction_time" type="text" style="border: none;color:black; width:100px; background:none; font-weight: bold !important; text-align:center" class="fdfd" readonly="">
                                                 <div id="timer" style="margin-top:5px;">
-                                                    <input id="minutes" type="text" style="width: 18%; border: none;color:#ff0000; background:none; font-weight: bold; text-align:center; font-size:30px; font-family:arial !important; font-weight:600 !important;" class="font3" readonly=""><b style="color:red;">:</b><input id="seconds" type="text" style="width: 18%; border: none;color:#ff0000; background:none; font-weight: bold; text-align:center; font-size:30px; font-family:arial !important; font-weight:600 !important;" class="font3" readonly="">
+                                                    <input id="minutes" type="text" style="width: 18%; border: none;color:black; background:none; font-weight: bold; text-align:center; font-size:30px; font-family:arial !important; font-weight:600 !important;" class="font3" readonly=""><b style="color:black;">:</b><input id="seconds" type="text" style="width: 18%; border: none;color:black; background:none; font-weight: bold; text-align:center; font-size:30px; font-family:arial !important; font-weight:600 !important;" class="font3" readonly="">
                                                 </div>
                                             </center>
                                         </td>
@@ -4103,8 +4107,8 @@ function wait(ms) {
                                     <input type="hidden" id="tickseriesabasev" value="1000">
                                     <input type="hidden" id="tickseriesbbasev" value="3000">
                                     <input type="hidden" id="tickseriescbasev" value="5000">
-                                    <input type="hidden" id="useriddd" value="12">
-                                    <input type="hidden" id="tickpriceid" value="2">
+                                    <input type="hidden" id="useriddd" value="{{$user->id}}">
+                                    <input type="hidden" id="tickpriceid" value="2100{{ DB::table('buytickets')->count()+1 }}">
                                     <input type="hidden" id="zindexvalue" value="30">
                                                                         <tr width="100%">
                                         <th width="6%"><input id="qntrow0" oninput="if(this.value<0)this.value=this.min;calcuqar(this.id,0,event)" onkeyup="if(this.value<0)this.value=this.min;if((event.keyCode==37) || (event.keyCode==38) || (event.keyCode==39) || (event.keyCode==40)){ calcuqar(this.id,0,event) }" type="number" autocomplete="off" pattern="/^-?\d+\.?\d*$/" onkeypress="if(this.value.length==3) return false;" style="width:100%; border: none;color:red;background-color:#5fffb1; font-weight: bold; border:#000 solid 1px; border-radius:1px;" class="third" onfocus="$(this).select();" min="0"></th>
@@ -4414,8 +4418,8 @@ function wait(ms) {
                                 Password</span></button>
                         <center>
                 </center></center></td>
-                <td width="10%"><button type="submit" class="font2 btn-hover color-611" id="todayresultbtn" onclick="window.location.replace('../retailers_lucky/index.php')" href="javascript:void(0)" style="width:100%; padding:4px 5px !important;"><span>LUCKY
-                                                    3D</span></button></td>
+                <!--<td width="10%"><button type="submit" class="font2 btn-hover color-611" id="todayresultbtn"  onclick="window.location.replace('../retailers_lucky/index.php')" href="javascript:void(0)" style="width:100%; padding:4px 5px !important;"><span>LUCKY-->
+                <!--                                    3D</span></button></td>-->
 
                                         <td width="10%"> <button type="submit" class="font2 btn-hover color-622" onclick="window.location.replace('../retailers1/index.php')" style="width:100%; padding:4px 5px !important;"><span style="width:100%">
                                                     1 Series Game</span></button></td>
@@ -4460,35 +4464,11 @@ function wait(ms) {
                     <div class="">
                         <span style="color:#000;font-size:40px !important;">Advance Draw<span style="float:right"> <a class="close" style="opacity:.9 !important; font-size:40px !important;" href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">×</a></span></span><br>
                                                 <span style="color:#000;font-size:25px;">Remaining
-                            Session:&nbsp;32</span><br><br>
+                            Session:&nbsp;27</span><br><br>
                         <form>
-                            <input type="text" id="advvinv" onkeyup="checkadvanceinput(22)" style="height:40px; " autocomplete="off">&nbsp;&nbsp;&nbsp;
-                            <input id="selectallid" type="button" style="height:40px;font-size:15px;background:#8ffff6" onclick="checkallselect(22);" value="Select All">&nbsp;&nbsp;<br><br>
-                                                        <label class="checkbox-inline">
-                                <input id="advancegameid22" type="button" style="width:100%;height:40px;font-size:15px;background:#8ffff6" onclick="checkoneselect(22);" value="02:30 pm ">&nbsp;&nbsp;
-
-                                <span style="font-size:20px;"></span>&nbsp;&nbsp;
-                            </label>
-                                                        <label class="checkbox-inline">
-                                <input id="advancegameid23" type="button" style="width:100%;height:40px;font-size:15px;background:#8ffff6" onclick="checkoneselect(23);" value="02:45 pm ">&nbsp;&nbsp;
-
-                                <span style="font-size:20px;"></span>&nbsp;&nbsp;
-                            </label>
-                                                        <label class="checkbox-inline">
-                                <input id="advancegameid24" type="button" style="width:100%;height:40px;font-size:15px;background:#8ffff6" onclick="checkoneselect(24);" value="03:00 pm ">&nbsp;&nbsp;
-
-                                <span style="font-size:20px;"></span>&nbsp;&nbsp;
-                            </label>
-                                                        <label class="checkbox-inline">
-                                <input id="advancegameid25" type="button" style="width:100%;height:40px;font-size:15px;background:#8ffff6" onclick="checkoneselect(25);" value="03:15 pm ">&nbsp;&nbsp;
-
-                                <span style="font-size:20px;"></span>&nbsp;&nbsp;
-                            </label>
-                                                        <label class="checkbox-inline">
-                                <input id="advancegameid26" type="button" style="width:100%;height:40px;font-size:15px;background:#8ffff6" onclick="checkoneselect(26);" value="03:30 pm ">&nbsp;&nbsp;
-
-                                <span style="font-size:20px;"></span>&nbsp;&nbsp;
-                            </label>
+                            @csrf
+                            <input type="text" id="advvinv" onkeyup="checkadvanceinput(27)" style="height:40px; " autocomplete="off">&nbsp;&nbsp;&nbsp;
+                            <input id="selectallid" type="button" style="height:40px;font-size:15px;background:#8ffff6" onclick="checkallselect(27);" value="Select All">&nbsp;&nbsp;<br><br>
                                                         <label class="checkbox-inline">
                                 <input id="advancegameid27" type="button" style="width:100%;height:40px;font-size:15px;background:#8ffff6" onclick="checkoneselect(27);" value="03:45 pm ">&nbsp;&nbsp;
 
@@ -4658,37 +4638,36 @@ function wait(ms) {
                 </div>
                 <div id="fade4" class="black_overlay"></div>
 
-                <div id="light5" class="white_content5" style="display: block;">
-                    <a href="javascript:void(0)" onclick="document.getElementById('light5').style.display='none';document.getElementById('fade5').style.display='none'" style="background:red; color:#fff; padding:5px 10px; border:red solid 1px; float:right;">Exit</a>
+                <div id="light5" class="white_content5">
+                    <a href="javascript:void(0)" id="closechangep" onclick="document.getElementById('light5').style.display='none';document.getElementById('fade5').style.display='none'" style="background:red; color:#fff; padding:5px 10px; border:red solid 1px; float:right;">Exit</a>
                     <div id="changepasswordiddd" style="font-size:25px;">
                         <div class="row">
 
                             <br>
-                                                        <form method="post">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h4>Change Password</h4><br>
                                     </div>
                                     <div class="input-field col-12">
                                         <label for="icon_prefix3" style="font-size:16px;">Old Password</label>
-                                        <input id="icon_prefix3" type="text" name="old_pass" class="form-control">
+                                        <input type="text" name="old_pass" id="old_pass" class="form-control" required>
 
                                     </div>
 
                                     <div class="input-field col-12">
                                         <label for="icon_prefix3" style="font-size:16px;">New Password</label>
-                                        <input id="icon_prefix3" type="text" name="password" class="form-control">
+                                        <input type="text" name="password" id="password" class="form-control" required>
 
                                     </div>
 
                                     <div class="input-field col-12">
                                         <label for="icon_prefix3" style="font-size:16px;">Confirm New Password</label>
-                                        <input id="icon_prefix3" type="text" name="confirm_password" class="form-control">
+                                        <input type="text" name="confirm_password" id="confirm_password" class="form-control" required>
 
                                     </div>
 
                                     <div class="input-field col-12" style="margin-top:20px;">
-                                        <button type="submit" style="width:30%;" class="btn btn-primary" name="chenge_password">Change</button>
+                                        <button type="button" id="changepassword" style="width:30%;" class="btn btn-primary" name="chenge_password">Change</button>
                                     </div>
                                 </div>
 
@@ -4697,14 +4676,15 @@ function wait(ms) {
 
                     </div>
                 </div>
-                <div id="fade5" class="black_overlay" style="display: block;"></div>
+                <div id="fade5" class="black_overlay"></div>
 
                 <div id="light6" class="white_content6">
                     <a href="javascript:void(0)" onclick="document.getElementById('light6').style.display='none';document.getElementById('fade6').style.display='none'" style="background:red; color:#fff; padding:5px 10px; border:red solid 1px; border-radius:5px; float:right;">Close</a>
                     <div id="profilemyiddd" style="font-size:25px;">
                         <div class="row">
                             <br>
-                                                        <form class="col s12" method="post" enctype="multipart/form-data">
+                                <form class="col s12" method="post" enctype="multipart/form-data">
+                                    @csrf
                                 <div class="row">
                                     <h4><u>Profile</u></h4><br>
                                     <div class="col-12 center-align">
@@ -4717,28 +4697,28 @@ function wait(ms) {
                                         <label for="icon_prefix3">
                                             <h5>Name</h5>
                                         </label>
-                                        <input id="icon_prefix3" type="text" name="name" value="Demo" class="form-control">
+                                        <input id="icon_prefix3" type="text" name="name" value="{{$user->name}}" class="form-control">
 
                                     </div>
                                     <div class="input-field col-12">
                                         <label for="icon_prefix3">
                                             <h5>Mobile</h5>
                                         </label>
-                                        <input id="icon_prefix3" type="text" name="mobile" value="00000000" class="form-control">
+                                        <input id="icon_prefix3" type="text" name="mobile" value="{{$user->contact}}" class="form-control">
 
                                     </div>
                                     <div class="input-field col-12">
                                         <label for="icon_prefix3">
                                             <h5>Email</h5>
                                         </label>
-                                        <input id="icon_prefix3" type="text" name="email" value="demo@gamil.com" class="form-control">
+                                        <input id="icon_prefix3" type="text" name="email" value="{{$user->email}}" class="form-control">
 
                                     </div>
                                     <div class="input-field col-12">
                                         <label for="icon_prefix3">
                                             <h5>Address</h5>
                                         </label>
-                                        <input id="icon_prefix3" type="text" name="address" value="Ltr" class="form-control">
+                                        <input id="icon_prefix3" type="text" name="address" value="{{$user->address}}" class="form-control">
 
                                     </div>
                                     <div class="input-field col-12" style="margin-top:20px;">
@@ -4758,7 +4738,7 @@ function wait(ms) {
                     <br>
                                         <div class="row">
                         <div class="col-6">
-                            <input type="date" value="2023-01-25" max="2023-01-25" onchange="callcancelledticklist(this.value)" class="form-control" id="cnldtkdtid">
+                            <input type="date" value="2023-02-13" max="2023-02-13" onchange="callcancelledticklist(this.value)" class="form-control" id="cnldtkdtid">
                         </div>
                     </div>
                     <br>
@@ -4800,7 +4780,7 @@ function wait(ms) {
                     <br>
                                         <div class="row">
                         <div class="col-6">
-                            <input type="date" value="2023-01-25" max="2023-01-25" onchange="callpreviousresultpop(this.value)" class="form-control" id="cnldtkdtid">
+                            <input type="date" value="2023-02-13" max="2023-02-13" onchange="callpreviousresultpop(this.value)" class="form-control" id="cnldtkdtid">
                         </div>
                     </div>
                     <br>
@@ -4808,7 +4788,7 @@ function wait(ms) {
 
     
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;02:15 pm &nbsp;<a href="print_current_result.php?id=21&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;03:15 pm &nbsp;<a href="print_current_result.php?id=25&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -4931,21 +4911,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0018</button></td>                    <td width="10%"><button class="btn-hover color-3">0154</button></td>                    <td width="10%"><button class="btn-hover color-4">0211,0292</button></td>                    <td width="10%"><button class="btn-hover color-5">0343</button></td>                    <td width="10%"><button class="btn-hover color-6">0496</button></td>                    <td width="10%"><button class="btn-hover color-7">0582</button></td>                    <td width="10%"><button class="btn-hover color-8">0653</button></td>                    <td width="10%"><button class="btn-hover color-9">0754</button></td>                    <td width="10%"><button class="btn-hover color-10">0885</button></td>                    <td width="10%"><button class="btn-hover color-11">0990</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1062</button></td>                    <td width="10%"><button class="btn-hover color-3">1106,1168</button></td>                    <td width="10%"><button class="btn-hover color-4">1271,1253</button></td>                    <td width="10%"><button class="btn-hover color-5">1358</button></td>                    <td width="10%"><button class="btn-hover color-6">1429</button></td>                    <td width="10%"><button class="btn-hover color-7">1535</button></td>                    <td width="10%"><button class="btn-hover color-8">1673</button></td>                    <td width="10%"><button class="btn-hover color-9">1716</button></td>                    <td width="10%"><button class="btn-hover color-10">1839</button></td>                    <td width="10%"><button class="btn-hover color-11">1984</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2042</button></td>                    <td width="10%"><button class="btn-hover color-3">2114,2199</button></td>                    <td width="10%"><button class="btn-hover color-4">2238</button></td>                    <td width="10%"><button class="btn-hover color-5">2394</button></td>                    <td width="10%"><button class="btn-hover color-6">2472</button></td>                    <td width="10%"><button class="btn-hover color-7">2542,2519</button></td>                    <td width="10%"><button class="btn-hover color-8">2623</button></td>                    <td width="10%"><button class="btn-hover color-9">2776</button></td>                    <td width="10%"><button class="btn-hover color-10">2879</button></td>                    <td width="10%"><button class="btn-hover color-11">2969</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3036</button></td>                    <td width="10%"><button class="btn-hover color-3">3181,3117</button></td>                    <td width="10%"><button class="btn-hover color-4">3229,3207</button></td>                    <td width="10%"><button class="btn-hover color-5">3345</button></td>                    <td width="10%"><button class="btn-hover color-6">3424</button></td>                    <td width="10%"><button class="btn-hover color-7">3593</button></td>                    <td width="10%"><button class="btn-hover color-8">3684</button></td>                    <td width="10%"><button class="btn-hover color-9">3783</button></td>                    <td width="10%"><button class="btn-hover color-10">3886</button></td>                    <td width="10%"><button class="btn-hover color-11">3907</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4055</button></td>                    <td width="10%"><button class="btn-hover color-3">4151</button></td>                    <td width="10%"><button class="btn-hover color-4">4298</button></td>                    <td width="10%"><button class="btn-hover color-5">4309</button></td>                    <td width="10%"><button class="btn-hover color-6">4406</button></td>                    <td width="10%"><button class="btn-hover color-7">4521</button></td>                    <td width="10%"><button class="btn-hover color-8">4607</button></td>                    <td width="10%"><button class="btn-hover color-9">4727</button></td>                    <td width="10%"><button class="btn-hover color-10">4808</button></td>                    <td width="10%"><button class="btn-hover color-11">4953,4972,4949</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5023,5016</button></td>                    <td width="10%"><button class="btn-hover color-3">5194</button></td>                    <td width="10%"><button class="btn-hover color-4">5290</button></td>                    <td width="10%"><button class="btn-hover color-5">5397</button></td>                    <td width="10%"><button class="btn-hover color-6">5483</button></td>                    <td width="10%"><button class="btn-hover color-7">5566</button></td>                    <td width="10%"><button class="btn-hover color-8">5674</button></td>                    <td width="10%"><button class="btn-hover color-9">5748</button></td>                    <td width="10%"><button class="btn-hover color-10">5817,5829</button></td>                    <td width="10%"><button class="btn-hover color-11">5955</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6001</button></td>                    <td width="10%"><button class="btn-hover color-3">6166,6119</button></td>                    <td width="10%"><button class="btn-hover color-4">6270</button></td>                    <td width="10%"><button class="btn-hover color-5">6352</button></td>                    <td width="10%"><button class="btn-hover color-6">6495</button></td>                    <td width="10%"><button class="btn-hover color-7">6577,6504</button></td>                    <td width="10%"><button class="btn-hover color-8">6653</button></td>                    <td width="10%"><button class="btn-hover color-9">6754</button></td>                    <td width="10%"><button class="btn-hover color-10">6878</button></td>                    <td width="10%"><button class="btn-hover color-11">6987</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7034</button></td>                    <td width="10%"><button class="btn-hover color-3">7136,7159</button></td>                    <td width="10%"><button class="btn-hover color-4">7240</button></td>                    <td width="10%"><button class="btn-hover color-5">7368,7333</button></td>                    <td width="10%"><button class="btn-hover color-6">7407</button></td>                    <td width="10%"><button class="btn-hover color-7">7504</button></td>                    <td width="10%"><button class="btn-hover color-8">7653</button></td>                    <td width="10%"><button class="btn-hover color-9">7799</button></td>                    <td width="10%"><button class="btn-hover color-10">7887</button></td>                    <td width="10%"><button class="btn-hover color-11">7944</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8062</button></td>                    <td width="10%"><button class="btn-hover color-3">8124</button></td>                    <td width="10%"><button class="btn-hover color-4">8219</button></td>                    <td width="10%"><button class="btn-hover color-5">8323</button></td>                    <td width="10%"><button class="btn-hover color-6">8422</button></td>                    <td width="10%"><button class="btn-hover color-7">8563,8573</button></td>                    <td width="10%"><button class="btn-hover color-8">8626</button></td>                    <td width="10%"><button class="btn-hover color-9">8778</button></td>                    <td width="10%"><button class="btn-hover color-10">8822</button></td>                    <td width="10%"><button class="btn-hover color-11">8972,8956</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9071,9034</button></td>                    <td width="10%"><button class="btn-hover color-3">9163</button></td>                    <td width="10%"><button class="btn-hover color-4">9232</button></td>                    <td width="10%"><button class="btn-hover color-5">9300</button></td>                    <td width="10%"><button class="btn-hover color-6">9414</button></td>                    <td width="10%"><button class="btn-hover color-7">9527,9520</button></td>                    <td width="10%"><button class="btn-hover color-8">9638</button></td>                    <td width="10%"><button class="btn-hover color-9">9795</button></td>                    <td width="10%"><button class="btn-hover color-10">9899</button></td>                    <td width="10%"><button class="btn-hover color-11">9914</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0072</button></td>                    <td width="10%"><button class="btn-hover color-3">0113</button></td>                    <td width="10%"><button class="btn-hover color-4">0266,0246</button></td>                    <td width="10%"><button class="btn-hover color-5">0308</button></td>                    <td width="10%"><button class="btn-hover color-6">0495</button></td>                    <td width="10%"><button class="btn-hover color-7">0595</button></td>                    <td width="10%"><button class="btn-hover color-8">0646</button></td>                    <td width="10%"><button class="btn-hover color-9">0731</button></td>                    <td width="10%"><button class="btn-hover color-10">0850</button></td>                    <td width="10%"><button class="btn-hover color-11">0988</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1098</button></td>                    <td width="10%"><button class="btn-hover color-3">1147</button></td>                    <td width="10%"><button class="btn-hover color-4">1251</button></td>                    <td width="10%"><button class="btn-hover color-5">1340,1373</button></td>                    <td width="10%"><button class="btn-hover color-6">1426,1440</button></td>                    <td width="10%"><button class="btn-hover color-7">1544</button></td>                    <td width="10%"><button class="btn-hover color-8">1688</button></td>                    <td width="10%"><button class="btn-hover color-9">1754</button></td>                    <td width="10%"><button class="btn-hover color-10">1804</button></td>                    <td width="10%"><button class="btn-hover color-11">1926</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2082</button></td>                    <td width="10%"><button class="btn-hover color-3">2148</button></td>                    <td width="10%"><button class="btn-hover color-4">2259</button></td>                    <td width="10%"><button class="btn-hover color-5">2302</button></td>                    <td width="10%"><button class="btn-hover color-6">2419</button></td>                    <td width="10%"><button class="btn-hover color-7">2530</button></td>                    <td width="10%"><button class="btn-hover color-8">2605</button></td>                    <td width="10%"><button class="btn-hover color-9">2732,2793</button></td>                    <td width="10%"><button class="btn-hover color-10">2841</button></td>                    <td width="10%"><button class="btn-hover color-11">2905,2936</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3098</button></td>                    <td width="10%"><button class="btn-hover color-3">3118,3147</button></td>                    <td width="10%"><button class="btn-hover color-4">3231</button></td>                    <td width="10%"><button class="btn-hover color-5">3321</button></td>                    <td width="10%"><button class="btn-hover color-6">3485</button></td>                    <td width="10%"><button class="btn-hover color-7">3523,3557</button></td>                    <td width="10%"><button class="btn-hover color-8">3611</button></td>                    <td width="10%"><button class="btn-hover color-9">3756</button></td>                    <td width="10%"><button class="btn-hover color-10">3803</button></td>                    <td width="10%"><button class="btn-hover color-11">3963</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4084</button></td>                    <td width="10%"><button class="btn-hover color-3">4178</button></td>                    <td width="10%"><button class="btn-hover color-4">4223</button></td>                    <td width="10%"><button class="btn-hover color-5">4315,4365</button></td>                    <td width="10%"><button class="btn-hover color-6">4410</button></td>                    <td width="10%"><button class="btn-hover color-7">4555</button></td>                    <td width="10%"><button class="btn-hover color-8">4698</button></td>                    <td width="10%"><button class="btn-hover color-9">4764,4702</button></td>                    <td width="10%"><button class="btn-hover color-10">4831</button></td>                    <td width="10%"><button class="btn-hover color-11">4957</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5019</button></td>                    <td width="10%"><button class="btn-hover color-3">5159,5106</button></td>                    <td width="10%"><button class="btn-hover color-4">5271,5294</button></td>                    <td width="10%"><button class="btn-hover color-5">5334</button></td>                    <td width="10%"><button class="btn-hover color-6">5453</button></td>                    <td width="10%"><button class="btn-hover color-7">5514</button></td>                    <td width="10%"><button class="btn-hover color-8">5683</button></td>                    <td width="10%"><button class="btn-hover color-9">5763</button></td>                    <td width="10%"><button class="btn-hover color-10">5842</button></td>                    <td width="10%"><button class="btn-hover color-11">5938</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6073</button></td>                    <td width="10%"><button class="btn-hover color-3">6153,6128</button></td>                    <td width="10%"><button class="btn-hover color-4">6269</button></td>                    <td width="10%"><button class="btn-hover color-5">6365</button></td>                    <td width="10%"><button class="btn-hover color-6">6491</button></td>                    <td width="10%"><button class="btn-hover color-7">6573</button></td>                    <td width="10%"><button class="btn-hover color-8">6695</button></td>                    <td width="10%"><button class="btn-hover color-9">6738</button></td>                    <td width="10%"><button class="btn-hover color-10">6851,6881</button></td>                    <td width="10%"><button class="btn-hover color-11">6903</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7018</button></td>                    <td width="10%"><button class="btn-hover color-3">7141</button></td>                    <td width="10%"><button class="btn-hover color-4">7253,7277</button></td>                    <td width="10%"><button class="btn-hover color-5">7389</button></td>                    <td width="10%"><button class="btn-hover color-6">7440,7488</button></td>                    <td width="10%"><button class="btn-hover color-7">7575</button></td>                    <td width="10%"><button class="btn-hover color-8">7670</button></td>                    <td width="10%"><button class="btn-hover color-9">7775</button></td>                    <td width="10%"><button class="btn-hover color-10">7896</button></td>                    <td width="10%"><button class="btn-hover color-11">7946</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8062</button></td>                    <td width="10%"><button class="btn-hover color-3">8113,8109</button></td>                    <td width="10%"><button class="btn-hover color-4">8217</button></td>                    <td width="10%"><button class="btn-hover color-5">8355</button></td>                    <td width="10%"><button class="btn-hover color-6">8412</button></td>                    <td width="10%"><button class="btn-hover color-7">8542</button></td>                    <td width="10%"><button class="btn-hover color-8">8621</button></td>                    <td width="10%"><button class="btn-hover color-9">8717</button></td>                    <td width="10%"><button class="btn-hover color-10">8805,8861</button></td>                    <td width="10%"><button class="btn-hover color-11">8975</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9029</button></td>                    <td width="10%"><button class="btn-hover color-3">9132</button></td>                    <td width="10%"><button class="btn-hover color-4">9217,9209</button></td>                    <td width="10%"><button class="btn-hover color-5">9349</button></td>                    <td width="10%"><button class="btn-hover color-6">9491</button></td>                    <td width="10%"><button class="btn-hover color-7">9527,9510</button></td>                    <td width="10%"><button class="btn-hover color-8">9654</button></td>                    <td width="10%"><button class="btn-hover color-9">9733</button></td>                    <td width="10%"><button class="btn-hover color-10">9864</button></td>                    <td width="10%"><button class="btn-hover color-11">9993</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;02:00 pm &nbsp;<a href="print_current_result.php?id=20&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;03:00 pm &nbsp;<a href="print_current_result.php?id=24&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -5068,21 +5048,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0025</button></td>                    <td width="10%"><button class="btn-hover color-3">0177</button></td>                    <td width="10%"><button class="btn-hover color-4">0271</button></td>                    <td width="10%"><button class="btn-hover color-5">0327</button></td>                    <td width="10%"><button class="btn-hover color-6">0466</button></td>                    <td width="10%"><button class="btn-hover color-7">0542,0595</button></td>                    <td width="10%"><button class="btn-hover color-8">0686</button></td>                    <td width="10%"><button class="btn-hover color-9">0791</button></td>                    <td width="10%"><button class="btn-hover color-10">0871</button></td>                    <td width="10%"><button class="btn-hover color-11">0950</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1041</button></td>                    <td width="10%"><button class="btn-hover color-3">1171</button></td>                    <td width="10%"><button class="btn-hover color-4">1296</button></td>                    <td width="10%"><button class="btn-hover color-5">1376,1316,1368</button></td>                    <td width="10%"><button class="btn-hover color-6">1468</button></td>                    <td width="10%"><button class="btn-hover color-7">1532</button></td>                    <td width="10%"><button class="btn-hover color-8">1633</button></td>                    <td width="10%"><button class="btn-hover color-9">1743</button></td>                    <td width="10%"><button class="btn-hover color-10">1853</button></td>                    <td width="10%"><button class="btn-hover color-11">1912</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2036</button></td>                    <td width="10%"><button class="btn-hover color-3">2169</button></td>                    <td width="10%"><button class="btn-hover color-4">2276,2233</button></td>                    <td width="10%"><button class="btn-hover color-5">2319</button></td>                    <td width="10%"><button class="btn-hover color-6">2424</button></td>                    <td width="10%"><button class="btn-hover color-7">2567</button></td>                    <td width="10%"><button class="btn-hover color-8">2685</button></td>                    <td width="10%"><button class="btn-hover color-9">2748,2737</button></td>                    <td width="10%"><button class="btn-hover color-10">2835</button></td>                    <td width="10%"><button class="btn-hover color-11">2932</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3063</button></td>                    <td width="10%"><button class="btn-hover color-3">3125</button></td>                    <td width="10%"><button class="btn-hover color-4">3211</button></td>                    <td width="10%"><button class="btn-hover color-5">3301,3325</button></td>                    <td width="10%"><button class="btn-hover color-6">3412</button></td>                    <td width="10%"><button class="btn-hover color-7">3544</button></td>                    <td width="10%"><button class="btn-hover color-8">3663</button></td>                    <td width="10%"><button class="btn-hover color-9">3729,3766</button></td>                    <td width="10%"><button class="btn-hover color-10">3864</button></td>                    <td width="10%"><button class="btn-hover color-11">3912</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4042</button></td>                    <td width="10%"><button class="btn-hover color-3">4139</button></td>                    <td width="10%"><button class="btn-hover color-4">4223</button></td>                    <td width="10%"><button class="btn-hover color-5">4302</button></td>                    <td width="10%"><button class="btn-hover color-6">4480</button></td>                    <td width="10%"><button class="btn-hover color-7">4570</button></td>                    <td width="10%"><button class="btn-hover color-8">4642</button></td>                    <td width="10%"><button class="btn-hover color-9">4748</button></td>                    <td width="10%"><button class="btn-hover color-10">4815,4854</button></td>                    <td width="10%"><button class="btn-hover color-11">4909,4922</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5094,5099</button></td>                    <td width="10%"><button class="btn-hover color-3">5135</button></td>                    <td width="10%"><button class="btn-hover color-4">5207</button></td>                    <td width="10%"><button class="btn-hover color-5">5351</button></td>                    <td width="10%"><button class="btn-hover color-6">5490</button></td>                    <td width="10%"><button class="btn-hover color-7">5555</button></td>                    <td width="10%"><button class="btn-hover color-8">5629,5600</button></td>                    <td width="10%"><button class="btn-hover color-9">5760</button></td>                    <td width="10%"><button class="btn-hover color-10">5888</button></td>                    <td width="10%"><button class="btn-hover color-11">5972</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6019,6076</button></td>                    <td width="10%"><button class="btn-hover color-3">6196</button></td>                    <td width="10%"><button class="btn-hover color-4">6293</button></td>                    <td width="10%"><button class="btn-hover color-5">6390</button></td>                    <td width="10%"><button class="btn-hover color-6">6470</button></td>                    <td width="10%"><button class="btn-hover color-7">6502</button></td>                    <td width="10%"><button class="btn-hover color-8">6687</button></td>                    <td width="10%"><button class="btn-hover color-9">6791,6718</button></td>                    <td width="10%"><button class="btn-hover color-10">6814</button></td>                    <td width="10%"><button class="btn-hover color-11">6936</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7083</button></td>                    <td width="10%"><button class="btn-hover color-3">7124</button></td>                    <td width="10%"><button class="btn-hover color-4">7231</button></td>                    <td width="10%"><button class="btn-hover color-5">7325,7351</button></td>                    <td width="10%"><button class="btn-hover color-6">7467</button></td>                    <td width="10%"><button class="btn-hover color-7">7543,7520</button></td>                    <td width="10%"><button class="btn-hover color-8">7685</button></td>                    <td width="10%"><button class="btn-hover color-9">7749</button></td>                    <td width="10%"><button class="btn-hover color-10">7871</button></td>                    <td width="10%"><button class="btn-hover color-11">7940</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8052,8021</button></td>                    <td width="10%"><button class="btn-hover color-3">8173</button></td>                    <td width="10%"><button class="btn-hover color-4">8206</button></td>                    <td width="10%"><button class="btn-hover color-5">8382</button></td>                    <td width="10%"><button class="btn-hover color-6">8407</button></td>                    <td width="10%"><button class="btn-hover color-7">8598,8521</button></td>                    <td width="10%"><button class="btn-hover color-8">8600</button></td>                    <td width="10%"><button class="btn-hover color-9">8779</button></td>                    <td width="10%"><button class="btn-hover color-10">8846</button></td>                    <td width="10%"><button class="btn-hover color-11">8909</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9015</button></td>                    <td width="10%"><button class="btn-hover color-3">9199</button></td>                    <td width="10%"><button class="btn-hover color-4">9295</button></td>                    <td width="10%"><button class="btn-hover color-5">9358</button></td>                    <td width="10%"><button class="btn-hover color-6">9436</button></td>                    <td width="10%"><button class="btn-hover color-7">9562,9547</button></td>                    <td width="10%"><button class="btn-hover color-8">9672</button></td>                    <td width="10%"><button class="btn-hover color-9">9706</button></td>                    <td width="10%"><button class="btn-hover color-10">9826,9887</button></td>                    <td width="10%"><button class="btn-hover color-11">9930</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0025</button></td>                    <td width="10%"><button class="btn-hover color-3">0116</button></td>                    <td width="10%"><button class="btn-hover color-4">0296</button></td>                    <td width="10%"><button class="btn-hover color-5">0318</button></td>                    <td width="10%"><button class="btn-hover color-6">0464</button></td>                    <td width="10%"><button class="btn-hover color-7">0586</button></td>                    <td width="10%"><button class="btn-hover color-8">0627</button></td>                    <td width="10%"><button class="btn-hover color-9">0765</button></td>                    <td width="10%"><button class="btn-hover color-10">0865</button></td>                    <td width="10%"><button class="btn-hover color-11">0930,0911</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1064</button></td>                    <td width="10%"><button class="btn-hover color-3">1190</button></td>                    <td width="10%"><button class="btn-hover color-4">1270,1222,1280</button></td>                    <td width="10%"><button class="btn-hover color-5">1336</button></td>                    <td width="10%"><button class="btn-hover color-6">1469</button></td>                    <td width="10%"><button class="btn-hover color-7">1596</button></td>                    <td width="10%"><button class="btn-hover color-8">1611</button></td>                    <td width="10%"><button class="btn-hover color-9">1761</button></td>                    <td width="10%"><button class="btn-hover color-10">1835</button></td>                    <td width="10%"><button class="btn-hover color-11">1981</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2004</button></td>                    <td width="10%"><button class="btn-hover color-3">2114</button></td>                    <td width="10%"><button class="btn-hover color-4">2274</button></td>                    <td width="10%"><button class="btn-hover color-5">2314</button></td>                    <td width="10%"><button class="btn-hover color-6">2469</button></td>                    <td width="10%"><button class="btn-hover color-7">2585</button></td>                    <td width="10%"><button class="btn-hover color-8">2692</button></td>                    <td width="10%"><button class="btn-hover color-9">2729</button></td>                    <td width="10%"><button class="btn-hover color-10">2854,2823,2873</button></td>                    <td width="10%"><button class="btn-hover color-11">2990</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3082</button></td>                    <td width="10%"><button class="btn-hover color-3">3166,3113</button></td>                    <td width="10%"><button class="btn-hover color-4">3277</button></td>                    <td width="10%"><button class="btn-hover color-5">3314</button></td>                    <td width="10%"><button class="btn-hover color-6">3464</button></td>                    <td width="10%"><button class="btn-hover color-7">3575</button></td>                    <td width="10%"><button class="btn-hover color-8">3624,3642</button></td>                    <td width="10%"><button class="btn-hover color-9">3786</button></td>                    <td width="10%"><button class="btn-hover color-10">3808</button></td>                    <td width="10%"><button class="btn-hover color-11">3960</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4082</button></td>                    <td width="10%"><button class="btn-hover color-3">4192</button></td>                    <td width="10%"><button class="btn-hover color-4">4293</button></td>                    <td width="10%"><button class="btn-hover color-5">4341</button></td>                    <td width="10%"><button class="btn-hover color-6">4480,4431</button></td>                    <td width="10%"><button class="btn-hover color-7">4592</button></td>                    <td width="10%"><button class="btn-hover color-8">4611</button></td>                    <td width="10%"><button class="btn-hover color-9">4765,4793</button></td>                    <td width="10%"><button class="btn-hover color-10">4805</button></td>                    <td width="10%"><button class="btn-hover color-11">4989</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5086,5048</button></td>                    <td width="10%"><button class="btn-hover color-3">5118</button></td>                    <td width="10%"><button class="btn-hover color-4">5234</button></td>                    <td width="10%"><button class="btn-hover color-5">5344,5343</button></td>                    <td width="10%"><button class="btn-hover color-6">5483</button></td>                    <td width="10%"><button class="btn-hover color-7">5574</button></td>                    <td width="10%"><button class="btn-hover color-8">5610</button></td>                    <td width="10%"><button class="btn-hover color-9">5731</button></td>                    <td width="10%"><button class="btn-hover color-10">5838</button></td>                    <td width="10%"><button class="btn-hover color-11">5945</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6028,6062</button></td>                    <td width="10%"><button class="btn-hover color-3">6141</button></td>                    <td width="10%"><button class="btn-hover color-4">6297,6223</button></td>                    <td width="10%"><button class="btn-hover color-5">6308</button></td>                    <td width="10%"><button class="btn-hover color-6">6436</button></td>                    <td width="10%"><button class="btn-hover color-7">6553</button></td>                    <td width="10%"><button class="btn-hover color-8">6672</button></td>                    <td width="10%"><button class="btn-hover color-9">6766</button></td>                    <td width="10%"><button class="btn-hover color-10">6850</button></td>                    <td width="10%"><button class="btn-hover color-11">6932</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7018</button></td>                    <td width="10%"><button class="btn-hover color-3">7191</button></td>                    <td width="10%"><button class="btn-hover color-4">7297</button></td>                    <td width="10%"><button class="btn-hover color-5">7346</button></td>                    <td width="10%"><button class="btn-hover color-6">7447</button></td>                    <td width="10%"><button class="btn-hover color-7">7565</button></td>                    <td width="10%"><button class="btn-hover color-8">7670,7624</button></td>                    <td width="10%"><button class="btn-hover color-9">7713</button></td>                    <td width="10%"><button class="btn-hover color-10">7840,7859</button></td>                    <td width="10%"><button class="btn-hover color-11">7937</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8087</button></td>                    <td width="10%"><button class="btn-hover color-3">8172</button></td>                    <td width="10%"><button class="btn-hover color-4">8259</button></td>                    <td width="10%"><button class="btn-hover color-5">8357,8311</button></td>                    <td width="10%"><button class="btn-hover color-6">8498</button></td>                    <td width="10%"><button class="btn-hover color-7">8507</button></td>                    <td width="10%"><button class="btn-hover color-8">8611,8661</button></td>                    <td width="10%"><button class="btn-hover color-9">8776</button></td>                    <td width="10%"><button class="btn-hover color-10">8825</button></td>                    <td width="10%"><button class="btn-hover color-11">8909</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9069</button></td>                    <td width="10%"><button class="btn-hover color-3">9195,9101</button></td>                    <td width="10%"><button class="btn-hover color-4">9246</button></td>                    <td width="10%"><button class="btn-hover color-5">9397</button></td>                    <td width="10%"><button class="btn-hover color-6">9480</button></td>                    <td width="10%"><button class="btn-hover color-7">9584</button></td>                    <td width="10%"><button class="btn-hover color-8">9641</button></td>                    <td width="10%"><button class="btn-hover color-9">9728</button></td>                    <td width="10%"><button class="btn-hover color-10">9808,9853</button></td>                    <td width="10%"><button class="btn-hover color-11">9916</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;01:45 pm &nbsp;<a href="print_current_result.php?id=19&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;02:45 pm &nbsp;<a href="print_current_result.php?id=23&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -5205,21 +5185,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0024</button></td>                    <td width="10%"><button class="btn-hover color-3">0151</button></td>                    <td width="10%"><button class="btn-hover color-4">0229,0299</button></td>                    <td width="10%"><button class="btn-hover color-5">0357</button></td>                    <td width="10%"><button class="btn-hover color-6">0486</button></td>                    <td width="10%"><button class="btn-hover color-7">0517</button></td>                    <td width="10%"><button class="btn-hover color-8">0688</button></td>                    <td width="10%"><button class="btn-hover color-9">0753</button></td>                    <td width="10%"><button class="btn-hover color-10">0848</button></td>                    <td width="10%"><button class="btn-hover color-11">0908</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1079</button></td>                    <td width="10%"><button class="btn-hover color-3">1160,1192</button></td>                    <td width="10%"><button class="btn-hover color-4">1257</button></td>                    <td width="10%"><button class="btn-hover color-5">1321</button></td>                    <td width="10%"><button class="btn-hover color-6">1408</button></td>                    <td width="10%"><button class="btn-hover color-7">1585</button></td>                    <td width="10%"><button class="btn-hover color-8">1636</button></td>                    <td width="10%"><button class="btn-hover color-9">1785</button></td>                    <td width="10%"><button class="btn-hover color-10">1842</button></td>                    <td width="10%"><button class="btn-hover color-11">1909,1964</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2065</button></td>                    <td width="10%"><button class="btn-hover color-3">2193,2122</button></td>                    <td width="10%"><button class="btn-hover color-4">2237</button></td>                    <td width="10%"><button class="btn-hover color-5">2391</button></td>                    <td width="10%"><button class="btn-hover color-6">2411</button></td>                    <td width="10%"><button class="btn-hover color-7">2576</button></td>                    <td width="10%"><button class="btn-hover color-8">2651,2604</button></td>                    <td width="10%"><button class="btn-hover color-9">2707</button></td>                    <td width="10%"><button class="btn-hover color-10">2812</button></td>                    <td width="10%"><button class="btn-hover color-11">2946</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3089,3042</button></td>                    <td width="10%"><button class="btn-hover color-3">3103</button></td>                    <td width="10%"><button class="btn-hover color-4">3257</button></td>                    <td width="10%"><button class="btn-hover color-5">3391</button></td>                    <td width="10%"><button class="btn-hover color-6">3451</button></td>                    <td width="10%"><button class="btn-hover color-7">3565</button></td>                    <td width="10%"><button class="btn-hover color-8">3637,3664</button></td>                    <td width="10%"><button class="btn-hover color-9">3720</button></td>                    <td width="10%"><button class="btn-hover color-10">3833</button></td>                    <td width="10%"><button class="btn-hover color-11">3959</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4058,4034</button></td>                    <td width="10%"><button class="btn-hover color-3">4103</button></td>                    <td width="10%"><button class="btn-hover color-4">4217</button></td>                    <td width="10%"><button class="btn-hover color-5">4392,4385</button></td>                    <td width="10%"><button class="btn-hover color-6">4446</button></td>                    <td width="10%"><button class="btn-hover color-7">4540</button></td>                    <td width="10%"><button class="btn-hover color-8">4619</button></td>                    <td width="10%"><button class="btn-hover color-9">4723</button></td>                    <td width="10%"><button class="btn-hover color-10">4888</button></td>                    <td width="10%"><button class="btn-hover color-11">4941</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5089</button></td>                    <td width="10%"><button class="btn-hover color-3">5168</button></td>                    <td width="10%"><button class="btn-hover color-4">5291</button></td>                    <td width="10%"><button class="btn-hover color-5">5322,5345</button></td>                    <td width="10%"><button class="btn-hover color-6">5464</button></td>                    <td width="10%"><button class="btn-hover color-7">5599</button></td>                    <td width="10%"><button class="btn-hover color-8">5612</button></td>                    <td width="10%"><button class="btn-hover color-9">5730</button></td>                    <td width="10%"><button class="btn-hover color-10">5886,5870</button></td>                    <td width="10%"><button class="btn-hover color-11">5956</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6070</button></td>                    <td width="10%"><button class="btn-hover color-3">6109</button></td>                    <td width="10%"><button class="btn-hover color-4">6280</button></td>                    <td width="10%"><button class="btn-hover color-5">6346</button></td>                    <td width="10%"><button class="btn-hover color-6">6488,6465</button></td>                    <td width="10%"><button class="btn-hover color-7">6550</button></td>                    <td width="10%"><button class="btn-hover color-8">6603</button></td>                    <td width="10%"><button class="btn-hover color-9">6701</button></td>                    <td width="10%"><button class="btn-hover color-10">6894</button></td>                    <td width="10%"><button class="btn-hover color-11">6992,6963</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7095</button></td>                    <td width="10%"><button class="btn-hover color-3">7150</button></td>                    <td width="10%"><button class="btn-hover color-4">7247</button></td>                    <td width="10%"><button class="btn-hover color-5">7305</button></td>                    <td width="10%"><button class="btn-hover color-6">7417</button></td>                    <td width="10%"><button class="btn-hover color-7">7591,7575</button></td>                    <td width="10%"><button class="btn-hover color-8">7612,7631</button></td>                    <td width="10%"><button class="btn-hover color-9">7705</button></td>                    <td width="10%"><button class="btn-hover color-10">7870</button></td>                    <td width="10%"><button class="btn-hover color-11">7998</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8045</button></td>                    <td width="10%"><button class="btn-hover color-3">8100</button></td>                    <td width="10%"><button class="btn-hover color-4">8263</button></td>                    <td width="10%"><button class="btn-hover color-5">8330</button></td>                    <td width="10%"><button class="btn-hover color-6">8409</button></td>                    <td width="10%"><button class="btn-hover color-7">8567</button></td>                    <td width="10%"><button class="btn-hover color-8">8661,8630</button></td>                    <td width="10%"><button class="btn-hover color-9">8721</button></td>                    <td width="10%"><button class="btn-hover color-10">8865,8818</button></td>                    <td width="10%"><button class="btn-hover color-11">8959</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9045,9081</button></td>                    <td width="10%"><button class="btn-hover color-3">9162</button></td>                    <td width="10%"><button class="btn-hover color-4">9271</button></td>                    <td width="10%"><button class="btn-hover color-5">9346</button></td>                    <td width="10%"><button class="btn-hover color-6">9446</button></td>                    <td width="10%"><button class="btn-hover color-7">9547</button></td>                    <td width="10%"><button class="btn-hover color-8">9640</button></td>                    <td width="10%"><button class="btn-hover color-9">9764</button></td>                    <td width="10%"><button class="btn-hover color-10">9833</button></td>                    <td width="10%"><button class="btn-hover color-11">9933,9968</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0053</button></td>                    <td width="10%"><button class="btn-hover color-3">0142</button></td>                    <td width="10%"><button class="btn-hover color-4">0253</button></td>                    <td width="10%"><button class="btn-hover color-5">0307</button></td>                    <td width="10%"><button class="btn-hover color-6">0420</button></td>                    <td width="10%"><button class="btn-hover color-7">0529</button></td>                    <td width="10%"><button class="btn-hover color-8">0643</button></td>                    <td width="10%"><button class="btn-hover color-9">0756</button></td>                    <td width="10%"><button class="btn-hover color-10">0837,0838</button></td>                    <td width="10%"><button class="btn-hover color-11">0973</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1067</button></td>                    <td width="10%"><button class="btn-hover color-3">1168,1138</button></td>                    <td width="10%"><button class="btn-hover color-4">1203</button></td>                    <td width="10%"><button class="btn-hover color-5">1360</button></td>                    <td width="10%"><button class="btn-hover color-6">1473</button></td>                    <td width="10%"><button class="btn-hover color-7">1513</button></td>                    <td width="10%"><button class="btn-hover color-8">1658</button></td>                    <td width="10%"><button class="btn-hover color-9">1779,1740</button></td>                    <td width="10%"><button class="btn-hover color-10">1880</button></td>                    <td width="10%"><button class="btn-hover color-11">1982</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2091,2053</button></td>                    <td width="10%"><button class="btn-hover color-3">2169</button></td>                    <td width="10%"><button class="btn-hover color-4">2232</button></td>                    <td width="10%"><button class="btn-hover color-5">2387</button></td>                    <td width="10%"><button class="btn-hover color-6">2424</button></td>                    <td width="10%"><button class="btn-hover color-7">2594</button></td>                    <td width="10%"><button class="btn-hover color-8">2694,2627</button></td>                    <td width="10%"><button class="btn-hover color-9">2717</button></td>                    <td width="10%"><button class="btn-hover color-10">2872</button></td>                    <td width="10%"><button class="btn-hover color-11">2907</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3098</button></td>                    <td width="10%"><button class="btn-hover color-3">3186</button></td>                    <td width="10%"><button class="btn-hover color-4">3239</button></td>                    <td width="10%"><button class="btn-hover color-5">3367</button></td>                    <td width="10%"><button class="btn-hover color-6">3437</button></td>                    <td width="10%"><button class="btn-hover color-7">3518</button></td>                    <td width="10%"><button class="btn-hover color-8">3626,3650</button></td>                    <td width="10%"><button class="btn-hover color-9">3754</button></td>                    <td width="10%"><button class="btn-hover color-10">3865</button></td>                    <td width="10%"><button class="btn-hover color-11">3996,3937</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4080,4082</button></td>                    <td width="10%"><button class="btn-hover color-3">4105</button></td>                    <td width="10%"><button class="btn-hover color-4">4222</button></td>                    <td width="10%"><button class="btn-hover color-5">4385</button></td>                    <td width="10%"><button class="btn-hover color-6">4416</button></td>                    <td width="10%"><button class="btn-hover color-7">4578</button></td>                    <td width="10%"><button class="btn-hover color-8">4605,4652</button></td>                    <td width="10%"><button class="btn-hover color-9">4730</button></td>                    <td width="10%"><button class="btn-hover color-10">4876</button></td>                    <td width="10%"><button class="btn-hover color-11">4907</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5050,5042,5090</button></td>                    <td width="10%"><button class="btn-hover color-3">5161</button></td>                    <td width="10%"><button class="btn-hover color-4">5294</button></td>                    <td width="10%"><button class="btn-hover color-5">5397</button></td>                    <td width="10%"><button class="btn-hover color-6">5462</button></td>                    <td width="10%"><button class="btn-hover color-7">5587</button></td>                    <td width="10%"><button class="btn-hover color-8">5615</button></td>                    <td width="10%"><button class="btn-hover color-9">5796</button></td>                    <td width="10%"><button class="btn-hover color-10">5889</button></td>                    <td width="10%"><button class="btn-hover color-11">5967</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6014</button></td>                    <td width="10%"><button class="btn-hover color-3">6125</button></td>                    <td width="10%"><button class="btn-hover color-4">6238</button></td>                    <td width="10%"><button class="btn-hover color-5">6380</button></td>                    <td width="10%"><button class="btn-hover color-6">6419</button></td>                    <td width="10%"><button class="btn-hover color-7">6565</button></td>                    <td width="10%"><button class="btn-hover color-8">6674,6626</button></td>                    <td width="10%"><button class="btn-hover color-9">6732,6747</button></td>                    <td width="10%"><button class="btn-hover color-10">6873</button></td>                    <td width="10%"><button class="btn-hover color-11">6938</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7095,7049</button></td>                    <td width="10%"><button class="btn-hover color-3">7158</button></td>                    <td width="10%"><button class="btn-hover color-4">7267,7205</button></td>                    <td width="10%"><button class="btn-hover color-5">7377</button></td>                    <td width="10%"><button class="btn-hover color-6">7482</button></td>                    <td width="10%"><button class="btn-hover color-7">7508</button></td>                    <td width="10%"><button class="btn-hover color-8">7650</button></td>                    <td width="10%"><button class="btn-hover color-9">7721</button></td>                    <td width="10%"><button class="btn-hover color-10">7839</button></td>                    <td width="10%"><button class="btn-hover color-11">7926</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8056</button></td>                    <td width="10%"><button class="btn-hover color-3">8172</button></td>                    <td width="10%"><button class="btn-hover color-4">8234,8231</button></td>                    <td width="10%"><button class="btn-hover color-5">8369,8365</button></td>                    <td width="10%"><button class="btn-hover color-6">8451</button></td>                    <td width="10%"><button class="btn-hover color-7">8569</button></td>                    <td width="10%"><button class="btn-hover color-8">8631</button></td>                    <td width="10%"><button class="btn-hover color-9">8794</button></td>                    <td width="10%"><button class="btn-hover color-10">8879</button></td>                    <td width="10%"><button class="btn-hover color-11">8950</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9003</button></td>                    <td width="10%"><button class="btn-hover color-3">9157</button></td>                    <td width="10%"><button class="btn-hover color-4">9286</button></td>                    <td width="10%"><button class="btn-hover color-5">9330,9363</button></td>                    <td width="10%"><button class="btn-hover color-6">9467</button></td>                    <td width="10%"><button class="btn-hover color-7">9588</button></td>                    <td width="10%"><button class="btn-hover color-8">9698</button></td>                    <td width="10%"><button class="btn-hover color-9">9752</button></td>                    <td width="10%"><button class="btn-hover color-10">9890,9867</button></td>                    <td width="10%"><button class="btn-hover color-11">9934</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;01:30 pm &nbsp;<a href="print_current_result.php?id=18&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;02:30 pm &nbsp;<a href="print_current_result.php?id=22&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -5342,21 +5322,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0014</button></td>                    <td width="10%"><button class="btn-hover color-3">0182</button></td>                    <td width="10%"><button class="btn-hover color-4">0257,0248</button></td>                    <td width="10%"><button class="btn-hover color-5">0308</button></td>                    <td width="10%"><button class="btn-hover color-6">0495</button></td>                    <td width="10%"><button class="btn-hover color-7">0593</button></td>                    <td width="10%"><button class="btn-hover color-8">0652</button></td>                    <td width="10%"><button class="btn-hover color-9">0743</button></td>                    <td width="10%"><button class="btn-hover color-10">0807</button></td>                    <td width="10%"><button class="btn-hover color-11">0942</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1004</button></td>                    <td width="10%"><button class="btn-hover color-3">1118</button></td>                    <td width="10%"><button class="btn-hover color-4">1231</button></td>                    <td width="10%"><button class="btn-hover color-5">1397,1317</button></td>                    <td width="10%"><button class="btn-hover color-6">1419</button></td>                    <td width="10%"><button class="btn-hover color-7">1599</button></td>                    <td width="10%"><button class="btn-hover color-8">1692</button></td>                    <td width="10%"><button class="btn-hover color-9">1706</button></td>                    <td width="10%"><button class="btn-hover color-10">1827</button></td>                    <td width="10%"><button class="btn-hover color-11">1947,1928</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2069</button></td>                    <td width="10%"><button class="btn-hover color-3">2132</button></td>                    <td width="10%"><button class="btn-hover color-4">2280</button></td>                    <td width="10%"><button class="btn-hover color-5">2349</button></td>                    <td width="10%"><button class="btn-hover color-6">2431</button></td>                    <td width="10%"><button class="btn-hover color-7">2519,2547</button></td>                    <td width="10%"><button class="btn-hover color-8">2696</button></td>                    <td width="10%"><button class="btn-hover color-9">2753</button></td>                    <td width="10%"><button class="btn-hover color-10">2815,2851</button></td>                    <td width="10%"><button class="btn-hover color-11">2995</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3038</button></td>                    <td width="10%"><button class="btn-hover color-3">3147</button></td>                    <td width="10%"><button class="btn-hover color-4">3208,3278</button></td>                    <td width="10%"><button class="btn-hover color-5">3301</button></td>                    <td width="10%"><button class="btn-hover color-6">3462,3457</button></td>                    <td width="10%"><button class="btn-hover color-7">3582</button></td>                    <td width="10%"><button class="btn-hover color-8">3651</button></td>                    <td width="10%"><button class="btn-hover color-9">3708</button></td>                    <td width="10%"><button class="btn-hover color-10">3882</button></td>                    <td width="10%"><button class="btn-hover color-11">3988</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4053,4072</button></td>                    <td width="10%"><button class="btn-hover color-3">4127</button></td>                    <td width="10%"><button class="btn-hover color-4">4256</button></td>                    <td width="10%"><button class="btn-hover color-5">4375</button></td>                    <td width="10%"><button class="btn-hover color-6">4402</button></td>                    <td width="10%"><button class="btn-hover color-7">4586</button></td>                    <td width="10%"><button class="btn-hover color-8">4649</button></td>                    <td width="10%"><button class="btn-hover color-9">4770,4789</button></td>                    <td width="10%"><button class="btn-hover color-10">4879</button></td>                    <td width="10%"><button class="btn-hover color-11">4939</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5089,5033</button></td>                    <td width="10%"><button class="btn-hover color-3">5130</button></td>                    <td width="10%"><button class="btn-hover color-4">5208</button></td>                    <td width="10%"><button class="btn-hover color-5">5386</button></td>                    <td width="10%"><button class="btn-hover color-6">5470</button></td>                    <td width="10%"><button class="btn-hover color-7">5501</button></td>                    <td width="10%"><button class="btn-hover color-8">5695,5637</button></td>                    <td width="10%"><button class="btn-hover color-9">5746</button></td>                    <td width="10%"><button class="btn-hover color-10">5802</button></td>                    <td width="10%"><button class="btn-hover color-11">5946</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6068</button></td>                    <td width="10%"><button class="btn-hover color-3">6180,6110,6126</button></td>                    <td width="10%"><button class="btn-hover color-4">6240</button></td>                    <td width="10%"><button class="btn-hover color-5">6320</button></td>                    <td width="10%"><button class="btn-hover color-6">6479</button></td>                    <td width="10%"><button class="btn-hover color-7">6584</button></td>                    <td width="10%"><button class="btn-hover color-8">6688</button></td>                    <td width="10%"><button class="btn-hover color-9">6715</button></td>                    <td width="10%"><button class="btn-hover color-10">6840</button></td>                    <td width="10%"><button class="btn-hover color-11">6908</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7071</button></td>                    <td width="10%"><button class="btn-hover color-3">7178</button></td>                    <td width="10%"><button class="btn-hover color-4">7223</button></td>                    <td width="10%"><button class="btn-hover color-5">7380</button></td>                    <td width="10%"><button class="btn-hover color-6">7408</button></td>                    <td width="10%"><button class="btn-hover color-7">7509</button></td>                    <td width="10%"><button class="btn-hover color-8">7606,7651</button></td>                    <td width="10%"><button class="btn-hover color-9">7710</button></td>                    <td width="10%"><button class="btn-hover color-10">7802,7815</button></td>                    <td width="10%"><button class="btn-hover color-11">7913</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8005,8054</button></td>                    <td width="10%"><button class="btn-hover color-3">8146</button></td>                    <td width="10%"><button class="btn-hover color-4">8202,8241</button></td>                    <td width="10%"><button class="btn-hover color-5">8338</button></td>                    <td width="10%"><button class="btn-hover color-6">8449</button></td>                    <td width="10%"><button class="btn-hover color-7">8540</button></td>                    <td width="10%"><button class="btn-hover color-8">8624</button></td>                    <td width="10%"><button class="btn-hover color-9">8774</button></td>                    <td width="10%"><button class="btn-hover color-10">8888</button></td>                    <td width="10%"><button class="btn-hover color-11">8949</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9016</button></td>                    <td width="10%"><button class="btn-hover color-3">9106</button></td>                    <td width="10%"><button class="btn-hover color-4">9237,9221</button></td>                    <td width="10%"><button class="btn-hover color-5">9307</button></td>                    <td width="10%"><button class="btn-hover color-6">9433</button></td>                    <td width="10%"><button class="btn-hover color-7">9585</button></td>                    <td width="10%"><button class="btn-hover color-8">9668,9689</button></td>                    <td width="10%"><button class="btn-hover color-9">9794</button></td>                    <td width="10%"><button class="btn-hover color-10">9843</button></td>                    <td width="10%"><button class="btn-hover color-11">9941</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0023</button></td>                    <td width="10%"><button class="btn-hover color-3">0109</button></td>                    <td width="10%"><button class="btn-hover color-4">0250,0202</button></td>                    <td width="10%"><button class="btn-hover color-5">0354</button></td>                    <td width="10%"><button class="btn-hover color-6">0458</button></td>                    <td width="10%"><button class="btn-hover color-7">0593</button></td>                    <td width="10%"><button class="btn-hover color-8">0606</button></td>                    <td width="10%"><button class="btn-hover color-9">0725</button></td>                    <td width="10%"><button class="btn-hover color-10">0809</button></td>                    <td width="10%"><button class="btn-hover color-11">0995</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1060</button></td>                    <td width="10%"><button class="btn-hover color-3">1106</button></td>                    <td width="10%"><button class="btn-hover color-4">1231,1203</button></td>                    <td width="10%"><button class="btn-hover color-5">1375</button></td>                    <td width="10%"><button class="btn-hover color-6">1462</button></td>                    <td width="10%"><button class="btn-hover color-7">1595</button></td>                    <td width="10%"><button class="btn-hover color-8">1646</button></td>                    <td width="10%"><button class="btn-hover color-9">1754</button></td>                    <td width="10%"><button class="btn-hover color-10">1883,1861</button></td>                    <td width="10%"><button class="btn-hover color-11">1923</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2025</button></td>                    <td width="10%"><button class="btn-hover color-3">2126</button></td>                    <td width="10%"><button class="btn-hover color-4">2230,2268</button></td>                    <td width="10%"><button class="btn-hover color-5">2353</button></td>                    <td width="10%"><button class="btn-hover color-6">2478</button></td>                    <td width="10%"><button class="btn-hover color-7">2554,2543</button></td>                    <td width="10%"><button class="btn-hover color-8">2676</button></td>                    <td width="10%"><button class="btn-hover color-9">2763</button></td>                    <td width="10%"><button class="btn-hover color-10">2858</button></td>                    <td width="10%"><button class="btn-hover color-11">2919</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3022</button></td>                    <td width="10%"><button class="btn-hover color-3">3197</button></td>                    <td width="10%"><button class="btn-hover color-4">3262</button></td>                    <td width="10%"><button class="btn-hover color-5">3325</button></td>                    <td width="10%"><button class="btn-hover color-6">3451</button></td>                    <td width="10%"><button class="btn-hover color-7">3553</button></td>                    <td width="10%"><button class="btn-hover color-8">3604</button></td>                    <td width="10%"><button class="btn-hover color-9">3723</button></td>                    <td width="10%"><button class="btn-hover color-10">3807,3875</button></td>                    <td width="10%"><button class="btn-hover color-11">3907,3931</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4065</button></td>                    <td width="10%"><button class="btn-hover color-3">4179,4121</button></td>                    <td width="10%"><button class="btn-hover color-4">4240</button></td>                    <td width="10%"><button class="btn-hover color-5">4385</button></td>                    <td width="10%"><button class="btn-hover color-6">4451</button></td>                    <td width="10%"><button class="btn-hover color-7">4567</button></td>                    <td width="10%"><button class="btn-hover color-8">4691</button></td>                    <td width="10%"><button class="btn-hover color-9">4781,4776</button></td>                    <td width="10%"><button class="btn-hover color-10">4808</button></td>                    <td width="10%"><button class="btn-hover color-11">4916</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5006</button></td>                    <td width="10%"><button class="btn-hover color-3">5115</button></td>                    <td width="10%"><button class="btn-hover color-4">5254</button></td>                    <td width="10%"><button class="btn-hover color-5">5391</button></td>                    <td width="10%"><button class="btn-hover color-6">5451</button></td>                    <td width="10%"><button class="btn-hover color-7">5501</button></td>                    <td width="10%"><button class="btn-hover color-8">5697</button></td>                    <td width="10%"><button class="btn-hover color-9">5725</button></td>                    <td width="10%"><button class="btn-hover color-10">5852,5851</button></td>                    <td width="10%"><button class="btn-hover color-11">5997,5956</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6042</button></td>                    <td width="10%"><button class="btn-hover color-3">6101</button></td>                    <td width="10%"><button class="btn-hover color-4">6260,6263</button></td>                    <td width="10%"><button class="btn-hover color-5">6300</button></td>                    <td width="10%"><button class="btn-hover color-6">6455</button></td>                    <td width="10%"><button class="btn-hover color-7">6500,6527</button></td>                    <td width="10%"><button class="btn-hover color-8">6622</button></td>                    <td width="10%"><button class="btn-hover color-9">6725</button></td>                    <td width="10%"><button class="btn-hover color-10">6805</button></td>                    <td width="10%"><button class="btn-hover color-11">6907</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7043</button></td>                    <td width="10%"><button class="btn-hover color-3">7118,7136</button></td>                    <td width="10%"><button class="btn-hover color-4">7206</button></td>                    <td width="10%"><button class="btn-hover color-5">7354</button></td>                    <td width="10%"><button class="btn-hover color-6">7469</button></td>                    <td width="10%"><button class="btn-hover color-7">7515</button></td>                    <td width="10%"><button class="btn-hover color-8">7607,7601</button></td>                    <td width="10%"><button class="btn-hover color-9">7721</button></td>                    <td width="10%"><button class="btn-hover color-10">7867</button></td>                    <td width="10%"><button class="btn-hover color-11">7955</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8082</button></td>                    <td width="10%"><button class="btn-hover color-3">8128</button></td>                    <td width="10%"><button class="btn-hover color-4">8248,8205</button></td>                    <td width="10%"><button class="btn-hover color-5">8310,8377</button></td>                    <td width="10%"><button class="btn-hover color-6">8424</button></td>                    <td width="10%"><button class="btn-hover color-7">8530</button></td>                    <td width="10%"><button class="btn-hover color-8">8614</button></td>                    <td width="10%"><button class="btn-hover color-9">8792</button></td>                    <td width="10%"><button class="btn-hover color-10">8892</button></td>                    <td width="10%"><button class="btn-hover color-11">8905</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9086,9097</button></td>                    <td width="10%"><button class="btn-hover color-3">9134</button></td>                    <td width="10%"><button class="btn-hover color-4">9244</button></td>                    <td width="10%"><button class="btn-hover color-5">9308</button></td>                    <td width="10%"><button class="btn-hover color-6">9486</button></td>                    <td width="10%"><button class="btn-hover color-7">9522</button></td>                    <td width="10%"><button class="btn-hover color-8">9676</button></td>                    <td width="10%"><button class="btn-hover color-9">9746,9732</button></td>                    <td width="10%"><button class="btn-hover color-10">9814</button></td>                    <td width="10%"><button class="btn-hover color-11">9953</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;01:15 pm &nbsp;<a href="print_current_result.php?id=17&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;02:15 pm &nbsp;<a href="print_current_result.php?id=21&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -5479,21 +5459,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0021</button></td>                    <td width="10%"><button class="btn-hover color-3">0122</button></td>                    <td width="10%"><button class="btn-hover color-4">0214</button></td>                    <td width="10%"><button class="btn-hover color-5">0361</button></td>                    <td width="10%"><button class="btn-hover color-6">0419</button></td>                    <td width="10%"><button class="btn-hover color-7">0520,0580</button></td>                    <td width="10%"><button class="btn-hover color-8">0625</button></td>                    <td width="10%"><button class="btn-hover color-9">0753</button></td>                    <td width="10%"><button class="btn-hover color-10">0854</button></td>                    <td width="10%"><button class="btn-hover color-11">0902</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1013</button></td>                    <td width="10%"><button class="btn-hover color-3">1135</button></td>                    <td width="10%"><button class="btn-hover color-4">1277</button></td>                    <td width="10%"><button class="btn-hover color-5">1371</button></td>                    <td width="10%"><button class="btn-hover color-6">1490</button></td>                    <td width="10%"><button class="btn-hover color-7">1595</button></td>                    <td width="10%"><button class="btn-hover color-8">1687</button></td>                    <td width="10%"><button class="btn-hover color-9">1780,1721</button></td>                    <td width="10%"><button class="btn-hover color-10">1869</button></td>                    <td width="10%"><button class="btn-hover color-11">1905,1940</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2004,2043</button></td>                    <td width="10%"><button class="btn-hover color-3">2112,2170</button></td>                    <td width="10%"><button class="btn-hover color-4">2292</button></td>                    <td width="10%"><button class="btn-hover color-5">2321</button></td>                    <td width="10%"><button class="btn-hover color-6">2480</button></td>                    <td width="10%"><button class="btn-hover color-7">2553</button></td>                    <td width="10%"><button class="btn-hover color-8">2634</button></td>                    <td width="10%"><button class="btn-hover color-9">2747</button></td>                    <td width="10%"><button class="btn-hover color-10">2874</button></td>                    <td width="10%"><button class="btn-hover color-11">2954</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3022,3025</button></td>                    <td width="10%"><button class="btn-hover color-3">3123</button></td>                    <td width="10%"><button class="btn-hover color-4">3263</button></td>                    <td width="10%"><button class="btn-hover color-5">3390</button></td>                    <td width="10%"><button class="btn-hover color-6">3492</button></td>                    <td width="10%"><button class="btn-hover color-7">3535</button></td>                    <td width="10%"><button class="btn-hover color-8">3605</button></td>                    <td width="10%"><button class="btn-hover color-9">3793</button></td>                    <td width="10%"><button class="btn-hover color-10">3842,3829</button></td>                    <td width="10%"><button class="btn-hover color-11">3982</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4089</button></td>                    <td width="10%"><button class="btn-hover color-3">4168</button></td>                    <td width="10%"><button class="btn-hover color-4">4211</button></td>                    <td width="10%"><button class="btn-hover color-5">4349</button></td>                    <td width="10%"><button class="btn-hover color-6">4471</button></td>                    <td width="10%"><button class="btn-hover color-7">4533,4534</button></td>                    <td width="10%"><button class="btn-hover color-8">4671</button></td>                    <td width="10%"><button class="btn-hover color-9">4768,4763</button></td>                    <td width="10%"><button class="btn-hover color-10">4892</button></td>                    <td width="10%"><button class="btn-hover color-11">4946</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5067,5097</button></td>                    <td width="10%"><button class="btn-hover color-3">5190</button></td>                    <td width="10%"><button class="btn-hover color-4">5260</button></td>                    <td width="10%"><button class="btn-hover color-5">5365</button></td>                    <td width="10%"><button class="btn-hover color-6">5481</button></td>                    <td width="10%"><button class="btn-hover color-7">5519,5532</button></td>                    <td width="10%"><button class="btn-hover color-8">5676</button></td>                    <td width="10%"><button class="btn-hover color-9">5798</button></td>                    <td width="10%"><button class="btn-hover color-10">5873</button></td>                    <td width="10%"><button class="btn-hover color-11">5957</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6041</button></td>                    <td width="10%"><button class="btn-hover color-3">6115,6151</button></td>                    <td width="10%"><button class="btn-hover color-4">6216</button></td>                    <td width="10%"><button class="btn-hover color-5">6342</button></td>                    <td width="10%"><button class="btn-hover color-6">6485</button></td>                    <td width="10%"><button class="btn-hover color-7">6512</button></td>                    <td width="10%"><button class="btn-hover color-8">6678</button></td>                    <td width="10%"><button class="btn-hover color-9">6770</button></td>                    <td width="10%"><button class="btn-hover color-10">6861,6849</button></td>                    <td width="10%"><button class="btn-hover color-11">6946</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7088</button></td>                    <td width="10%"><button class="btn-hover color-3">7142</button></td>                    <td width="10%"><button class="btn-hover color-4">7234</button></td>                    <td width="10%"><button class="btn-hover color-5">7344</button></td>                    <td width="10%"><button class="btn-hover color-6">7430,7423</button></td>                    <td width="10%"><button class="btn-hover color-7">7569,7576</button></td>                    <td width="10%"><button class="btn-hover color-8">7605</button></td>                    <td width="10%"><button class="btn-hover color-9">7718</button></td>                    <td width="10%"><button class="btn-hover color-10">7827</button></td>                    <td width="10%"><button class="btn-hover color-11">7964</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8073</button></td>                    <td width="10%"><button class="btn-hover color-3">8153,8121</button></td>                    <td width="10%"><button class="btn-hover color-4">8274,8267</button></td>                    <td width="10%"><button class="btn-hover color-5">8347</button></td>                    <td width="10%"><button class="btn-hover color-6">8478</button></td>                    <td width="10%"><button class="btn-hover color-7">8573</button></td>                    <td width="10%"><button class="btn-hover color-8">8609</button></td>                    <td width="10%"><button class="btn-hover color-9">8703</button></td>                    <td width="10%"><button class="btn-hover color-10">8841</button></td>                    <td width="10%"><button class="btn-hover color-11">8974</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9039</button></td>                    <td width="10%"><button class="btn-hover color-3">9128</button></td>                    <td width="10%"><button class="btn-hover color-4">9202</button></td>                    <td width="10%"><button class="btn-hover color-5">9348</button></td>                    <td width="10%"><button class="btn-hover color-6">9484</button></td>                    <td width="10%"><button class="btn-hover color-7">9528</button></td>                    <td width="10%"><button class="btn-hover color-8">9644</button></td>                    <td width="10%"><button class="btn-hover color-9">9750</button></td>                    <td width="10%"><button class="btn-hover color-10">9847</button></td>                    <td width="10%"><button class="btn-hover color-11">9950,9973,9982</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0071</button></td>                    <td width="10%"><button class="btn-hover color-3">0124</button></td>                    <td width="10%"><button class="btn-hover color-4">0248</button></td>                    <td width="10%"><button class="btn-hover color-5">0378,0348</button></td>                    <td width="10%"><button class="btn-hover color-6">0437</button></td>                    <td width="10%"><button class="btn-hover color-7">0595</button></td>                    <td width="10%"><button class="btn-hover color-8">0629</button></td>                    <td width="10%"><button class="btn-hover color-9">0737</button></td>                    <td width="10%"><button class="btn-hover color-10">0806</button></td>                    <td width="10%"><button class="btn-hover color-11">0995</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1083</button></td>                    <td width="10%"><button class="btn-hover color-3">1124</button></td>                    <td width="10%"><button class="btn-hover color-4">1260</button></td>                    <td width="10%"><button class="btn-hover color-5">1330,1300</button></td>                    <td width="10%"><button class="btn-hover color-6">1401</button></td>                    <td width="10%"><button class="btn-hover color-7">1550</button></td>                    <td width="10%"><button class="btn-hover color-8">1673</button></td>                    <td width="10%"><button class="btn-hover color-9">1721</button></td>                    <td width="10%"><button class="btn-hover color-10">1828</button></td>                    <td width="10%"><button class="btn-hover color-11">1951,1933</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2092,2007</button></td>                    <td width="10%"><button class="btn-hover color-3">2195</button></td>                    <td width="10%"><button class="btn-hover color-4">2202</button></td>                    <td width="10%"><button class="btn-hover color-5">2372</button></td>                    <td width="10%"><button class="btn-hover color-6">2437</button></td>                    <td width="10%"><button class="btn-hover color-7">2515</button></td>                    <td width="10%"><button class="btn-hover color-8">2621</button></td>                    <td width="10%"><button class="btn-hover color-9">2725</button></td>                    <td width="10%"><button class="btn-hover color-10">2840,2887</button></td>                    <td width="10%"><button class="btn-hover color-11">2998</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3069</button></td>                    <td width="10%"><button class="btn-hover color-3">3156,3198</button></td>                    <td width="10%"><button class="btn-hover color-4">3210</button></td>                    <td width="10%"><button class="btn-hover color-5">3374</button></td>                    <td width="10%"><button class="btn-hover color-6">3483</button></td>                    <td width="10%"><button class="btn-hover color-7">3526</button></td>                    <td width="10%"><button class="btn-hover color-8">3633</button></td>                    <td width="10%"><button class="btn-hover color-9">3785</button></td>                    <td width="10%"><button class="btn-hover color-10">3891</button></td>                    <td width="10%"><button class="btn-hover color-11">3985,3933</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4011</button></td>                    <td width="10%"><button class="btn-hover color-3">4146,4175</button></td>                    <td width="10%"><button class="btn-hover color-4">4283</button></td>                    <td width="10%"><button class="btn-hover color-5">4363</button></td>                    <td width="10%"><button class="btn-hover color-6">4430</button></td>                    <td width="10%"><button class="btn-hover color-7">4554</button></td>                    <td width="10%"><button class="btn-hover color-8">4601</button></td>                    <td width="10%"><button class="btn-hover color-9">4776</button></td>                    <td width="10%"><button class="btn-hover color-10">4892,4870</button></td>                    <td width="10%"><button class="btn-hover color-11">4982</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5059</button></td>                    <td width="10%"><button class="btn-hover color-3">5187,5182</button></td>                    <td width="10%"><button class="btn-hover color-4">5236</button></td>                    <td width="10%"><button class="btn-hover color-5">5346</button></td>                    <td width="10%"><button class="btn-hover color-6">5445</button></td>                    <td width="10%"><button class="btn-hover color-7">5503</button></td>                    <td width="10%"><button class="btn-hover color-8">5688</button></td>                    <td width="10%"><button class="btn-hover color-9">5766</button></td>                    <td width="10%"><button class="btn-hover color-10">5843,5884</button></td>                    <td width="10%"><button class="btn-hover color-11">5922</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6021</button></td>                    <td width="10%"><button class="btn-hover color-3">6197</button></td>                    <td width="10%"><button class="btn-hover color-4">6277,6229</button></td>                    <td width="10%"><button class="btn-hover color-5">6343</button></td>                    <td width="10%"><button class="btn-hover color-6">6419</button></td>                    <td width="10%"><button class="btn-hover color-7">6556,6572</button></td>                    <td width="10%"><button class="btn-hover color-8">6613</button></td>                    <td width="10%"><button class="btn-hover color-9">6757</button></td>                    <td width="10%"><button class="btn-hover color-10">6870</button></td>                    <td width="10%"><button class="btn-hover color-11">6921</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7010</button></td>                    <td width="10%"><button class="btn-hover color-3">7191</button></td>                    <td width="10%"><button class="btn-hover color-4">7291,7219</button></td>                    <td width="10%"><button class="btn-hover color-5">7330</button></td>                    <td width="10%"><button class="btn-hover color-6">7483</button></td>                    <td width="10%"><button class="btn-hover color-7">7593</button></td>                    <td width="10%"><button class="btn-hover color-8">7653</button></td>                    <td width="10%"><button class="btn-hover color-9">7720,7795</button></td>                    <td width="10%"><button class="btn-hover color-10">7870</button></td>                    <td width="10%"><button class="btn-hover color-11">7991</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8071,8088</button></td>                    <td width="10%"><button class="btn-hover color-3">8129</button></td>                    <td width="10%"><button class="btn-hover color-4">8233,8295</button></td>                    <td width="10%"><button class="btn-hover color-5">8363</button></td>                    <td width="10%"><button class="btn-hover color-6">8414</button></td>                    <td width="10%"><button class="btn-hover color-7">8547</button></td>                    <td width="10%"><button class="btn-hover color-8">8633</button></td>                    <td width="10%"><button class="btn-hover color-9">8778</button></td>                    <td width="10%"><button class="btn-hover color-10">8856</button></td>                    <td width="10%"><button class="btn-hover color-11">8934</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9004,9084</button></td>                    <td width="10%"><button class="btn-hover color-3">9128</button></td>                    <td width="10%"><button class="btn-hover color-4">9273</button></td>                    <td width="10%"><button class="btn-hover color-5">9388</button></td>                    <td width="10%"><button class="btn-hover color-6">9439</button></td>                    <td width="10%"><button class="btn-hover color-7">9502</button></td>                    <td width="10%"><button class="btn-hover color-8">9608</button></td>                    <td width="10%"><button class="btn-hover color-9">9792</button></td>                    <td width="10%"><button class="btn-hover color-10">9811,9813</button></td>                    <td width="10%"><button class="btn-hover color-11">9999</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;01:00 pm &nbsp;<a href="print_current_result.php?id=16&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;02:00 pm &nbsp;<a href="print_current_result.php?id=20&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -5616,21 +5596,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0078</button></td>                    <td width="10%"><button class="btn-hover color-3">0142</button></td>                    <td width="10%"><button class="btn-hover color-4">0266</button></td>                    <td width="10%"><button class="btn-hover color-5">0316</button></td>                    <td width="10%"><button class="btn-hover color-6">0451</button></td>                    <td width="10%"><button class="btn-hover color-7">0572</button></td>                    <td width="10%"><button class="btn-hover color-8">0629</button></td>                    <td width="10%"><button class="btn-hover color-9">0791</button></td>                    <td width="10%"><button class="btn-hover color-10">0899</button></td>                    <td width="10%"><button class="btn-hover color-11">0978,0946</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1050,1048</button></td>                    <td width="10%"><button class="btn-hover color-3">1138</button></td>                    <td width="10%"><button class="btn-hover color-4">1217</button></td>                    <td width="10%"><button class="btn-hover color-5">1389</button></td>                    <td width="10%"><button class="btn-hover color-6">1458</button></td>                    <td width="10%"><button class="btn-hover color-7">1565</button></td>                    <td width="10%"><button class="btn-hover color-8">1620</button></td>                    <td width="10%"><button class="btn-hover color-9">1749</button></td>                    <td width="10%"><button class="btn-hover color-10">1851</button></td>                    <td width="10%"><button class="btn-hover color-11">1992,1967</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2001</button></td>                    <td width="10%"><button class="btn-hover color-3">2116</button></td>                    <td width="10%"><button class="btn-hover color-4">2208</button></td>                    <td width="10%"><button class="btn-hover color-5">2371</button></td>                    <td width="10%"><button class="btn-hover color-6">2497</button></td>                    <td width="10%"><button class="btn-hover color-7">2514,2542</button></td>                    <td width="10%"><button class="btn-hover color-8">2685</button></td>                    <td width="10%"><button class="btn-hover color-9">2719,2728</button></td>                    <td width="10%"><button class="btn-hover color-10">2831</button></td>                    <td width="10%"><button class="btn-hover color-11">2918</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3064</button></td>                    <td width="10%"><button class="btn-hover color-3">3123</button></td>                    <td width="10%"><button class="btn-hover color-4">3219</button></td>                    <td width="10%"><button class="btn-hover color-5">3360</button></td>                    <td width="10%"><button class="btn-hover color-6">3491</button></td>                    <td width="10%"><button class="btn-hover color-7">3551</button></td>                    <td width="10%"><button class="btn-hover color-8">3614,3637</button></td>                    <td width="10%"><button class="btn-hover color-9">3742,3793</button></td>                    <td width="10%"><button class="btn-hover color-10">3820</button></td>                    <td width="10%"><button class="btn-hover color-11">3982</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4065</button></td>                    <td width="10%"><button class="btn-hover color-3">4165</button></td>                    <td width="10%"><button class="btn-hover color-4">4223</button></td>                    <td width="10%"><button class="btn-hover color-5">4341</button></td>                    <td width="10%"><button class="btn-hover color-6">4466,4403</button></td>                    <td width="10%"><button class="btn-hover color-7">4579</button></td>                    <td width="10%"><button class="btn-hover color-8">4614</button></td>                    <td width="10%"><button class="btn-hover color-9">4776</button></td>                    <td width="10%"><button class="btn-hover color-10">4878</button></td>                    <td width="10%"><button class="btn-hover color-11">4911,4921</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5038</button></td>                    <td width="10%"><button class="btn-hover color-3">5105</button></td>                    <td width="10%"><button class="btn-hover color-4">5263</button></td>                    <td width="10%"><button class="btn-hover color-5">5337</button></td>                    <td width="10%"><button class="btn-hover color-6">5479</button></td>                    <td width="10%"><button class="btn-hover color-7">5599,5501</button></td>                    <td width="10%"><button class="btn-hover color-8">5602</button></td>                    <td width="10%"><button class="btn-hover color-9">5772,5766</button></td>                    <td width="10%"><button class="btn-hover color-10">5853</button></td>                    <td width="10%"><button class="btn-hover color-11">5976</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6034</button></td>                    <td width="10%"><button class="btn-hover color-3">6146</button></td>                    <td width="10%"><button class="btn-hover color-4">6233</button></td>                    <td width="10%"><button class="btn-hover color-5">6348</button></td>                    <td width="10%"><button class="btn-hover color-6">6445</button></td>                    <td width="10%"><button class="btn-hover color-7">6537</button></td>                    <td width="10%"><button class="btn-hover color-8">6615</button></td>                    <td width="10%"><button class="btn-hover color-9">6782,6768</button></td>                    <td width="10%"><button class="btn-hover color-10">6838,6807</button></td>                    <td width="10%"><button class="btn-hover color-11">6920</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7043</button></td>                    <td width="10%"><button class="btn-hover color-3">7112</button></td>                    <td width="10%"><button class="btn-hover color-4">7280,7237</button></td>                    <td width="10%"><button class="btn-hover color-5">7329</button></td>                    <td width="10%"><button class="btn-hover color-6">7491</button></td>                    <td width="10%"><button class="btn-hover color-7">7599</button></td>                    <td width="10%"><button class="btn-hover color-8">7639</button></td>                    <td width="10%"><button class="btn-hover color-9">7790</button></td>                    <td width="10%"><button class="btn-hover color-10">7899,7852</button></td>                    <td width="10%"><button class="btn-hover color-11">7906</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8031</button></td>                    <td width="10%"><button class="btn-hover color-3">8159</button></td>                    <td width="10%"><button class="btn-hover color-4">8254</button></td>                    <td width="10%"><button class="btn-hover color-5">8360,8366</button></td>                    <td width="10%"><button class="btn-hover color-6">8482</button></td>                    <td width="10%"><button class="btn-hover color-7">8527</button></td>                    <td width="10%"><button class="btn-hover color-8">8689</button></td>                    <td width="10%"><button class="btn-hover color-9">8785,8717</button></td>                    <td width="10%"><button class="btn-hover color-10">8893</button></td>                    <td width="10%"><button class="btn-hover color-11">8911</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9059</button></td>                    <td width="10%"><button class="btn-hover color-3">9195</button></td>                    <td width="10%"><button class="btn-hover color-4">9271</button></td>                    <td width="10%"><button class="btn-hover color-5">9347</button></td>                    <td width="10%"><button class="btn-hover color-6">9435</button></td>                    <td width="10%"><button class="btn-hover color-7">9520</button></td>                    <td width="10%"><button class="btn-hover color-8">9621,9619</button></td>                    <td width="10%"><button class="btn-hover color-9">9777</button></td>                    <td width="10%"><button class="btn-hover color-10">9883</button></td>                    <td width="10%"><button class="btn-hover color-11">9931,9938</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0024</button></td>                    <td width="10%"><button class="btn-hover color-3">0145</button></td>                    <td width="10%"><button class="btn-hover color-4">0276</button></td>                    <td width="10%"><button class="btn-hover color-5">0344</button></td>                    <td width="10%"><button class="btn-hover color-6">0463</button></td>                    <td width="10%"><button class="btn-hover color-7">0564,0548</button></td>                    <td width="10%"><button class="btn-hover color-8">0603</button></td>                    <td width="10%"><button class="btn-hover color-9">0706</button></td>                    <td width="10%"><button class="btn-hover color-10">0805</button></td>                    <td width="10%"><button class="btn-hover color-11">0900</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1080</button></td>                    <td width="10%"><button class="btn-hover color-3">1143</button></td>                    <td width="10%"><button class="btn-hover color-4">1298</button></td>                    <td width="10%"><button class="btn-hover color-5">1306,1397</button></td>                    <td width="10%"><button class="btn-hover color-6">1415</button></td>                    <td width="10%"><button class="btn-hover color-7">1516,1572</button></td>                    <td width="10%"><button class="btn-hover color-8">1671</button></td>                    <td width="10%"><button class="btn-hover color-9">1731</button></td>                    <td width="10%"><button class="btn-hover color-10">1898</button></td>                    <td width="10%"><button class="btn-hover color-11">1926</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2074</button></td>                    <td width="10%"><button class="btn-hover color-3">2108</button></td>                    <td width="10%"><button class="btn-hover color-4">2218</button></td>                    <td width="10%"><button class="btn-hover color-5">2395,2372</button></td>                    <td width="10%"><button class="btn-hover color-6">2426</button></td>                    <td width="10%"><button class="btn-hover color-7">2524,2506</button></td>                    <td width="10%"><button class="btn-hover color-8">2670</button></td>                    <td width="10%"><button class="btn-hover color-9">2790</button></td>                    <td width="10%"><button class="btn-hover color-10">2871</button></td>                    <td width="10%"><button class="btn-hover color-11">2943</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3091,3040</button></td>                    <td width="10%"><button class="btn-hover color-3">3141,3140</button></td>                    <td width="10%"><button class="btn-hover color-4">3214</button></td>                    <td width="10%"><button class="btn-hover color-5">3374</button></td>                    <td width="10%"><button class="btn-hover color-6">3411</button></td>                    <td width="10%"><button class="btn-hover color-7">3533</button></td>                    <td width="10%"><button class="btn-hover color-8">3631</button></td>                    <td width="10%"><button class="btn-hover color-9">3713</button></td>                    <td width="10%"><button class="btn-hover color-10">3896</button></td>                    <td width="10%"><button class="btn-hover color-11">3975</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4049</button></td>                    <td width="10%"><button class="btn-hover color-3">4133,4161</button></td>                    <td width="10%"><button class="btn-hover color-4">4268</button></td>                    <td width="10%"><button class="btn-hover color-5">4343</button></td>                    <td width="10%"><button class="btn-hover color-6">4494,4412</button></td>                    <td width="10%"><button class="btn-hover color-7">4557</button></td>                    <td width="10%"><button class="btn-hover color-8">4664</button></td>                    <td width="10%"><button class="btn-hover color-9">4714</button></td>                    <td width="10%"><button class="btn-hover color-10">4831</button></td>                    <td width="10%"><button class="btn-hover color-11">4934</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5077</button></td>                    <td width="10%"><button class="btn-hover color-3">5117</button></td>                    <td width="10%"><button class="btn-hover color-4">5203</button></td>                    <td width="10%"><button class="btn-hover color-5">5351</button></td>                    <td width="10%"><button class="btn-hover color-6">5413</button></td>                    <td width="10%"><button class="btn-hover color-7">5573</button></td>                    <td width="10%"><button class="btn-hover color-8">5671</button></td>                    <td width="10%"><button class="btn-hover color-9">5772</button></td>                    <td width="10%"><button class="btn-hover color-10">5868,5871,5813</button></td>                    <td width="10%"><button class="btn-hover color-11">5965</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6039,6043</button></td>                    <td width="10%"><button class="btn-hover color-3">6140</button></td>                    <td width="10%"><button class="btn-hover color-4">6292</button></td>                    <td width="10%"><button class="btn-hover color-5">6340</button></td>                    <td width="10%"><button class="btn-hover color-6">6483</button></td>                    <td width="10%"><button class="btn-hover color-7">6599,6598</button></td>                    <td width="10%"><button class="btn-hover color-8">6691</button></td>                    <td width="10%"><button class="btn-hover color-9">6714</button></td>                    <td width="10%"><button class="btn-hover color-10">6805</button></td>                    <td width="10%"><button class="btn-hover color-11">6981</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7044</button></td>                    <td width="10%"><button class="btn-hover color-3">7188</button></td>                    <td width="10%"><button class="btn-hover color-4">7233</button></td>                    <td width="10%"><button class="btn-hover color-5">7370,7300</button></td>                    <td width="10%"><button class="btn-hover color-6">7422</button></td>                    <td width="10%"><button class="btn-hover color-7">7579</button></td>                    <td width="10%"><button class="btn-hover color-8">7672,7640</button></td>                    <td width="10%"><button class="btn-hover color-9">7762</button></td>                    <td width="10%"><button class="btn-hover color-10">7852</button></td>                    <td width="10%"><button class="btn-hover color-11">7943</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8046</button></td>                    <td width="10%"><button class="btn-hover color-3">8137</button></td>                    <td width="10%"><button class="btn-hover color-4">8233</button></td>                    <td width="10%"><button class="btn-hover color-5">8368</button></td>                    <td width="10%"><button class="btn-hover color-6">8450,8493</button></td>                    <td width="10%"><button class="btn-hover color-7">8537</button></td>                    <td width="10%"><button class="btn-hover color-8">8653,8619</button></td>                    <td width="10%"><button class="btn-hover color-9">8775</button></td>                    <td width="10%"><button class="btn-hover color-10">8833</button></td>                    <td width="10%"><button class="btn-hover color-11">8921</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9070,9002</button></td>                    <td width="10%"><button class="btn-hover color-3">9117</button></td>                    <td width="10%"><button class="btn-hover color-4">9295</button></td>                    <td width="10%"><button class="btn-hover color-5">9377</button></td>                    <td width="10%"><button class="btn-hover color-6">9454</button></td>                    <td width="10%"><button class="btn-hover color-7">9539</button></td>                    <td width="10%"><button class="btn-hover color-8">9614,9630</button></td>                    <td width="10%"><button class="btn-hover color-9">9745</button></td>                    <td width="10%"><button class="btn-hover color-10">9800</button></td>                    <td width="10%"><button class="btn-hover color-11">9957</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;12:45 pm &nbsp;<a href="print_current_result.php?id=15&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;01:45 pm &nbsp;<a href="print_current_result.php?id=19&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -5753,21 +5733,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0029</button></td>                    <td width="10%"><button class="btn-hover color-3">0150</button></td>                    <td width="10%"><button class="btn-hover color-4">0242,0261</button></td>                    <td width="10%"><button class="btn-hover color-5">0388</button></td>                    <td width="10%"><button class="btn-hover color-6">0444</button></td>                    <td width="10%"><button class="btn-hover color-7">0577</button></td>                    <td width="10%"><button class="btn-hover color-8">0652</button></td>                    <td width="10%"><button class="btn-hover color-9">0715</button></td>                    <td width="10%"><button class="btn-hover color-10">0849</button></td>                    <td width="10%"><button class="btn-hover color-11">0961</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1043,1039</button></td>                    <td width="10%"><button class="btn-hover color-3">1117</button></td>                    <td width="10%"><button class="btn-hover color-4">1260</button></td>                    <td width="10%"><button class="btn-hover color-5">1333</button></td>                    <td width="10%"><button class="btn-hover color-6">1421</button></td>                    <td width="10%"><button class="btn-hover color-7">1570</button></td>                    <td width="10%"><button class="btn-hover color-8">1652,1673</button></td>                    <td width="10%"><button class="btn-hover color-9">1795</button></td>                    <td width="10%"><button class="btn-hover color-10">1811</button></td>                    <td width="10%"><button class="btn-hover color-11">1941</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2057</button></td>                    <td width="10%"><button class="btn-hover color-3">2139</button></td>                    <td width="10%"><button class="btn-hover color-4">2259,2250</button></td>                    <td width="10%"><button class="btn-hover color-5">2365</button></td>                    <td width="10%"><button class="btn-hover color-6">2481</button></td>                    <td width="10%"><button class="btn-hover color-7">2525</button></td>                    <td width="10%"><button class="btn-hover color-8">2600</button></td>                    <td width="10%"><button class="btn-hover color-9">2785,2746</button></td>                    <td width="10%"><button class="btn-hover color-10">2849</button></td>                    <td width="10%"><button class="btn-hover color-11">2906</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3056</button></td>                    <td width="10%"><button class="btn-hover color-3">3173</button></td>                    <td width="10%"><button class="btn-hover color-4">3201</button></td>                    <td width="10%"><button class="btn-hover color-5">3378</button></td>                    <td width="10%"><button class="btn-hover color-6">3488</button></td>                    <td width="10%"><button class="btn-hover color-7">3564</button></td>                    <td width="10%"><button class="btn-hover color-8">3685</button></td>                    <td width="10%"><button class="btn-hover color-9">3715,3724</button></td>                    <td width="10%"><button class="btn-hover color-10">3827</button></td>                    <td width="10%"><button class="btn-hover color-11">3924,3948</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4026</button></td>                    <td width="10%"><button class="btn-hover color-3">4163</button></td>                    <td width="10%"><button class="btn-hover color-4">4265</button></td>                    <td width="10%"><button class="btn-hover color-5">4369</button></td>                    <td width="10%"><button class="btn-hover color-6">4403,4497</button></td>                    <td width="10%"><button class="btn-hover color-7">4573</button></td>                    <td width="10%"><button class="btn-hover color-8">4613,4624</button></td>                    <td width="10%"><button class="btn-hover color-9">4744</button></td>                    <td width="10%"><button class="btn-hover color-10">4819</button></td>                    <td width="10%"><button class="btn-hover color-11">4940</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5058</button></td>                    <td width="10%"><button class="btn-hover color-3">5161</button></td>                    <td width="10%"><button class="btn-hover color-4">5200</button></td>                    <td width="10%"><button class="btn-hover color-5">5330</button></td>                    <td width="10%"><button class="btn-hover color-6">5415</button></td>                    <td width="10%"><button class="btn-hover color-7">5522</button></td>                    <td width="10%"><button class="btn-hover color-8">5604</button></td>                    <td width="10%"><button class="btn-hover color-9">5780,5723</button></td>                    <td width="10%"><button class="btn-hover color-10">5822</button></td>                    <td width="10%"><button class="btn-hover color-11">5989,5992</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6045</button></td>                    <td width="10%"><button class="btn-hover color-3">6183</button></td>                    <td width="10%"><button class="btn-hover color-4">6212</button></td>                    <td width="10%"><button class="btn-hover color-5">6307</button></td>                    <td width="10%"><button class="btn-hover color-6">6493</button></td>                    <td width="10%"><button class="btn-hover color-7">6549</button></td>                    <td width="10%"><button class="btn-hover color-8">6666,6637</button></td>                    <td width="10%"><button class="btn-hover color-9">6739,6763</button></td>                    <td width="10%"><button class="btn-hover color-10">6879</button></td>                    <td width="10%"><button class="btn-hover color-11">6913</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7088,7070</button></td>                    <td width="10%"><button class="btn-hover color-3">7157</button></td>                    <td width="10%"><button class="btn-hover color-4">7224</button></td>                    <td width="10%"><button class="btn-hover color-5">7329,7396</button></td>                    <td width="10%"><button class="btn-hover color-6">7431</button></td>                    <td width="10%"><button class="btn-hover color-7">7536</button></td>                    <td width="10%"><button class="btn-hover color-8">7617</button></td>                    <td width="10%"><button class="btn-hover color-9">7701</button></td>                    <td width="10%"><button class="btn-hover color-10">7887</button></td>                    <td width="10%"><button class="btn-hover color-11">7951</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8039</button></td>                    <td width="10%"><button class="btn-hover color-3">8198</button></td>                    <td width="10%"><button class="btn-hover color-4">8282</button></td>                    <td width="10%"><button class="btn-hover color-5">8344</button></td>                    <td width="10%"><button class="btn-hover color-6">8446</button></td>                    <td width="10%"><button class="btn-hover color-7">8589</button></td>                    <td width="10%"><button class="btn-hover color-8">8680,8624,8629</button></td>                    <td width="10%"><button class="btn-hover color-9">8797</button></td>                    <td width="10%"><button class="btn-hover color-10">8817</button></td>                    <td width="10%"><button class="btn-hover color-11">8908</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9038</button></td>                    <td width="10%"><button class="btn-hover color-3">9161</button></td>                    <td width="10%"><button class="btn-hover color-4">9257</button></td>                    <td width="10%"><button class="btn-hover color-5">9347,9328</button></td>                    <td width="10%"><button class="btn-hover color-6">9459</button></td>                    <td width="10%"><button class="btn-hover color-7">9531</button></td>                    <td width="10%"><button class="btn-hover color-8">9656</button></td>                    <td width="10%"><button class="btn-hover color-9">9773</button></td>                    <td width="10%"><button class="btn-hover color-10">9887,9841</button></td>                    <td width="10%"><button class="btn-hover color-11">9913</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0024</button></td>                    <td width="10%"><button class="btn-hover color-3">0169</button></td>                    <td width="10%"><button class="btn-hover color-4">0228</button></td>                    <td width="10%"><button class="btn-hover color-5">0357</button></td>                    <td width="10%"><button class="btn-hover color-6">0462</button></td>                    <td width="10%"><button class="btn-hover color-7">0545</button></td>                    <td width="10%"><button class="btn-hover color-8">0647</button></td>                    <td width="10%"><button class="btn-hover color-9">0762</button></td>                    <td width="10%"><button class="btn-hover color-10">0836,0803</button></td>                    <td width="10%"><button class="btn-hover color-11">0956</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1068</button></td>                    <td width="10%"><button class="btn-hover color-3">1168</button></td>                    <td width="10%"><button class="btn-hover color-4">1230,1217,1289</button></td>                    <td width="10%"><button class="btn-hover color-5">1330</button></td>                    <td width="10%"><button class="btn-hover color-6">1447</button></td>                    <td width="10%"><button class="btn-hover color-7">1536</button></td>                    <td width="10%"><button class="btn-hover color-8">1697</button></td>                    <td width="10%"><button class="btn-hover color-9">1709</button></td>                    <td width="10%"><button class="btn-hover color-10">1806</button></td>                    <td width="10%"><button class="btn-hover color-11">1912</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2082</button></td>                    <td width="10%"><button class="btn-hover color-3">2124,2197</button></td>                    <td width="10%"><button class="btn-hover color-4">2208</button></td>                    <td width="10%"><button class="btn-hover color-5">2338</button></td>                    <td width="10%"><button class="btn-hover color-6">2406</button></td>                    <td width="10%"><button class="btn-hover color-7">2570</button></td>                    <td width="10%"><button class="btn-hover color-8">2626,2613</button></td>                    <td width="10%"><button class="btn-hover color-9">2727</button></td>                    <td width="10%"><button class="btn-hover color-10">2898</button></td>                    <td width="10%"><button class="btn-hover color-11">2947</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3034,3069</button></td>                    <td width="10%"><button class="btn-hover color-3">3136</button></td>                    <td width="10%"><button class="btn-hover color-4">3202</button></td>                    <td width="10%"><button class="btn-hover color-5">3320</button></td>                    <td width="10%"><button class="btn-hover color-6">3459</button></td>                    <td width="10%"><button class="btn-hover color-7">3580</button></td>                    <td width="10%"><button class="btn-hover color-8">3676</button></td>                    <td width="10%"><button class="btn-hover color-9">3759,3727</button></td>                    <td width="10%"><button class="btn-hover color-10">3812</button></td>                    <td width="10%"><button class="btn-hover color-11">3904</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4047</button></td>                    <td width="10%"><button class="btn-hover color-3">4115</button></td>                    <td width="10%"><button class="btn-hover color-4">4246</button></td>                    <td width="10%"><button class="btn-hover color-5">4384</button></td>                    <td width="10%"><button class="btn-hover color-6">4417</button></td>                    <td width="10%"><button class="btn-hover color-7">4512</button></td>                    <td width="10%"><button class="btn-hover color-8">4659,4683</button></td>                    <td width="10%"><button class="btn-hover color-9">4708</button></td>                    <td width="10%"><button class="btn-hover color-10">4811</button></td>                    <td width="10%"><button class="btn-hover color-11">4929,4913</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5046</button></td>                    <td width="10%"><button class="btn-hover color-3">5171</button></td>                    <td width="10%"><button class="btn-hover color-4">5264</button></td>                    <td width="10%"><button class="btn-hover color-5">5341,5321</button></td>                    <td width="10%"><button class="btn-hover color-6">5478,5467</button></td>                    <td width="10%"><button class="btn-hover color-7">5509</button></td>                    <td width="10%"><button class="btn-hover color-8">5670</button></td>                    <td width="10%"><button class="btn-hover color-9">5725</button></td>                    <td width="10%"><button class="btn-hover color-10">5850</button></td>                    <td width="10%"><button class="btn-hover color-11">5978</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6022</button></td>                    <td width="10%"><button class="btn-hover color-3">6131</button></td>                    <td width="10%"><button class="btn-hover color-4">6250</button></td>                    <td width="10%"><button class="btn-hover color-5">6361</button></td>                    <td width="10%"><button class="btn-hover color-6">6434</button></td>                    <td width="10%"><button class="btn-hover color-7">6502,6593,6521</button></td>                    <td width="10%"><button class="btn-hover color-8">6603</button></td>                    <td width="10%"><button class="btn-hover color-9">6743</button></td>                    <td width="10%"><button class="btn-hover color-10">6830</button></td>                    <td width="10%"><button class="btn-hover color-11">6903</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7048,7053</button></td>                    <td width="10%"><button class="btn-hover color-3">7165</button></td>                    <td width="10%"><button class="btn-hover color-4">7204</button></td>                    <td width="10%"><button class="btn-hover color-5">7307</button></td>                    <td width="10%"><button class="btn-hover color-6">7445</button></td>                    <td width="10%"><button class="btn-hover color-7">7523</button></td>                    <td width="10%"><button class="btn-hover color-8">7661</button></td>                    <td width="10%"><button class="btn-hover color-9">7778</button></td>                    <td width="10%"><button class="btn-hover color-10">7887,7826</button></td>                    <td width="10%"><button class="btn-hover color-11">7984</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8081</button></td>                    <td width="10%"><button class="btn-hover color-3">8111,8157</button></td>                    <td width="10%"><button class="btn-hover color-4">8268</button></td>                    <td width="10%"><button class="btn-hover color-5">8344</button></td>                    <td width="10%"><button class="btn-hover color-6">8466,8428</button></td>                    <td width="10%"><button class="btn-hover color-7">8513</button></td>                    <td width="10%"><button class="btn-hover color-8">8640</button></td>                    <td width="10%"><button class="btn-hover color-9">8706</button></td>                    <td width="10%"><button class="btn-hover color-10">8881</button></td>                    <td width="10%"><button class="btn-hover color-11">8915</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9089</button></td>                    <td width="10%"><button class="btn-hover color-3">9134,9121</button></td>                    <td width="10%"><button class="btn-hover color-4">9222</button></td>                    <td width="10%"><button class="btn-hover color-5">9371</button></td>                    <td width="10%"><button class="btn-hover color-6">9453</button></td>                    <td width="10%"><button class="btn-hover color-7">9543</button></td>                    <td width="10%"><button class="btn-hover color-8">9615,9611</button></td>                    <td width="10%"><button class="btn-hover color-9">9782</button></td>                    <td width="10%"><button class="btn-hover color-10">9869</button></td>                    <td width="10%"><button class="btn-hover color-11">9901</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;12:30 pm &nbsp;<a href="print_current_result.php?id=14&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;01:30 pm &nbsp;<a href="print_current_result.php?id=18&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -5890,21 +5870,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0011</button></td>                    <td width="10%"><button class="btn-hover color-3">0172</button></td>                    <td width="10%"><button class="btn-hover color-4">0210</button></td>                    <td width="10%"><button class="btn-hover color-5">0394</button></td>                    <td width="10%"><button class="btn-hover color-6">0486</button></td>                    <td width="10%"><button class="btn-hover color-7">0515</button></td>                    <td width="10%"><button class="btn-hover color-8">0689</button></td>                    <td width="10%"><button class="btn-hover color-9">0705,0781</button></td>                    <td width="10%"><button class="btn-hover color-10">0831</button></td>                    <td width="10%"><button class="btn-hover color-11">0990</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1022</button></td>                    <td width="10%"><button class="btn-hover color-3">1170</button></td>                    <td width="10%"><button class="btn-hover color-4">1233,1226</button></td>                    <td width="10%"><button class="btn-hover color-5">1383</button></td>                    <td width="10%"><button class="btn-hover color-6">1489</button></td>                    <td width="10%"><button class="btn-hover color-7">1591,1541</button></td>                    <td width="10%"><button class="btn-hover color-8">1682</button></td>                    <td width="10%"><button class="btn-hover color-9">1762</button></td>                    <td width="10%"><button class="btn-hover color-10">1849</button></td>                    <td width="10%"><button class="btn-hover color-11">1981</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2097,2092</button></td>                    <td width="10%"><button class="btn-hover color-3">2162</button></td>                    <td width="10%"><button class="btn-hover color-4">2258</button></td>                    <td width="10%"><button class="btn-hover color-5">2376</button></td>                    <td width="10%"><button class="btn-hover color-6">2401</button></td>                    <td width="10%"><button class="btn-hover color-7">2586</button></td>                    <td width="10%"><button class="btn-hover color-8">2610</button></td>                    <td width="10%"><button class="btn-hover color-9">2703</button></td>                    <td width="10%"><button class="btn-hover color-10">2815</button></td>                    <td width="10%"><button class="btn-hover color-11">2978,2985</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3062</button></td>                    <td width="10%"><button class="btn-hover color-3">3180</button></td>                    <td width="10%"><button class="btn-hover color-4">3257</button></td>                    <td width="10%"><button class="btn-hover color-5">3379</button></td>                    <td width="10%"><button class="btn-hover color-6">3473</button></td>                    <td width="10%"><button class="btn-hover color-7">3571</button></td>                    <td width="10%"><button class="btn-hover color-8">3699</button></td>                    <td width="10%"><button class="btn-hover color-9">3748</button></td>                    <td width="10%"><button class="btn-hover color-10">3882</button></td>                    <td width="10%"><button class="btn-hover color-11">3972,3934,3995</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4036</button></td>                    <td width="10%"><button class="btn-hover color-3">4133,4110</button></td>                    <td width="10%"><button class="btn-hover color-4">4228</button></td>                    <td width="10%"><button class="btn-hover color-5">4370</button></td>                    <td width="10%"><button class="btn-hover color-6">4456</button></td>                    <td width="10%"><button class="btn-hover color-7">4556,4590</button></td>                    <td width="10%"><button class="btn-hover color-8">4661</button></td>                    <td width="10%"><button class="btn-hover color-9">4713</button></td>                    <td width="10%"><button class="btn-hover color-10">4859</button></td>                    <td width="10%"><button class="btn-hover color-11">4907</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5044</button></td>                    <td width="10%"><button class="btn-hover color-3">5157,5130</button></td>                    <td width="10%"><button class="btn-hover color-4">5244</button></td>                    <td width="10%"><button class="btn-hover color-5">5323</button></td>                    <td width="10%"><button class="btn-hover color-6">5463,5408</button></td>                    <td width="10%"><button class="btn-hover color-7">5513</button></td>                    <td width="10%"><button class="btn-hover color-8">5636</button></td>                    <td width="10%"><button class="btn-hover color-9">5731</button></td>                    <td width="10%"><button class="btn-hover color-10">5839</button></td>                    <td width="10%"><button class="btn-hover color-11">5985</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6033</button></td>                    <td width="10%"><button class="btn-hover color-3">6157</button></td>                    <td width="10%"><button class="btn-hover color-4">6251</button></td>                    <td width="10%"><button class="btn-hover color-5">6310,6300</button></td>                    <td width="10%"><button class="btn-hover color-6">6446</button></td>                    <td width="10%"><button class="btn-hover color-7">6514,6588</button></td>                    <td width="10%"><button class="btn-hover color-8">6606</button></td>                    <td width="10%"><button class="btn-hover color-9">6757</button></td>                    <td width="10%"><button class="btn-hover color-10">6800</button></td>                    <td width="10%"><button class="btn-hover color-11">6959</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7024</button></td>                    <td width="10%"><button class="btn-hover color-3">7142,7131</button></td>                    <td width="10%"><button class="btn-hover color-4">7238</button></td>                    <td width="10%"><button class="btn-hover color-5">7357</button></td>                    <td width="10%"><button class="btn-hover color-6">7471</button></td>                    <td width="10%"><button class="btn-hover color-7">7560</button></td>                    <td width="10%"><button class="btn-hover color-8">7646</button></td>                    <td width="10%"><button class="btn-hover color-9">7774,7771</button></td>                    <td width="10%"><button class="btn-hover color-10">7812</button></td>                    <td width="10%"><button class="btn-hover color-11">7994</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8093</button></td>                    <td width="10%"><button class="btn-hover color-3">8120</button></td>                    <td width="10%"><button class="btn-hover color-4">8211,8207</button></td>                    <td width="10%"><button class="btn-hover color-5">8386</button></td>                    <td width="10%"><button class="btn-hover color-6">8488</button></td>                    <td width="10%"><button class="btn-hover color-7">8551</button></td>                    <td width="10%"><button class="btn-hover color-8">8656</button></td>                    <td width="10%"><button class="btn-hover color-9">8736</button></td>                    <td width="10%"><button class="btn-hover color-10">8877,8894</button></td>                    <td width="10%"><button class="btn-hover color-11">8930</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9028</button></td>                    <td width="10%"><button class="btn-hover color-3">9109</button></td>                    <td width="10%"><button class="btn-hover color-4">9239,9251</button></td>                    <td width="10%"><button class="btn-hover color-5">9373</button></td>                    <td width="10%"><button class="btn-hover color-6">9491</button></td>                    <td width="10%"><button class="btn-hover color-7">9555</button></td>                    <td width="10%"><button class="btn-hover color-8">9636</button></td>                    <td width="10%"><button class="btn-hover color-9">9791</button></td>                    <td width="10%"><button class="btn-hover color-10">9876,9896</button></td>                    <td width="10%"><button class="btn-hover color-11">9966</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0047</button></td>                    <td width="10%"><button class="btn-hover color-3">0124</button></td>                    <td width="10%"><button class="btn-hover color-4">0289,0275</button></td>                    <td width="10%"><button class="btn-hover color-5">0338</button></td>                    <td width="10%"><button class="btn-hover color-6">0491</button></td>                    <td width="10%"><button class="btn-hover color-7">0589</button></td>                    <td width="10%"><button class="btn-hover color-8">0606</button></td>                    <td width="10%"><button class="btn-hover color-9">0739</button></td>                    <td width="10%"><button class="btn-hover color-10">0886</button></td>                    <td width="10%"><button class="btn-hover color-11">0982</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1047</button></td>                    <td width="10%"><button class="btn-hover color-3">1150</button></td>                    <td width="10%"><button class="btn-hover color-4">1298</button></td>                    <td width="10%"><button class="btn-hover color-5">1392</button></td>                    <td width="10%"><button class="btn-hover color-6">1472</button></td>                    <td width="10%"><button class="btn-hover color-7">1550,1589</button></td>                    <td width="10%"><button class="btn-hover color-8">1619</button></td>                    <td width="10%"><button class="btn-hover color-9">1704</button></td>                    <td width="10%"><button class="btn-hover color-10">1881</button></td>                    <td width="10%"><button class="btn-hover color-11">1910,1937</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2021</button></td>                    <td width="10%"><button class="btn-hover color-3">2155</button></td>                    <td width="10%"><button class="btn-hover color-4">2297</button></td>                    <td width="10%"><button class="btn-hover color-5">2373</button></td>                    <td width="10%"><button class="btn-hover color-6">2491</button></td>                    <td width="10%"><button class="btn-hover color-7">2540</button></td>                    <td width="10%"><button class="btn-hover color-8">2675,2670</button></td>                    <td width="10%"><button class="btn-hover color-9">2798,2725</button></td>                    <td width="10%"><button class="btn-hover color-10">2888</button></td>                    <td width="10%"><button class="btn-hover color-11">2910</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3006,3083</button></td>                    <td width="10%"><button class="btn-hover color-3">3131,3113</button></td>                    <td width="10%"><button class="btn-hover color-4">3216</button></td>                    <td width="10%"><button class="btn-hover color-5">3363</button></td>                    <td width="10%"><button class="btn-hover color-6">3441</button></td>                    <td width="10%"><button class="btn-hover color-7">3566</button></td>                    <td width="10%"><button class="btn-hover color-8">3608</button></td>                    <td width="10%"><button class="btn-hover color-9">3766</button></td>                    <td width="10%"><button class="btn-hover color-10">3812</button></td>                    <td width="10%"><button class="btn-hover color-11">3938</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4017</button></td>                    <td width="10%"><button class="btn-hover color-3">4122</button></td>                    <td width="10%"><button class="btn-hover color-4">4221</button></td>                    <td width="10%"><button class="btn-hover color-5">4335,4359</button></td>                    <td width="10%"><button class="btn-hover color-6">4406</button></td>                    <td width="10%"><button class="btn-hover color-7">4540</button></td>                    <td width="10%"><button class="btn-hover color-8">4623,4668</button></td>                    <td width="10%"><button class="btn-hover color-9">4753</button></td>                    <td width="10%"><button class="btn-hover color-10">4837</button></td>                    <td width="10%"><button class="btn-hover color-11">4929</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5091</button></td>                    <td width="10%"><button class="btn-hover color-3">5142</button></td>                    <td width="10%"><button class="btn-hover color-4">5222,5239</button></td>                    <td width="10%"><button class="btn-hover color-5">5301</button></td>                    <td width="10%"><button class="btn-hover color-6">5492</button></td>                    <td width="10%"><button class="btn-hover color-7">5591,5598</button></td>                    <td width="10%"><button class="btn-hover color-8">5698</button></td>                    <td width="10%"><button class="btn-hover color-9">5784</button></td>                    <td width="10%"><button class="btn-hover color-10">5809</button></td>                    <td width="10%"><button class="btn-hover color-11">5955</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6027</button></td>                    <td width="10%"><button class="btn-hover color-3">6193</button></td>                    <td width="10%"><button class="btn-hover color-4">6212</button></td>                    <td width="10%"><button class="btn-hover color-5">6399</button></td>                    <td width="10%"><button class="btn-hover color-6">6428</button></td>                    <td width="10%"><button class="btn-hover color-7">6589</button></td>                    <td width="10%"><button class="btn-hover color-8">6698</button></td>                    <td width="10%"><button class="btn-hover color-9">6794,6772</button></td>                    <td width="10%"><button class="btn-hover color-10">6872</button></td>                    <td width="10%"><button class="btn-hover color-11">6900,6952</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7089</button></td>                    <td width="10%"><button class="btn-hover color-3">7150,7167</button></td>                    <td width="10%"><button class="btn-hover color-4">7268</button></td>                    <td width="10%"><button class="btn-hover color-5">7312</button></td>                    <td width="10%"><button class="btn-hover color-6">7410</button></td>                    <td width="10%"><button class="btn-hover color-7">7597</button></td>                    <td width="10%"><button class="btn-hover color-8">7653</button></td>                    <td width="10%"><button class="btn-hover color-9">7792</button></td>                    <td width="10%"><button class="btn-hover color-10">7851</button></td>                    <td width="10%"><button class="btn-hover color-11">7997,7902</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8027</button></td>                    <td width="10%"><button class="btn-hover color-3">8125</button></td>                    <td width="10%"><button class="btn-hover color-4">8246</button></td>                    <td width="10%"><button class="btn-hover color-5">8323</button></td>                    <td width="10%"><button class="btn-hover color-6">8440</button></td>                    <td width="10%"><button class="btn-hover color-7">8508</button></td>                    <td width="10%"><button class="btn-hover color-8">8655</button></td>                    <td width="10%"><button class="btn-hover color-9">8773</button></td>                    <td width="10%"><button class="btn-hover color-10">8828,8897</button></td>                    <td width="10%"><button class="btn-hover color-11">8997,8981</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9059,9021</button></td>                    <td width="10%"><button class="btn-hover color-3">9150</button></td>                    <td width="10%"><button class="btn-hover color-4">9241</button></td>                    <td width="10%"><button class="btn-hover color-5">9327</button></td>                    <td width="10%"><button class="btn-hover color-6">9442</button></td>                    <td width="10%"><button class="btn-hover color-7">9569</button></td>                    <td width="10%"><button class="btn-hover color-8">9629</button></td>                    <td width="10%"><button class="btn-hover color-9">9744,9712</button></td>                    <td width="10%"><button class="btn-hover color-10">9851</button></td>                    <td width="10%"><button class="btn-hover color-11">9915</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;12:15 pm &nbsp;<a href="print_current_result.php?id=13&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;01:15 pm &nbsp;<a href="print_current_result.php?id=17&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -6027,21 +6007,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0009</button></td>                    <td width="10%"><button class="btn-hover color-3">0185</button></td>                    <td width="10%"><button class="btn-hover color-4">0261</button></td>                    <td width="10%"><button class="btn-hover color-5">0302</button></td>                    <td width="10%"><button class="btn-hover color-6">0463</button></td>                    <td width="10%"><button class="btn-hover color-7">0577</button></td>                    <td width="10%"><button class="btn-hover color-8">0660</button></td>                    <td width="10%"><button class="btn-hover color-9">0794</button></td>                    <td width="10%"><button class="btn-hover color-10">0828,0846</button></td>                    <td width="10%"><button class="btn-hover color-11">0998</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1086</button></td>                    <td width="10%"><button class="btn-hover color-3">1198,1192</button></td>                    <td width="10%"><button class="btn-hover color-4">1227</button></td>                    <td width="10%"><button class="btn-hover color-5">1362</button></td>                    <td width="10%"><button class="btn-hover color-6">1435</button></td>                    <td width="10%"><button class="btn-hover color-7">1502,1507</button></td>                    <td width="10%"><button class="btn-hover color-8">1624</button></td>                    <td width="10%"><button class="btn-hover color-9">1737</button></td>                    <td width="10%"><button class="btn-hover color-10">1806</button></td>                    <td width="10%"><button class="btn-hover color-11">1964</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2072</button></td>                    <td width="10%"><button class="btn-hover color-3">2140</button></td>                    <td width="10%"><button class="btn-hover color-4">2271,2272</button></td>                    <td width="10%"><button class="btn-hover color-5">2395</button></td>                    <td width="10%"><button class="btn-hover color-6">2434</button></td>                    <td width="10%"><button class="btn-hover color-7">2595</button></td>                    <td width="10%"><button class="btn-hover color-8">2660,2699</button></td>                    <td width="10%"><button class="btn-hover color-9">2744</button></td>                    <td width="10%"><button class="btn-hover color-10">2860</button></td>                    <td width="10%"><button class="btn-hover color-11">2940</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3090</button></td>                    <td width="10%"><button class="btn-hover color-3">3123</button></td>                    <td width="10%"><button class="btn-hover color-4">3248</button></td>                    <td width="10%"><button class="btn-hover color-5">3348</button></td>                    <td width="10%"><button class="btn-hover color-6">3493,3461</button></td>                    <td width="10%"><button class="btn-hover color-7">3527,3504</button></td>                    <td width="10%"><button class="btn-hover color-8">3671</button></td>                    <td width="10%"><button class="btn-hover color-9">3718</button></td>                    <td width="10%"><button class="btn-hover color-10">3836</button></td>                    <td width="10%"><button class="btn-hover color-11">3993</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4095,4022</button></td>                    <td width="10%"><button class="btn-hover color-3">4151</button></td>                    <td width="10%"><button class="btn-hover color-4">4258</button></td>                    <td width="10%"><button class="btn-hover color-5">4301,4322</button></td>                    <td width="10%"><button class="btn-hover color-6">4475</button></td>                    <td width="10%"><button class="btn-hover color-7">4507</button></td>                    <td width="10%"><button class="btn-hover color-8">4606</button></td>                    <td width="10%"><button class="btn-hover color-9">4760</button></td>                    <td width="10%"><button class="btn-hover color-10">4831</button></td>                    <td width="10%"><button class="btn-hover color-11">4902</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5057</button></td>                    <td width="10%"><button class="btn-hover color-3">5187</button></td>                    <td width="10%"><button class="btn-hover color-4">5256</button></td>                    <td width="10%"><button class="btn-hover color-5">5316</button></td>                    <td width="10%"><button class="btn-hover color-6">5429</button></td>                    <td width="10%"><button class="btn-hover color-7">5536</button></td>                    <td width="10%"><button class="btn-hover color-8">5623,5633</button></td>                    <td width="10%"><button class="btn-hover color-9">5765</button></td>                    <td width="10%"><button class="btn-hover color-10">5857,5852</button></td>                    <td width="10%"><button class="btn-hover color-11">5921</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6056</button></td>                    <td width="10%"><button class="btn-hover color-3">6113</button></td>                    <td width="10%"><button class="btn-hover color-4">6245</button></td>                    <td width="10%"><button class="btn-hover color-5">6382,6360,6359</button></td>                    <td width="10%"><button class="btn-hover color-6">6419</button></td>                    <td width="10%"><button class="btn-hover color-7">6569</button></td>                    <td width="10%"><button class="btn-hover color-8">6628</button></td>                    <td width="10%"><button class="btn-hover color-9">6710</button></td>                    <td width="10%"><button class="btn-hover color-10">6886</button></td>                    <td width="10%"><button class="btn-hover color-11">6973</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7051</button></td>                    <td width="10%"><button class="btn-hover color-3">7188</button></td>                    <td width="10%"><button class="btn-hover color-4">7239</button></td>                    <td width="10%"><button class="btn-hover color-5">7392</button></td>                    <td width="10%"><button class="btn-hover color-6">7422,7465</button></td>                    <td width="10%"><button class="btn-hover color-7">7591,7504</button></td>                    <td width="10%"><button class="btn-hover color-8">7663</button></td>                    <td width="10%"><button class="btn-hover color-9">7726</button></td>                    <td width="10%"><button class="btn-hover color-10">7819</button></td>                    <td width="10%"><button class="btn-hover color-11">7920</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8099,8000</button></td>                    <td width="10%"><button class="btn-hover color-3">8125</button></td>                    <td width="10%"><button class="btn-hover color-4">8271</button></td>                    <td width="10%"><button class="btn-hover color-5">8333</button></td>                    <td width="10%"><button class="btn-hover color-6">8463</button></td>                    <td width="10%"><button class="btn-hover color-7">8561</button></td>                    <td width="10%"><button class="btn-hover color-8">8664</button></td>                    <td width="10%"><button class="btn-hover color-9">8727,8761</button></td>                    <td width="10%"><button class="btn-hover color-10">8867</button></td>                    <td width="10%"><button class="btn-hover color-11">8939</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9027</button></td>                    <td width="10%"><button class="btn-hover color-3">9138</button></td>                    <td width="10%"><button class="btn-hover color-4">9270</button></td>                    <td width="10%"><button class="btn-hover color-5">9329,9348</button></td>                    <td width="10%"><button class="btn-hover color-6">9444</button></td>                    <td width="10%"><button class="btn-hover color-7">9519</button></td>                    <td width="10%"><button class="btn-hover color-8">9604,9652</button></td>                    <td width="10%"><button class="btn-hover color-9">9751</button></td>                    <td width="10%"><button class="btn-hover color-10">9859</button></td>                    <td width="10%"><button class="btn-hover color-11">9901</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0067</button></td>                    <td width="10%"><button class="btn-hover color-3">0198</button></td>                    <td width="10%"><button class="btn-hover color-4">0252</button></td>                    <td width="10%"><button class="btn-hover color-5">0303</button></td>                    <td width="10%"><button class="btn-hover color-6">0471</button></td>                    <td width="10%"><button class="btn-hover color-7">0587</button></td>                    <td width="10%"><button class="btn-hover color-8">0638</button></td>                    <td width="10%"><button class="btn-hover color-9">0767</button></td>                    <td width="10%"><button class="btn-hover color-10">0846,0894</button></td>                    <td width="10%"><button class="btn-hover color-11">0926</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1011</button></td>                    <td width="10%"><button class="btn-hover color-3">1134,1118</button></td>                    <td width="10%"><button class="btn-hover color-4">1237</button></td>                    <td width="10%"><button class="btn-hover color-5">1393,1319</button></td>                    <td width="10%"><button class="btn-hover color-6">1459</button></td>                    <td width="10%"><button class="btn-hover color-7">1506</button></td>                    <td width="10%"><button class="btn-hover color-8">1607</button></td>                    <td width="10%"><button class="btn-hover color-9">1770</button></td>                    <td width="10%"><button class="btn-hover color-10">1825</button></td>                    <td width="10%"><button class="btn-hover color-11">1904</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2050</button></td>                    <td width="10%"><button class="btn-hover color-3">2197</button></td>                    <td width="10%"><button class="btn-hover color-4">2215,2260</button></td>                    <td width="10%"><button class="btn-hover color-5">2315</button></td>                    <td width="10%"><button class="btn-hover color-6">2403</button></td>                    <td width="10%"><button class="btn-hover color-7">2511</button></td>                    <td width="10%"><button class="btn-hover color-8">2664</button></td>                    <td width="10%"><button class="btn-hover color-9">2769</button></td>                    <td width="10%"><button class="btn-hover color-10">2887</button></td>                    <td width="10%"><button class="btn-hover color-11">2970,2983</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3028</button></td>                    <td width="10%"><button class="btn-hover color-3">3100</button></td>                    <td width="10%"><button class="btn-hover color-4">3202,3267</button></td>                    <td width="10%"><button class="btn-hover color-5">3315</button></td>                    <td width="10%"><button class="btn-hover color-6">3415</button></td>                    <td width="10%"><button class="btn-hover color-7">3575,3513</button></td>                    <td width="10%"><button class="btn-hover color-8">3699</button></td>                    <td width="10%"><button class="btn-hover color-9">3796</button></td>                    <td width="10%"><button class="btn-hover color-10">3802</button></td>                    <td width="10%"><button class="btn-hover color-11">3922</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4011,4031</button></td>                    <td width="10%"><button class="btn-hover color-3">4143</button></td>                    <td width="10%"><button class="btn-hover color-4">4276</button></td>                    <td width="10%"><button class="btn-hover color-5">4358</button></td>                    <td width="10%"><button class="btn-hover color-6">4455</button></td>                    <td width="10%"><button class="btn-hover color-7">4597</button></td>                    <td width="10%"><button class="btn-hover color-8">4618,4669</button></td>                    <td width="10%"><button class="btn-hover color-9">4705</button></td>                    <td width="10%"><button class="btn-hover color-10">4836</button></td>                    <td width="10%"><button class="btn-hover color-11">4951</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5051</button></td>                    <td width="10%"><button class="btn-hover color-3">5152</button></td>                    <td width="10%"><button class="btn-hover color-4">5277</button></td>                    <td width="10%"><button class="btn-hover color-5">5339</button></td>                    <td width="10%"><button class="btn-hover color-6">5427,5409</button></td>                    <td width="10%"><button class="btn-hover color-7">5580</button></td>                    <td width="10%"><button class="btn-hover color-8">5606</button></td>                    <td width="10%"><button class="btn-hover color-9">5724,5713</button></td>                    <td width="10%"><button class="btn-hover color-10">5835</button></td>                    <td width="10%"><button class="btn-hover color-11">5901</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6052</button></td>                    <td width="10%"><button class="btn-hover color-3">6182</button></td>                    <td width="10%"><button class="btn-hover color-4">6205</button></td>                    <td width="10%"><button class="btn-hover color-5">6332</button></td>                    <td width="10%"><button class="btn-hover color-6">6496</button></td>                    <td width="10%"><button class="btn-hover color-7">6537,6549,6517</button></td>                    <td width="10%"><button class="btn-hover color-8">6671</button></td>                    <td width="10%"><button class="btn-hover color-9">6749</button></td>                    <td width="10%"><button class="btn-hover color-10">6855</button></td>                    <td width="10%"><button class="btn-hover color-11">6909</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7091</button></td>                    <td width="10%"><button class="btn-hover color-3">7161</button></td>                    <td width="10%"><button class="btn-hover color-4">7296</button></td>                    <td width="10%"><button class="btn-hover color-5">7315</button></td>                    <td width="10%"><button class="btn-hover color-6">7499</button></td>                    <td width="10%"><button class="btn-hover color-7">7540</button></td>                    <td width="10%"><button class="btn-hover color-8">7698,7699,7658</button></td>                    <td width="10%"><button class="btn-hover color-9">7720</button></td>                    <td width="10%"><button class="btn-hover color-10">7893</button></td>                    <td width="10%"><button class="btn-hover color-11">7930</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8045</button></td>                    <td width="10%"><button class="btn-hover color-3">8150,8178</button></td>                    <td width="10%"><button class="btn-hover color-4">8236,8256</button></td>                    <td width="10%"><button class="btn-hover color-5">8387</button></td>                    <td width="10%"><button class="btn-hover color-6">8403</button></td>                    <td width="10%"><button class="btn-hover color-7">8591</button></td>                    <td width="10%"><button class="btn-hover color-8">8694</button></td>                    <td width="10%"><button class="btn-hover color-9">8760</button></td>                    <td width="10%"><button class="btn-hover color-10">8827</button></td>                    <td width="10%"><button class="btn-hover color-11">8958</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9043,9046</button></td>                    <td width="10%"><button class="btn-hover color-3">9184</button></td>                    <td width="10%"><button class="btn-hover color-4">9284</button></td>                    <td width="10%"><button class="btn-hover color-5">9323</button></td>                    <td width="10%"><button class="btn-hover color-6">9445</button></td>                    <td width="10%"><button class="btn-hover color-7">9520,9548</button></td>                    <td width="10%"><button class="btn-hover color-8">9688</button></td>                    <td width="10%"><button class="btn-hover color-9">9727</button></td>                    <td width="10%"><button class="btn-hover color-10">9898</button></td>                    <td width="10%"><button class="btn-hover color-11">9916</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;12:00 pm &nbsp;<a href="print_current_result.php?id=12&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;01:00 pm &nbsp;<a href="print_current_result.php?id=16&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -6164,21 +6144,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0048</button></td>                    <td width="10%"><button class="btn-hover color-3">0189</button></td>                    <td width="10%"><button class="btn-hover color-4">0249</button></td>                    <td width="10%"><button class="btn-hover color-5">0306,0394</button></td>                    <td width="10%"><button class="btn-hover color-6">0435</button></td>                    <td width="10%"><button class="btn-hover color-7">0557</button></td>                    <td width="10%"><button class="btn-hover color-8">0663</button></td>                    <td width="10%"><button class="btn-hover color-9">0702</button></td>                    <td width="10%"><button class="btn-hover color-10">0835</button></td>                    <td width="10%"><button class="btn-hover color-11">0924</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1037</button></td>                    <td width="10%"><button class="btn-hover color-3">1192</button></td>                    <td width="10%"><button class="btn-hover color-4">1267,1243</button></td>                    <td width="10%"><button class="btn-hover color-5">1311</button></td>                    <td width="10%"><button class="btn-hover color-6">1437</button></td>                    <td width="10%"><button class="btn-hover color-7">1525</button></td>                    <td width="10%"><button class="btn-hover color-8">1654</button></td>                    <td width="10%"><button class="btn-hover color-9">1726</button></td>                    <td width="10%"><button class="btn-hover color-10">1836,1856</button></td>                    <td width="10%"><button class="btn-hover color-11">1915</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2087</button></td>                    <td width="10%"><button class="btn-hover color-3">2165</button></td>                    <td width="10%"><button class="btn-hover color-4">2275</button></td>                    <td width="10%"><button class="btn-hover color-5">2376</button></td>                    <td width="10%"><button class="btn-hover color-6">2438</button></td>                    <td width="10%"><button class="btn-hover color-7">2545</button></td>                    <td width="10%"><button class="btn-hover color-8">2632</button></td>                    <td width="10%"><button class="btn-hover color-9">2749</button></td>                    <td width="10%"><button class="btn-hover color-10">2867,2871</button></td>                    <td width="10%"><button class="btn-hover color-11">2976,2930</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3062</button></td>                    <td width="10%"><button class="btn-hover color-3">3132</button></td>                    <td width="10%"><button class="btn-hover color-4">3255,3212</button></td>                    <td width="10%"><button class="btn-hover color-5">3328,3397</button></td>                    <td width="10%"><button class="btn-hover color-6">3464</button></td>                    <td width="10%"><button class="btn-hover color-7">3571</button></td>                    <td width="10%"><button class="btn-hover color-8">3612</button></td>                    <td width="10%"><button class="btn-hover color-9">3777</button></td>                    <td width="10%"><button class="btn-hover color-10">3817</button></td>                    <td width="10%"><button class="btn-hover color-11">3932</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4010,4072</button></td>                    <td width="10%"><button class="btn-hover color-3">4143</button></td>                    <td width="10%"><button class="btn-hover color-4">4262</button></td>                    <td width="10%"><button class="btn-hover color-5">4367</button></td>                    <td width="10%"><button class="btn-hover color-6">4424</button></td>                    <td width="10%"><button class="btn-hover color-7">4521</button></td>                    <td width="10%"><button class="btn-hover color-8">4695,4689</button></td>                    <td width="10%"><button class="btn-hover color-9">4767</button></td>                    <td width="10%"><button class="btn-hover color-10">4866</button></td>                    <td width="10%"><button class="btn-hover color-11">4960</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5083,5087</button></td>                    <td width="10%"><button class="btn-hover color-3">5164</button></td>                    <td width="10%"><button class="btn-hover color-4">5274</button></td>                    <td width="10%"><button class="btn-hover color-5">5340</button></td>                    <td width="10%"><button class="btn-hover color-6">5410</button></td>                    <td width="10%"><button class="btn-hover color-7">5507</button></td>                    <td width="10%"><button class="btn-hover color-8">5611</button></td>                    <td width="10%"><button class="btn-hover color-9">5742</button></td>                    <td width="10%"><button class="btn-hover color-10">5876</button></td>                    <td width="10%"><button class="btn-hover color-11">5966,5996</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6053</button></td>                    <td width="10%"><button class="btn-hover color-3">6190</button></td>                    <td width="10%"><button class="btn-hover color-4">6271</button></td>                    <td width="10%"><button class="btn-hover color-5">6384</button></td>                    <td width="10%"><button class="btn-hover color-6">6473,6447</button></td>                    <td width="10%"><button class="btn-hover color-7">6567</button></td>                    <td width="10%"><button class="btn-hover color-8">6695</button></td>                    <td width="10%"><button class="btn-hover color-9">6725</button></td>                    <td width="10%"><button class="btn-hover color-10">6871</button></td>                    <td width="10%"><button class="btn-hover color-11">6909,6901</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7072</button></td>                    <td width="10%"><button class="btn-hover color-3">7183</button></td>                    <td width="10%"><button class="btn-hover color-4">7236</button></td>                    <td width="10%"><button class="btn-hover color-5">7342,7383</button></td>                    <td width="10%"><button class="btn-hover color-6">7425</button></td>                    <td width="10%"><button class="btn-hover color-7">7541</button></td>                    <td width="10%"><button class="btn-hover color-8">7617</button></td>                    <td width="10%"><button class="btn-hover color-9">7765</button></td>                    <td width="10%"><button class="btn-hover color-10">7897,7840</button></td>                    <td width="10%"><button class="btn-hover color-11">7978</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8050,8080</button></td>                    <td width="10%"><button class="btn-hover color-3">8111</button></td>                    <td width="10%"><button class="btn-hover color-4">8266</button></td>                    <td width="10%"><button class="btn-hover color-5">8316</button></td>                    <td width="10%"><button class="btn-hover color-6">8461</button></td>                    <td width="10%"><button class="btn-hover color-7">8565</button></td>                    <td width="10%"><button class="btn-hover color-8">8608</button></td>                    <td width="10%"><button class="btn-hover color-9">8701</button></td>                    <td width="10%"><button class="btn-hover color-10">8808</button></td>                    <td width="10%"><button class="btn-hover color-11">8987,8946</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9027</button></td>                    <td width="10%"><button class="btn-hover color-3">9116,9177</button></td>                    <td width="10%"><button class="btn-hover color-4">9298</button></td>                    <td width="10%"><button class="btn-hover color-5">9338</button></td>                    <td width="10%"><button class="btn-hover color-6">9470,9426</button></td>                    <td width="10%"><button class="btn-hover color-7">9543</button></td>                    <td width="10%"><button class="btn-hover color-8">9688</button></td>                    <td width="10%"><button class="btn-hover color-9">9711</button></td>                    <td width="10%"><button class="btn-hover color-10">9846</button></td>                    <td width="10%"><button class="btn-hover color-11">9934</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0052</button></td>                    <td width="10%"><button class="btn-hover color-3">0194</button></td>                    <td width="10%"><button class="btn-hover color-4">0202</button></td>                    <td width="10%"><button class="btn-hover color-5">0343</button></td>                    <td width="10%"><button class="btn-hover color-6">0457</button></td>                    <td width="10%"><button class="btn-hover color-7">0544</button></td>                    <td width="10%"><button class="btn-hover color-8">0607</button></td>                    <td width="10%"><button class="btn-hover color-9">0740,0767</button></td>                    <td width="10%"><button class="btn-hover color-10">0833</button></td>                    <td width="10%"><button class="btn-hover color-11">0969</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1021</button></td>                    <td width="10%"><button class="btn-hover color-3">1123</button></td>                    <td width="10%"><button class="btn-hover color-4">1263,1280</button></td>                    <td width="10%"><button class="btn-hover color-5">1330</button></td>                    <td width="10%"><button class="btn-hover color-6">1411</button></td>                    <td width="10%"><button class="btn-hover color-7">1525</button></td>                    <td width="10%"><button class="btn-hover color-8">1660</button></td>                    <td width="10%"><button class="btn-hover color-9">1781,1758</button></td>                    <td width="10%"><button class="btn-hover color-10">1857</button></td>                    <td width="10%"><button class="btn-hover color-11">1962</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2019</button></td>                    <td width="10%"><button class="btn-hover color-3">2199</button></td>                    <td width="10%"><button class="btn-hover color-4">2239,2229</button></td>                    <td width="10%"><button class="btn-hover color-5">2323</button></td>                    <td width="10%"><button class="btn-hover color-6">2481</button></td>                    <td width="10%"><button class="btn-hover color-7">2597</button></td>                    <td width="10%"><button class="btn-hover color-8">2693,2656</button></td>                    <td width="10%"><button class="btn-hover color-9">2730</button></td>                    <td width="10%"><button class="btn-hover color-10">2807</button></td>                    <td width="10%"><button class="btn-hover color-11">2962</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3080</button></td>                    <td width="10%"><button class="btn-hover color-3">3181</button></td>                    <td width="10%"><button class="btn-hover color-4">3260</button></td>                    <td width="10%"><button class="btn-hover color-5">3367</button></td>                    <td width="10%"><button class="btn-hover color-6">3496</button></td>                    <td width="10%"><button class="btn-hover color-7">3569</button></td>                    <td width="10%"><button class="btn-hover color-8">3664</button></td>                    <td width="10%"><button class="btn-hover color-9">3763</button></td>                    <td width="10%"><button class="btn-hover color-10">3827,3838</button></td>                    <td width="10%"><button class="btn-hover color-11">3934,3933</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4027</button></td>                    <td width="10%"><button class="btn-hover color-3">4171,4111</button></td>                    <td width="10%"><button class="btn-hover color-4">4291</button></td>                    <td width="10%"><button class="btn-hover color-5">4358</button></td>                    <td width="10%"><button class="btn-hover color-6">4453</button></td>                    <td width="10%"><button class="btn-hover color-7">4562</button></td>                    <td width="10%"><button class="btn-hover color-8">4601</button></td>                    <td width="10%"><button class="btn-hover color-9">4795</button></td>                    <td width="10%"><button class="btn-hover color-10">4866,4835</button></td>                    <td width="10%"><button class="btn-hover color-11">4932</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5046,5065</button></td>                    <td width="10%"><button class="btn-hover color-3">5118</button></td>                    <td width="10%"><button class="btn-hover color-4">5280</button></td>                    <td width="10%"><button class="btn-hover color-5">5336</button></td>                    <td width="10%"><button class="btn-hover color-6">5432</button></td>                    <td width="10%"><button class="btn-hover color-7">5558</button></td>                    <td width="10%"><button class="btn-hover color-8">5601</button></td>                    <td width="10%"><button class="btn-hover color-9">5793</button></td>                    <td width="10%"><button class="btn-hover color-10">5890</button></td>                    <td width="10%"><button class="btn-hover color-11">5976,5935</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6090</button></td>                    <td width="10%"><button class="btn-hover color-3">6196</button></td>                    <td width="10%"><button class="btn-hover color-4">6213</button></td>                    <td width="10%"><button class="btn-hover color-5">6385</button></td>                    <td width="10%"><button class="btn-hover color-6">6428</button></td>                    <td width="10%"><button class="btn-hover color-7">6567,6556</button></td>                    <td width="10%"><button class="btn-hover color-8">6685,6645</button></td>                    <td width="10%"><button class="btn-hover color-9">6783</button></td>                    <td width="10%"><button class="btn-hover color-10">6883</button></td>                    <td width="10%"><button class="btn-hover color-11">6977</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7035</button></td>                    <td width="10%"><button class="btn-hover color-3">7119</button></td>                    <td width="10%"><button class="btn-hover color-4">7289</button></td>                    <td width="10%"><button class="btn-hover color-5">7320</button></td>                    <td width="10%"><button class="btn-hover color-6">7480</button></td>                    <td width="10%"><button class="btn-hover color-7">7548,7593,7576</button></td>                    <td width="10%"><button class="btn-hover color-8">7622</button></td>                    <td width="10%"><button class="btn-hover color-9">7709</button></td>                    <td width="10%"><button class="btn-hover color-10">7866</button></td>                    <td width="10%"><button class="btn-hover color-11">7913</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8085</button></td>                    <td width="10%"><button class="btn-hover color-3">8166</button></td>                    <td width="10%"><button class="btn-hover color-4">8240</button></td>                    <td width="10%"><button class="btn-hover color-5">8318</button></td>                    <td width="10%"><button class="btn-hover color-6">8448</button></td>                    <td width="10%"><button class="btn-hover color-7">8503</button></td>                    <td width="10%"><button class="btn-hover color-8">8692,8669</button></td>                    <td width="10%"><button class="btn-hover color-9">8760</button></td>                    <td width="10%"><button class="btn-hover color-10">8804,8869</button></td>                    <td width="10%"><button class="btn-hover color-11">8950</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9021,9062</button></td>                    <td width="10%"><button class="btn-hover color-3">9138,9199</button></td>                    <td width="10%"><button class="btn-hover color-4">9253</button></td>                    <td width="10%"><button class="btn-hover color-5">9373</button></td>                    <td width="10%"><button class="btn-hover color-6">9455</button></td>                    <td width="10%"><button class="btn-hover color-7">9568</button></td>                    <td width="10%"><button class="btn-hover color-8">9625</button></td>                    <td width="10%"><button class="btn-hover color-9">9714</button></td>                    <td width="10%"><button class="btn-hover color-10">9834</button></td>                    <td width="10%"><button class="btn-hover color-11">9969</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;11:45 am &nbsp;<a href="print_current_result.php?id=11&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;12:45 pm &nbsp;<a href="print_current_result.php?id=15&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -6301,21 +6281,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0026</button></td>                    <td width="10%"><button class="btn-hover color-3">0156</button></td>                    <td width="10%"><button class="btn-hover color-4">0242</button></td>                    <td width="10%"><button class="btn-hover color-5">0332</button></td>                    <td width="10%"><button class="btn-hover color-6">0436</button></td>                    <td width="10%"><button class="btn-hover color-7">0592</button></td>                    <td width="10%"><button class="btn-hover color-8">0650</button></td>                    <td width="10%"><button class="btn-hover color-9">0738,0713</button></td>                    <td width="10%"><button class="btn-hover color-10">0815</button></td>                    <td width="10%"><button class="btn-hover color-11">0910</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1060</button></td>                    <td width="10%"><button class="btn-hover color-3">1178</button></td>                    <td width="10%"><button class="btn-hover color-4">1268</button></td>                    <td width="10%"><button class="btn-hover color-5">1381,1367</button></td>                    <td width="10%"><button class="btn-hover color-6">1428,1423</button></td>                    <td width="10%"><button class="btn-hover color-7">1510</button></td>                    <td width="10%"><button class="btn-hover color-8">1650</button></td>                    <td width="10%"><button class="btn-hover color-9">1798</button></td>                    <td width="10%"><button class="btn-hover color-10">1813</button></td>                    <td width="10%"><button class="btn-hover color-11">1912</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2098</button></td>                    <td width="10%"><button class="btn-hover color-3">2128,2160</button></td>                    <td width="10%"><button class="btn-hover color-4">2243</button></td>                    <td width="10%"><button class="btn-hover color-5">2356</button></td>                    <td width="10%"><button class="btn-hover color-6">2466</button></td>                    <td width="10%"><button class="btn-hover color-7">2539</button></td>                    <td width="10%"><button class="btn-hover color-8">2650</button></td>                    <td width="10%"><button class="btn-hover color-9">2725</button></td>                    <td width="10%"><button class="btn-hover color-10">2808,2806</button></td>                    <td width="10%"><button class="btn-hover color-11">2982</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3099</button></td>                    <td width="10%"><button class="btn-hover color-3">3142</button></td>                    <td width="10%"><button class="btn-hover color-4">3283</button></td>                    <td width="10%"><button class="btn-hover color-5">3312</button></td>                    <td width="10%"><button class="btn-hover color-6">3482</button></td>                    <td width="10%"><button class="btn-hover color-7">3529</button></td>                    <td width="10%"><button class="btn-hover color-8">3626,3648,3666</button></td>                    <td width="10%"><button class="btn-hover color-9">3783</button></td>                    <td width="10%"><button class="btn-hover color-10">3841</button></td>                    <td width="10%"><button class="btn-hover color-11">3999</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4034</button></td>                    <td width="10%"><button class="btn-hover color-3">4110</button></td>                    <td width="10%"><button class="btn-hover color-4">4241</button></td>                    <td width="10%"><button class="btn-hover color-5">4322,4381</button></td>                    <td width="10%"><button class="btn-hover color-6">4483</button></td>                    <td width="10%"><button class="btn-hover color-7">4563,4548</button></td>                    <td width="10%"><button class="btn-hover color-8">4680</button></td>                    <td width="10%"><button class="btn-hover color-9">4764</button></td>                    <td width="10%"><button class="btn-hover color-10">4863</button></td>                    <td width="10%"><button class="btn-hover color-11">4952</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5034,5056</button></td>                    <td width="10%"><button class="btn-hover color-3">5101,5162</button></td>                    <td width="10%"><button class="btn-hover color-4">5276</button></td>                    <td width="10%"><button class="btn-hover color-5">5318</button></td>                    <td width="10%"><button class="btn-hover color-6">5441</button></td>                    <td width="10%"><button class="btn-hover color-7">5597</button></td>                    <td width="10%"><button class="btn-hover color-8">5609</button></td>                    <td width="10%"><button class="btn-hover color-9">5778</button></td>                    <td width="10%"><button class="btn-hover color-10">5850</button></td>                    <td width="10%"><button class="btn-hover color-11">5919</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6010</button></td>                    <td width="10%"><button class="btn-hover color-3">6165</button></td>                    <td width="10%"><button class="btn-hover color-4">6296</button></td>                    <td width="10%"><button class="btn-hover color-5">6384</button></td>                    <td width="10%"><button class="btn-hover color-6">6433,6483</button></td>                    <td width="10%"><button class="btn-hover color-7">6519</button></td>                    <td width="10%"><button class="btn-hover color-8">6653</button></td>                    <td width="10%"><button class="btn-hover color-9">6708</button></td>                    <td width="10%"><button class="btn-hover color-10">6860</button></td>                    <td width="10%"><button class="btn-hover color-11">6922,6936</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7043</button></td>                    <td width="10%"><button class="btn-hover color-3">7182,7194</button></td>                    <td width="10%"><button class="btn-hover color-4">7266</button></td>                    <td width="10%"><button class="btn-hover color-5">7343</button></td>                    <td width="10%"><button class="btn-hover color-6">7465</button></td>                    <td width="10%"><button class="btn-hover color-7">7566</button></td>                    <td width="10%"><button class="btn-hover color-8">7603</button></td>                    <td width="10%"><button class="btn-hover color-9">7708</button></td>                    <td width="10%"><button class="btn-hover color-10">7840,7858</button></td>                    <td width="10%"><button class="btn-hover color-11">7995</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8017</button></td>                    <td width="10%"><button class="btn-hover color-3">8199,8108</button></td>                    <td width="10%"><button class="btn-hover color-4">8255</button></td>                    <td width="10%"><button class="btn-hover color-5">8388</button></td>                    <td width="10%"><button class="btn-hover color-6">8464</button></td>                    <td width="10%"><button class="btn-hover color-7">8573</button></td>                    <td width="10%"><button class="btn-hover color-8">8616</button></td>                    <td width="10%"><button class="btn-hover color-9">8740</button></td>                    <td width="10%"><button class="btn-hover color-10">8867,8858</button></td>                    <td width="10%"><button class="btn-hover color-11">8935</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9095</button></td>                    <td width="10%"><button class="btn-hover color-3">9142</button></td>                    <td width="10%"><button class="btn-hover color-4">9214,9201</button></td>                    <td width="10%"><button class="btn-hover color-5">9343,9386</button></td>                    <td width="10%"><button class="btn-hover color-6">9454</button></td>                    <td width="10%"><button class="btn-hover color-7">9579</button></td>                    <td width="10%"><button class="btn-hover color-8">9648</button></td>                    <td width="10%"><button class="btn-hover color-9">9792</button></td>                    <td width="10%"><button class="btn-hover color-10">9877</button></td>                    <td width="10%"><button class="btn-hover color-11">9960</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0046</button></td>                    <td width="10%"><button class="btn-hover color-3">0147</button></td>                    <td width="10%"><button class="btn-hover color-4">0246</button></td>                    <td width="10%"><button class="btn-hover color-5">0331</button></td>                    <td width="10%"><button class="btn-hover color-6">0400,0422</button></td>                    <td width="10%"><button class="btn-hover color-7">0563</button></td>                    <td width="10%"><button class="btn-hover color-8">0622</button></td>                    <td width="10%"><button class="btn-hover color-9">0756</button></td>                    <td width="10%"><button class="btn-hover color-10">0837</button></td>                    <td width="10%"><button class="btn-hover color-11">0911</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1064</button></td>                    <td width="10%"><button class="btn-hover color-3">1147</button></td>                    <td width="10%"><button class="btn-hover color-4">1240</button></td>                    <td width="10%"><button class="btn-hover color-5">1357</button></td>                    <td width="10%"><button class="btn-hover color-6">1464</button></td>                    <td width="10%"><button class="btn-hover color-7">1502,1554</button></td>                    <td width="10%"><button class="btn-hover color-8">1602</button></td>                    <td width="10%"><button class="btn-hover color-9">1764</button></td>                    <td width="10%"><button class="btn-hover color-10">1803</button></td>                    <td width="10%"><button class="btn-hover color-11">1946,1927</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2066</button></td>                    <td width="10%"><button class="btn-hover color-3">2117</button></td>                    <td width="10%"><button class="btn-hover color-4">2219</button></td>                    <td width="10%"><button class="btn-hover color-5">2391</button></td>                    <td width="10%"><button class="btn-hover color-6">2446</button></td>                    <td width="10%"><button class="btn-hover color-7">2549,2537</button></td>                    <td width="10%"><button class="btn-hover color-8">2661</button></td>                    <td width="10%"><button class="btn-hover color-9">2713</button></td>                    <td width="10%"><button class="btn-hover color-10">2891,2813</button></td>                    <td width="10%"><button class="btn-hover color-11">2911</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3074</button></td>                    <td width="10%"><button class="btn-hover color-3">3165</button></td>                    <td width="10%"><button class="btn-hover color-4">3253</button></td>                    <td width="10%"><button class="btn-hover color-5">3368</button></td>                    <td width="10%"><button class="btn-hover color-6">3435</button></td>                    <td width="10%"><button class="btn-hover color-7">3513,3522,3518</button></td>                    <td width="10%"><button class="btn-hover color-8">3665</button></td>                    <td width="10%"><button class="btn-hover color-9">3740</button></td>                    <td width="10%"><button class="btn-hover color-10">3857</button></td>                    <td width="10%"><button class="btn-hover color-11">3917</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4000</button></td>                    <td width="10%"><button class="btn-hover color-3">4106</button></td>                    <td width="10%"><button class="btn-hover color-4">4233</button></td>                    <td width="10%"><button class="btn-hover color-5">4371</button></td>                    <td width="10%"><button class="btn-hover color-6">4468,4443</button></td>                    <td width="10%"><button class="btn-hover color-7">4552</button></td>                    <td width="10%"><button class="btn-hover color-8">4699</button></td>                    <td width="10%"><button class="btn-hover color-9">4708,4738</button></td>                    <td width="10%"><button class="btn-hover color-10">4898</button></td>                    <td width="10%"><button class="btn-hover color-11">4975</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5061</button></td>                    <td width="10%"><button class="btn-hover color-3">5141</button></td>                    <td width="10%"><button class="btn-hover color-4">5277</button></td>                    <td width="10%"><button class="btn-hover color-5">5370</button></td>                    <td width="10%"><button class="btn-hover color-6">5407</button></td>                    <td width="10%"><button class="btn-hover color-7">5521</button></td>                    <td width="10%"><button class="btn-hover color-8">5664,5691</button></td>                    <td width="10%"><button class="btn-hover color-9">5772</button></td>                    <td width="10%"><button class="btn-hover color-10">5890,5864</button></td>                    <td width="10%"><button class="btn-hover color-11">5920</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6090</button></td>                    <td width="10%"><button class="btn-hover color-3">6112,6128</button></td>                    <td width="10%"><button class="btn-hover color-4">6235</button></td>                    <td width="10%"><button class="btn-hover color-5">6317</button></td>                    <td width="10%"><button class="btn-hover color-6">6442</button></td>                    <td width="10%"><button class="btn-hover color-7">6566</button></td>                    <td width="10%"><button class="btn-hover color-8">6608</button></td>                    <td width="10%"><button class="btn-hover color-9">6755</button></td>                    <td width="10%"><button class="btn-hover color-10">6865,6809</button></td>                    <td width="10%"><button class="btn-hover color-11">6950</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7062</button></td>                    <td width="10%"><button class="btn-hover color-3">7154</button></td>                    <td width="10%"><button class="btn-hover color-4">7251</button></td>                    <td width="10%"><button class="btn-hover color-5">7311,7331,7362</button></td>                    <td width="10%"><button class="btn-hover color-6">7486</button></td>                    <td width="10%"><button class="btn-hover color-7">7549</button></td>                    <td width="10%"><button class="btn-hover color-8">7646</button></td>                    <td width="10%"><button class="btn-hover color-9">7760</button></td>                    <td width="10%"><button class="btn-hover color-10">7810</button></td>                    <td width="10%"><button class="btn-hover color-11">7992</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8099</button></td>                    <td width="10%"><button class="btn-hover color-3">8192</button></td>                    <td width="10%"><button class="btn-hover color-4">8213</button></td>                    <td width="10%"><button class="btn-hover color-5">8328</button></td>                    <td width="10%"><button class="btn-hover color-6">8407</button></td>                    <td width="10%"><button class="btn-hover color-7">8540</button></td>                    <td width="10%"><button class="btn-hover color-8">8608</button></td>                    <td width="10%"><button class="btn-hover color-9">8794,8774</button></td>                    <td width="10%"><button class="btn-hover color-10">8825</button></td>                    <td width="10%"><button class="btn-hover color-11">8914,8984</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9098,9004</button></td>                    <td width="10%"><button class="btn-hover color-3">9185,9187</button></td>                    <td width="10%"><button class="btn-hover color-4">9243</button></td>                    <td width="10%"><button class="btn-hover color-5">9369</button></td>                    <td width="10%"><button class="btn-hover color-6">9423</button></td>                    <td width="10%"><button class="btn-hover color-7">9554</button></td>                    <td width="10%"><button class="btn-hover color-8">9653</button></td>                    <td width="10%"><button class="btn-hover color-9">9741</button></td>                    <td width="10%"><button class="btn-hover color-10">9866</button></td>                    <td width="10%"><button class="btn-hover color-11">9988</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;11:30 am &nbsp;<a href="print_current_result.php?id=10&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;12:30 pm &nbsp;<a href="print_current_result.php?id=14&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -6438,21 +6418,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0007</button></td>                    <td width="10%"><button class="btn-hover color-3">0132</button></td>                    <td width="10%"><button class="btn-hover color-4">0294</button></td>                    <td width="10%"><button class="btn-hover color-5">0319</button></td>                    <td width="10%"><button class="btn-hover color-6">0407</button></td>                    <td width="10%"><button class="btn-hover color-7">0525,0519</button></td>                    <td width="10%"><button class="btn-hover color-8">0609</button></td>                    <td width="10%"><button class="btn-hover color-9">0785</button></td>                    <td width="10%"><button class="btn-hover color-10">0882</button></td>                    <td width="10%"><button class="btn-hover color-11">0927</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1082</button></td>                    <td width="10%"><button class="btn-hover color-3">1146</button></td>                    <td width="10%"><button class="btn-hover color-4">1201</button></td>                    <td width="10%"><button class="btn-hover color-5">1335</button></td>                    <td width="10%"><button class="btn-hover color-6">1446</button></td>                    <td width="10%"><button class="btn-hover color-7">1578</button></td>                    <td width="10%"><button class="btn-hover color-8">1654</button></td>                    <td width="10%"><button class="btn-hover color-9">1749,1735</button></td>                    <td width="10%"><button class="btn-hover color-10">1821,1868</button></td>                    <td width="10%"><button class="btn-hover color-11">1946</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2011</button></td>                    <td width="10%"><button class="btn-hover color-3">2187</button></td>                    <td width="10%"><button class="btn-hover color-4">2239</button></td>                    <td width="10%"><button class="btn-hover color-5">2333</button></td>                    <td width="10%"><button class="btn-hover color-6">2443,2441</button></td>                    <td width="10%"><button class="btn-hover color-7">2507</button></td>                    <td width="10%"><button class="btn-hover color-8">2610</button></td>                    <td width="10%"><button class="btn-hover color-9">2715</button></td>                    <td width="10%"><button class="btn-hover color-10">2858</button></td>                    <td width="10%"><button class="btn-hover color-11">2983,2932</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3030</button></td>                    <td width="10%"><button class="btn-hover color-3">3168,3175</button></td>                    <td width="10%"><button class="btn-hover color-4">3224</button></td>                    <td width="10%"><button class="btn-hover color-5">3354</button></td>                    <td width="10%"><button class="btn-hover color-6">3418</button></td>                    <td width="10%"><button class="btn-hover color-7">3556</button></td>                    <td width="10%"><button class="btn-hover color-8">3609</button></td>                    <td width="10%"><button class="btn-hover color-9">3756</button></td>                    <td width="10%"><button class="btn-hover color-10">3827,3836</button></td>                    <td width="10%"><button class="btn-hover color-11">3934</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4015</button></td>                    <td width="10%"><button class="btn-hover color-3">4110,4191</button></td>                    <td width="10%"><button class="btn-hover color-4">4282,4281</button></td>                    <td width="10%"><button class="btn-hover color-5">4383</button></td>                    <td width="10%"><button class="btn-hover color-6">4418</button></td>                    <td width="10%"><button class="btn-hover color-7">4520</button></td>                    <td width="10%"><button class="btn-hover color-8">4651</button></td>                    <td width="10%"><button class="btn-hover color-9">4789</button></td>                    <td width="10%"><button class="btn-hover color-10">4836</button></td>                    <td width="10%"><button class="btn-hover color-11">4931</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5045</button></td>                    <td width="10%"><button class="btn-hover color-3">5143,5102</button></td>                    <td width="10%"><button class="btn-hover color-4">5256,5236</button></td>                    <td width="10%"><button class="btn-hover color-5">5308</button></td>                    <td width="10%"><button class="btn-hover color-6">5455</button></td>                    <td width="10%"><button class="btn-hover color-7">5578</button></td>                    <td width="10%"><button class="btn-hover color-8">5669</button></td>                    <td width="10%"><button class="btn-hover color-9">5746</button></td>                    <td width="10%"><button class="btn-hover color-10">5882</button></td>                    <td width="10%"><button class="btn-hover color-11">5958</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6015</button></td>                    <td width="10%"><button class="btn-hover color-3">6148,6107</button></td>                    <td width="10%"><button class="btn-hover color-4">6243</button></td>                    <td width="10%"><button class="btn-hover color-5">6307</button></td>                    <td width="10%"><button class="btn-hover color-6">6479</button></td>                    <td width="10%"><button class="btn-hover color-7">6541,6514</button></td>                    <td width="10%"><button class="btn-hover color-8">6666</button></td>                    <td width="10%"><button class="btn-hover color-9">6755</button></td>                    <td width="10%"><button class="btn-hover color-10">6863</button></td>                    <td width="10%"><button class="btn-hover color-11">6918</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7008</button></td>                    <td width="10%"><button class="btn-hover color-3">7110</button></td>                    <td width="10%"><button class="btn-hover color-4">7290</button></td>                    <td width="10%"><button class="btn-hover color-5">7358</button></td>                    <td width="10%"><button class="btn-hover color-6">7431</button></td>                    <td width="10%"><button class="btn-hover color-7">7537</button></td>                    <td width="10%"><button class="btn-hover color-8">7601,7648</button></td>                    <td width="10%"><button class="btn-hover color-9">7749</button></td>                    <td width="10%"><button class="btn-hover color-10">7871,7817</button></td>                    <td width="10%"><button class="btn-hover color-11">7988</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8024,8006</button></td>                    <td width="10%"><button class="btn-hover color-3">8161</button></td>                    <td width="10%"><button class="btn-hover color-4">8246</button></td>                    <td width="10%"><button class="btn-hover color-5">8328</button></td>                    <td width="10%"><button class="btn-hover color-6">8409</button></td>                    <td width="10%"><button class="btn-hover color-7">8582</button></td>                    <td width="10%"><button class="btn-hover color-8">8688</button></td>                    <td width="10%"><button class="btn-hover color-9">8766</button></td>                    <td width="10%"><button class="btn-hover color-10">8889,8854</button></td>                    <td width="10%"><button class="btn-hover color-11">8947</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9071</button></td>                    <td width="10%"><button class="btn-hover color-3">9140</button></td>                    <td width="10%"><button class="btn-hover color-4">9276</button></td>                    <td width="10%"><button class="btn-hover color-5">9309</button></td>                    <td width="10%"><button class="btn-hover color-6">9427</button></td>                    <td width="10%"><button class="btn-hover color-7">9503</button></td>                    <td width="10%"><button class="btn-hover color-8">9676</button></td>                    <td width="10%"><button class="btn-hover color-9">9736,9767,9725</button></td>                    <td width="10%"><button class="btn-hover color-10">9809</button></td>                    <td width="10%"><button class="btn-hover color-11">9973</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0062</button></td>                    <td width="10%"><button class="btn-hover color-3">0166</button></td>                    <td width="10%"><button class="btn-hover color-4">0257</button></td>                    <td width="10%"><button class="btn-hover color-5">0365</button></td>                    <td width="10%"><button class="btn-hover color-6">0433</button></td>                    <td width="10%"><button class="btn-hover color-7">0524,0520</button></td>                    <td width="10%"><button class="btn-hover color-8">0654</button></td>                    <td width="10%"><button class="btn-hover color-9">0792</button></td>                    <td width="10%"><button class="btn-hover color-10">0868</button></td>                    <td width="10%"><button class="btn-hover color-11">0978</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1093</button></td>                    <td width="10%"><button class="btn-hover color-3">1120,1141</button></td>                    <td width="10%"><button class="btn-hover color-4">1244</button></td>                    <td width="10%"><button class="btn-hover color-5">1374</button></td>                    <td width="10%"><button class="btn-hover color-6">1469</button></td>                    <td width="10%"><button class="btn-hover color-7">1512</button></td>                    <td width="10%"><button class="btn-hover color-8">1661</button></td>                    <td width="10%"><button class="btn-hover color-9">1708,1702</button></td>                    <td width="10%"><button class="btn-hover color-10">1855</button></td>                    <td width="10%"><button class="btn-hover color-11">1984</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2068</button></td>                    <td width="10%"><button class="btn-hover color-3">2104,2137</button></td>                    <td width="10%"><button class="btn-hover color-4">2200</button></td>                    <td width="10%"><button class="btn-hover color-5">2346</button></td>                    <td width="10%"><button class="btn-hover color-6">2436,2426</button></td>                    <td width="10%"><button class="btn-hover color-7">2546</button></td>                    <td width="10%"><button class="btn-hover color-8">2671</button></td>                    <td width="10%"><button class="btn-hover color-9">2732</button></td>                    <td width="10%"><button class="btn-hover color-10">2824</button></td>                    <td width="10%"><button class="btn-hover color-11">2950</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3026</button></td>                    <td width="10%"><button class="btn-hover color-3">3130</button></td>                    <td width="10%"><button class="btn-hover color-4">3257,3251</button></td>                    <td width="10%"><button class="btn-hover color-5">3364</button></td>                    <td width="10%"><button class="btn-hover color-6">3477</button></td>                    <td width="10%"><button class="btn-hover color-7">3525</button></td>                    <td width="10%"><button class="btn-hover color-8">3665</button></td>                    <td width="10%"><button class="btn-hover color-9">3795</button></td>                    <td width="10%"><button class="btn-hover color-10">3835,3813</button></td>                    <td width="10%"><button class="btn-hover color-11">3930</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4031</button></td>                    <td width="10%"><button class="btn-hover color-3">4132</button></td>                    <td width="10%"><button class="btn-hover color-4">4250</button></td>                    <td width="10%"><button class="btn-hover color-5">4362</button></td>                    <td width="10%"><button class="btn-hover color-6">4497</button></td>                    <td width="10%"><button class="btn-hover color-7">4501,4576</button></td>                    <td width="10%"><button class="btn-hover color-8">4602</button></td>                    <td width="10%"><button class="btn-hover color-9">4702,4750</button></td>                    <td width="10%"><button class="btn-hover color-10">4871</button></td>                    <td width="10%"><button class="btn-hover color-11">4924</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5011</button></td>                    <td width="10%"><button class="btn-hover color-3">5133,5188</button></td>                    <td width="10%"><button class="btn-hover color-4">5254,5246</button></td>                    <td width="10%"><button class="btn-hover color-5">5325</button></td>                    <td width="10%"><button class="btn-hover color-6">5481</button></td>                    <td width="10%"><button class="btn-hover color-7">5505</button></td>                    <td width="10%"><button class="btn-hover color-8">5696</button></td>                    <td width="10%"><button class="btn-hover color-9">5764</button></td>                    <td width="10%"><button class="btn-hover color-10">5894</button></td>                    <td width="10%"><button class="btn-hover color-11">5996</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6041</button></td>                    <td width="10%"><button class="btn-hover color-3">6105</button></td>                    <td width="10%"><button class="btn-hover color-4">6274</button></td>                    <td width="10%"><button class="btn-hover color-5">6380</button></td>                    <td width="10%"><button class="btn-hover color-6">6423</button></td>                    <td width="10%"><button class="btn-hover color-7">6516,6592</button></td>                    <td width="10%"><button class="btn-hover color-8">6686</button></td>                    <td width="10%"><button class="btn-hover color-9">6734</button></td>                    <td width="10%"><button class="btn-hover color-10">6867</button></td>                    <td width="10%"><button class="btn-hover color-11">6956,6966</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7096</button></td>                    <td width="10%"><button class="btn-hover color-3">7134</button></td>                    <td width="10%"><button class="btn-hover color-4">7261,7284</button></td>                    <td width="10%"><button class="btn-hover color-5">7348</button></td>                    <td width="10%"><button class="btn-hover color-6">7475</button></td>                    <td width="10%"><button class="btn-hover color-7">7569</button></td>                    <td width="10%"><button class="btn-hover color-8">7661</button></td>                    <td width="10%"><button class="btn-hover color-9">7715</button></td>                    <td width="10%"><button class="btn-hover color-10">7889</button></td>                    <td width="10%"><button class="btn-hover color-11">7901,7974</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8057,8056</button></td>                    <td width="10%"><button class="btn-hover color-3">8198</button></td>                    <td width="10%"><button class="btn-hover color-4">8298</button></td>                    <td width="10%"><button class="btn-hover color-5">8399</button></td>                    <td width="10%"><button class="btn-hover color-6">8439</button></td>                    <td width="10%"><button class="btn-hover color-7">8559</button></td>                    <td width="10%"><button class="btn-hover color-8">8654,8682</button></td>                    <td width="10%"><button class="btn-hover color-9">8788</button></td>                    <td width="10%"><button class="btn-hover color-10">8864</button></td>                    <td width="10%"><button class="btn-hover color-11">8950</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9009,9010</button></td>                    <td width="10%"><button class="btn-hover color-3">9109</button></td>                    <td width="10%"><button class="btn-hover color-4">9292</button></td>                    <td width="10%"><button class="btn-hover color-5">9375</button></td>                    <td width="10%"><button class="btn-hover color-6">9421</button></td>                    <td width="10%"><button class="btn-hover color-7">9501</button></td>                    <td width="10%"><button class="btn-hover color-8">9602</button></td>                    <td width="10%"><button class="btn-hover color-9">9793</button></td>                    <td width="10%"><button class="btn-hover color-10">9823</button></td>                    <td width="10%"><button class="btn-hover color-11">9969,9937</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;11:15 am &nbsp;<a href="print_current_result.php?id=9&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;12:15 pm &nbsp;<a href="print_current_result.php?id=13&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -6575,21 +6555,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0068</button></td>                    <td width="10%"><button class="btn-hover color-3">0161</button></td>                    <td width="10%"><button class="btn-hover color-4">0246</button></td>                    <td width="10%"><button class="btn-hover color-5">0310</button></td>                    <td width="10%"><button class="btn-hover color-6">0476</button></td>                    <td width="10%"><button class="btn-hover color-7">0595</button></td>                    <td width="10%"><button class="btn-hover color-8">0641</button></td>                    <td width="10%"><button class="btn-hover color-9">0702,0733</button></td>                    <td width="10%"><button class="btn-hover color-10">0876</button></td>                    <td width="10%"><button class="btn-hover color-11">0940</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1023</button></td>                    <td width="10%"><button class="btn-hover color-3">1178,1136</button></td>                    <td width="10%"><button class="btn-hover color-4">1205</button></td>                    <td width="10%"><button class="btn-hover color-5">1392</button></td>                    <td width="10%"><button class="btn-hover color-6">1445</button></td>                    <td width="10%"><button class="btn-hover color-7">1557</button></td>                    <td width="10%"><button class="btn-hover color-8">1649</button></td>                    <td width="10%"><button class="btn-hover color-9">1775,1752</button></td>                    <td width="10%"><button class="btn-hover color-10">1809</button></td>                    <td width="10%"><button class="btn-hover color-11">1958</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2003,2063</button></td>                    <td width="10%"><button class="btn-hover color-3">2102</button></td>                    <td width="10%"><button class="btn-hover color-4">2205</button></td>                    <td width="10%"><button class="btn-hover color-5">2350</button></td>                    <td width="10%"><button class="btn-hover color-6">2462</button></td>                    <td width="10%"><button class="btn-hover color-7">2529</button></td>                    <td width="10%"><button class="btn-hover color-8">2622</button></td>                    <td width="10%"><button class="btn-hover color-9">2708</button></td>                    <td width="10%"><button class="btn-hover color-10">2845</button></td>                    <td width="10%"><button class="btn-hover color-11">2945,2984</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3004</button></td>                    <td width="10%"><button class="btn-hover color-3">3120</button></td>                    <td width="10%"><button class="btn-hover color-4">3237</button></td>                    <td width="10%"><button class="btn-hover color-5">3317,3363</button></td>                    <td width="10%"><button class="btn-hover color-6">3446</button></td>                    <td width="10%"><button class="btn-hover color-7">3557</button></td>                    <td width="10%"><button class="btn-hover color-8">3698</button></td>                    <td width="10%"><button class="btn-hover color-9">3732,3719</button></td>                    <td width="10%"><button class="btn-hover color-10">3881</button></td>                    <td width="10%"><button class="btn-hover color-11">3963</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4037</button></td>                    <td width="10%"><button class="btn-hover color-3">4150,4126</button></td>                    <td width="10%"><button class="btn-hover color-4">4244</button></td>                    <td width="10%"><button class="btn-hover color-5">4301,4393</button></td>                    <td width="10%"><button class="btn-hover color-6">4497</button></td>                    <td width="10%"><button class="btn-hover color-7">4562</button></td>                    <td width="10%"><button class="btn-hover color-8">4680</button></td>                    <td width="10%"><button class="btn-hover color-9">4785</button></td>                    <td width="10%"><button class="btn-hover color-10">4835</button></td>                    <td width="10%"><button class="btn-hover color-11">4943</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5012</button></td>                    <td width="10%"><button class="btn-hover color-3">5133</button></td>                    <td width="10%"><button class="btn-hover color-4">5260</button></td>                    <td width="10%"><button class="btn-hover color-5">5355</button></td>                    <td width="10%"><button class="btn-hover color-6">5462</button></td>                    <td width="10%"><button class="btn-hover color-7">5547</button></td>                    <td width="10%"><button class="btn-hover color-8">5626</button></td>                    <td width="10%"><button class="btn-hover color-9">5789</button></td>                    <td width="10%"><button class="btn-hover color-10">5827,5822</button></td>                    <td width="10%"><button class="btn-hover color-11">5976,5948</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6063</button></td>                    <td width="10%"><button class="btn-hover color-3">6183</button></td>                    <td width="10%"><button class="btn-hover color-4">6299</button></td>                    <td width="10%"><button class="btn-hover color-5">6300,6314</button></td>                    <td width="10%"><button class="btn-hover color-6">6496</button></td>                    <td width="10%"><button class="btn-hover color-7">6565</button></td>                    <td width="10%"><button class="btn-hover color-8">6693</button></td>                    <td width="10%"><button class="btn-hover color-9">6773,6771</button></td>                    <td width="10%"><button class="btn-hover color-10">6888</button></td>                    <td width="10%"><button class="btn-hover color-11">6973</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7046,7052</button></td>                    <td width="10%"><button class="btn-hover color-3">7138</button></td>                    <td width="10%"><button class="btn-hover color-4">7272</button></td>                    <td width="10%"><button class="btn-hover color-5">7358</button></td>                    <td width="10%"><button class="btn-hover color-6">7451</button></td>                    <td width="10%"><button class="btn-hover color-7">7546</button></td>                    <td width="10%"><button class="btn-hover color-8">7641</button></td>                    <td width="10%"><button class="btn-hover color-9">7710</button></td>                    <td width="10%"><button class="btn-hover color-10">7862</button></td>                    <td width="10%"><button class="btn-hover color-11">7996,7923</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8039,8099</button></td>                    <td width="10%"><button class="btn-hover color-3">8159</button></td>                    <td width="10%"><button class="btn-hover color-4">8250</button></td>                    <td width="10%"><button class="btn-hover color-5">8323,8392</button></td>                    <td width="10%"><button class="btn-hover color-6">8406</button></td>                    <td width="10%"><button class="btn-hover color-7">8569</button></td>                    <td width="10%"><button class="btn-hover color-8">8698</button></td>                    <td width="10%"><button class="btn-hover color-9">8706</button></td>                    <td width="10%"><button class="btn-hover color-10">8880</button></td>                    <td width="10%"><button class="btn-hover color-11">8978</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9036</button></td>                    <td width="10%"><button class="btn-hover color-3">9158</button></td>                    <td width="10%"><button class="btn-hover color-4">9299,9249</button></td>                    <td width="10%"><button class="btn-hover color-5">9371,9317</button></td>                    <td width="10%"><button class="btn-hover color-6">9489</button></td>                    <td width="10%"><button class="btn-hover color-7">9562</button></td>                    <td width="10%"><button class="btn-hover color-8">9621</button></td>                    <td width="10%"><button class="btn-hover color-9">9724</button></td>                    <td width="10%"><button class="btn-hover color-10">9898</button></td>                    <td width="10%"><button class="btn-hover color-11">9979</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0060</button></td>                    <td width="10%"><button class="btn-hover color-3">0106</button></td>                    <td width="10%"><button class="btn-hover color-4">0237</button></td>                    <td width="10%"><button class="btn-hover color-5">0321</button></td>                    <td width="10%"><button class="btn-hover color-6">0487</button></td>                    <td width="10%"><button class="btn-hover color-7">0582</button></td>                    <td width="10%"><button class="btn-hover color-8">0675</button></td>                    <td width="10%"><button class="btn-hover color-9">0715,0776</button></td>                    <td width="10%"><button class="btn-hover color-10">0851</button></td>                    <td width="10%"><button class="btn-hover color-11">0990</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1069</button></td>                    <td width="10%"><button class="btn-hover color-3">1158,1124</button></td>                    <td width="10%"><button class="btn-hover color-4">1207,1275</button></td>                    <td width="10%"><button class="btn-hover color-5">1321</button></td>                    <td width="10%"><button class="btn-hover color-6">1448</button></td>                    <td width="10%"><button class="btn-hover color-7">1512</button></td>                    <td width="10%"><button class="btn-hover color-8">1671</button></td>                    <td width="10%"><button class="btn-hover color-9">1720</button></td>                    <td width="10%"><button class="btn-hover color-10">1875</button></td>                    <td width="10%"><button class="btn-hover color-11">1903</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2030</button></td>                    <td width="10%"><button class="btn-hover color-3">2197</button></td>                    <td width="10%"><button class="btn-hover color-4">2241</button></td>                    <td width="10%"><button class="btn-hover color-5">2374</button></td>                    <td width="10%"><button class="btn-hover color-6">2410,2492</button></td>                    <td width="10%"><button class="btn-hover color-7">2544</button></td>                    <td width="10%"><button class="btn-hover color-8">2699</button></td>                    <td width="10%"><button class="btn-hover color-9">2722</button></td>                    <td width="10%"><button class="btn-hover color-10">2818,2868</button></td>                    <td width="10%"><button class="btn-hover color-11">2994</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3090</button></td>                    <td width="10%"><button class="btn-hover color-3">3142,3197</button></td>                    <td width="10%"><button class="btn-hover color-4">3298</button></td>                    <td width="10%"><button class="btn-hover color-5">3345</button></td>                    <td width="10%"><button class="btn-hover color-6">3427,3476</button></td>                    <td width="10%"><button class="btn-hover color-7">3548</button></td>                    <td width="10%"><button class="btn-hover color-8">3662</button></td>                    <td width="10%"><button class="btn-hover color-9">3796</button></td>                    <td width="10%"><button class="btn-hover color-10">3865</button></td>                    <td width="10%"><button class="btn-hover color-11">3932</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4035,4077</button></td>                    <td width="10%"><button class="btn-hover color-3">4186</button></td>                    <td width="10%"><button class="btn-hover color-4">4252</button></td>                    <td width="10%"><button class="btn-hover color-5">4335</button></td>                    <td width="10%"><button class="btn-hover color-6">4465</button></td>                    <td width="10%"><button class="btn-hover color-7">4505</button></td>                    <td width="10%"><button class="btn-hover color-8">4647,4667</button></td>                    <td width="10%"><button class="btn-hover color-9">4776</button></td>                    <td width="10%"><button class="btn-hover color-10">4815</button></td>                    <td width="10%"><button class="btn-hover color-11">4998</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5015</button></td>                    <td width="10%"><button class="btn-hover color-3">5188</button></td>                    <td width="10%"><button class="btn-hover color-4">5208</button></td>                    <td width="10%"><button class="btn-hover color-5">5343</button></td>                    <td width="10%"><button class="btn-hover color-6">5499</button></td>                    <td width="10%"><button class="btn-hover color-7">5588,5593,5576</button></td>                    <td width="10%"><button class="btn-hover color-8">5687</button></td>                    <td width="10%"><button class="btn-hover color-9">5727</button></td>                    <td width="10%"><button class="btn-hover color-10">5830</button></td>                    <td width="10%"><button class="btn-hover color-11">5994</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6039</button></td>                    <td width="10%"><button class="btn-hover color-3">6126</button></td>                    <td width="10%"><button class="btn-hover color-4">6247</button></td>                    <td width="10%"><button class="btn-hover color-5">6375</button></td>                    <td width="10%"><button class="btn-hover color-6">6445</button></td>                    <td width="10%"><button class="btn-hover color-7">6527</button></td>                    <td width="10%"><button class="btn-hover color-8">6663</button></td>                    <td width="10%"><button class="btn-hover color-9">6747</button></td>                    <td width="10%"><button class="btn-hover color-10">6887,6897</button></td>                    <td width="10%"><button class="btn-hover color-11">6985,6936</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7073</button></td>                    <td width="10%"><button class="btn-hover color-3">7198</button></td>                    <td width="10%"><button class="btn-hover color-4">7241,7229</button></td>                    <td width="10%"><button class="btn-hover color-5">7311</button></td>                    <td width="10%"><button class="btn-hover color-6">7471</button></td>                    <td width="10%"><button class="btn-hover color-7">7511</button></td>                    <td width="10%"><button class="btn-hover color-8">7613</button></td>                    <td width="10%"><button class="btn-hover color-9">7702,7719</button></td>                    <td width="10%"><button class="btn-hover color-10">7857</button></td>                    <td width="10%"><button class="btn-hover color-11">7939</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8059</button></td>                    <td width="10%"><button class="btn-hover color-3">8163</button></td>                    <td width="10%"><button class="btn-hover color-4">8284</button></td>                    <td width="10%"><button class="btn-hover color-5">8319,8353</button></td>                    <td width="10%"><button class="btn-hover color-6">8439</button></td>                    <td width="10%"><button class="btn-hover color-7">8573</button></td>                    <td width="10%"><button class="btn-hover color-8">8624</button></td>                    <td width="10%"><button class="btn-hover color-9">8702</button></td>                    <td width="10%"><button class="btn-hover color-10">8817,8829</button></td>                    <td width="10%"><button class="btn-hover color-11">8908</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9068</button></td>                    <td width="10%"><button class="btn-hover color-3">9118,9155</button></td>                    <td width="10%"><button class="btn-hover color-4">9235</button></td>                    <td width="10%"><button class="btn-hover color-5">9336</button></td>                    <td width="10%"><button class="btn-hover color-6">9483</button></td>                    <td width="10%"><button class="btn-hover color-7">9527,9578</button></td>                    <td width="10%"><button class="btn-hover color-8">9601</button></td>                    <td width="10%"><button class="btn-hover color-9">9716</button></td>                    <td width="10%"><button class="btn-hover color-10">9811</button></td>                    <td width="10%"><button class="btn-hover color-11">9907</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;11:00 am &nbsp;<a href="print_current_result.php?id=8&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;12:00 pm &nbsp;<a href="print_current_result.php?id=12&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -6712,21 +6692,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0012</button></td>                    <td width="10%"><button class="btn-hover color-3">0156</button></td>                    <td width="10%"><button class="btn-hover color-4">0213</button></td>                    <td width="10%"><button class="btn-hover color-5">0380,0336</button></td>                    <td width="10%"><button class="btn-hover color-6">0438</button></td>                    <td width="10%"><button class="btn-hover color-7">0560</button></td>                    <td width="10%"><button class="btn-hover color-8">0695</button></td>                    <td width="10%"><button class="btn-hover color-9">0770</button></td>                    <td width="10%"><button class="btn-hover color-10">0814</button></td>                    <td width="10%"><button class="btn-hover color-11">0960</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1066</button></td>                    <td width="10%"><button class="btn-hover color-3">1115</button></td>                    <td width="10%"><button class="btn-hover color-4">1241</button></td>                    <td width="10%"><button class="btn-hover color-5">1367,1328</button></td>                    <td width="10%"><button class="btn-hover color-6">1419,1404</button></td>                    <td width="10%"><button class="btn-hover color-7">1559</button></td>                    <td width="10%"><button class="btn-hover color-8">1666</button></td>                    <td width="10%"><button class="btn-hover color-9">1759</button></td>                    <td width="10%"><button class="btn-hover color-10">1827</button></td>                    <td width="10%"><button class="btn-hover color-11">1910</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2032</button></td>                    <td width="10%"><button class="btn-hover color-3">2111</button></td>                    <td width="10%"><button class="btn-hover color-4">2244,2288</button></td>                    <td width="10%"><button class="btn-hover color-5">2361</button></td>                    <td width="10%"><button class="btn-hover color-6">2403</button></td>                    <td width="10%"><button class="btn-hover color-7">2502</button></td>                    <td width="10%"><button class="btn-hover color-8">2687</button></td>                    <td width="10%"><button class="btn-hover color-9">2715</button></td>                    <td width="10%"><button class="btn-hover color-10">2899,2880</button></td>                    <td width="10%"><button class="btn-hover color-11">2949</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3076</button></td>                    <td width="10%"><button class="btn-hover color-3">3133,3107</button></td>                    <td width="10%"><button class="btn-hover color-4">3263,3241</button></td>                    <td width="10%"><button class="btn-hover color-5">3392</button></td>                    <td width="10%"><button class="btn-hover color-6">3459</button></td>                    <td width="10%"><button class="btn-hover color-7">3577</button></td>                    <td width="10%"><button class="btn-hover color-8">3662</button></td>                    <td width="10%"><button class="btn-hover color-9">3738</button></td>                    <td width="10%"><button class="btn-hover color-10">3847</button></td>                    <td width="10%"><button class="btn-hover color-11">3934</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4060</button></td>                    <td width="10%"><button class="btn-hover color-3">4102</button></td>                    <td width="10%"><button class="btn-hover color-4">4288</button></td>                    <td width="10%"><button class="btn-hover color-5">4390</button></td>                    <td width="10%"><button class="btn-hover color-6">4464,4409</button></td>                    <td width="10%"><button class="btn-hover color-7">4584</button></td>                    <td width="10%"><button class="btn-hover color-8">4616</button></td>                    <td width="10%"><button class="btn-hover color-9">4745</button></td>                    <td width="10%"><button class="btn-hover color-10">4840,4894</button></td>                    <td width="10%"><button class="btn-hover color-11">4944</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5076</button></td>                    <td width="10%"><button class="btn-hover color-3">5194</button></td>                    <td width="10%"><button class="btn-hover color-4">5261</button></td>                    <td width="10%"><button class="btn-hover color-5">5313</button></td>                    <td width="10%"><button class="btn-hover color-6">5407</button></td>                    <td width="10%"><button class="btn-hover color-7">5541</button></td>                    <td width="10%"><button class="btn-hover color-8">5632</button></td>                    <td width="10%"><button class="btn-hover color-9">5795</button></td>                    <td width="10%"><button class="btn-hover color-10">5861,5807</button></td>                    <td width="10%"><button class="btn-hover color-11">5983,5980</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6026</button></td>                    <td width="10%"><button class="btn-hover color-3">6135</button></td>                    <td width="10%"><button class="btn-hover color-4">6219</button></td>                    <td width="10%"><button class="btn-hover color-5">6368</button></td>                    <td width="10%"><button class="btn-hover color-6">6492</button></td>                    <td width="10%"><button class="btn-hover color-7">6520,6511,6529</button></td>                    <td width="10%"><button class="btn-hover color-8">6636</button></td>                    <td width="10%"><button class="btn-hover color-9">6796</button></td>                    <td width="10%"><button class="btn-hover color-10">6805</button></td>                    <td width="10%"><button class="btn-hover color-11">6949</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7015</button></td>                    <td width="10%"><button class="btn-hover color-3">7176,7196</button></td>                    <td width="10%"><button class="btn-hover color-4">7216</button></td>                    <td width="10%"><button class="btn-hover color-5">7375</button></td>                    <td width="10%"><button class="btn-hover color-6">7464</button></td>                    <td width="10%"><button class="btn-hover color-7">7577</button></td>                    <td width="10%"><button class="btn-hover color-8">7683</button></td>                    <td width="10%"><button class="btn-hover color-9">7704</button></td>                    <td width="10%"><button class="btn-hover color-10">7802,7895</button></td>                    <td width="10%"><button class="btn-hover color-11">7926</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8003</button></td>                    <td width="10%"><button class="btn-hover color-3">8176</button></td>                    <td width="10%"><button class="btn-hover color-4">8295,8286</button></td>                    <td width="10%"><button class="btn-hover color-5">8336</button></td>                    <td width="10%"><button class="btn-hover color-6">8404</button></td>                    <td width="10%"><button class="btn-hover color-7">8584,8573</button></td>                    <td width="10%"><button class="btn-hover color-8">8607</button></td>                    <td width="10%"><button class="btn-hover color-9">8758</button></td>                    <td width="10%"><button class="btn-hover color-10">8827</button></td>                    <td width="10%"><button class="btn-hover color-11">8999</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9040</button></td>                    <td width="10%"><button class="btn-hover color-3">9110</button></td>                    <td width="10%"><button class="btn-hover color-4">9243,9289</button></td>                    <td width="10%"><button class="btn-hover color-5">9364</button></td>                    <td width="10%"><button class="btn-hover color-6">9454</button></td>                    <td width="10%"><button class="btn-hover color-7">9545</button></td>                    <td width="10%"><button class="btn-hover color-8">9683</button></td>                    <td width="10%"><button class="btn-hover color-9">9765,9785</button></td>                    <td width="10%"><button class="btn-hover color-10">9802</button></td>                    <td width="10%"><button class="btn-hover color-11">9965</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0061</button></td>                    <td width="10%"><button class="btn-hover color-3">0190</button></td>                    <td width="10%"><button class="btn-hover color-4">0258</button></td>                    <td width="10%"><button class="btn-hover color-5">0318</button></td>                    <td width="10%"><button class="btn-hover color-6">0483</button></td>                    <td width="10%"><button class="btn-hover color-7">0565</button></td>                    <td width="10%"><button class="btn-hover color-8">0601</button></td>                    <td width="10%"><button class="btn-hover color-9">0709</button></td>                    <td width="10%"><button class="btn-hover color-10">0842,0846</button></td>                    <td width="10%"><button class="btn-hover color-11">0974</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1058,1083</button></td>                    <td width="10%"><button class="btn-hover color-3">1158</button></td>                    <td width="10%"><button class="btn-hover color-4">1228</button></td>                    <td width="10%"><button class="btn-hover color-5">1357</button></td>                    <td width="10%"><button class="btn-hover color-6">1470,1491</button></td>                    <td width="10%"><button class="btn-hover color-7">1509</button></td>                    <td width="10%"><button class="btn-hover color-8">1677</button></td>                    <td width="10%"><button class="btn-hover color-9">1741</button></td>                    <td width="10%"><button class="btn-hover color-10">1838</button></td>                    <td width="10%"><button class="btn-hover color-11">1932</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2015</button></td>                    <td width="10%"><button class="btn-hover color-3">2147</button></td>                    <td width="10%"><button class="btn-hover color-4">2281</button></td>                    <td width="10%"><button class="btn-hover color-5">2312,2373</button></td>                    <td width="10%"><button class="btn-hover color-6">2415,2452</button></td>                    <td width="10%"><button class="btn-hover color-7">2516</button></td>                    <td width="10%"><button class="btn-hover color-8">2691</button></td>                    <td width="10%"><button class="btn-hover color-9">2763</button></td>                    <td width="10%"><button class="btn-hover color-10">2831</button></td>                    <td width="10%"><button class="btn-hover color-11">2919</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3031</button></td>                    <td width="10%"><button class="btn-hover color-3">3174</button></td>                    <td width="10%"><button class="btn-hover color-4">3287</button></td>                    <td width="10%"><button class="btn-hover color-5">3354</button></td>                    <td width="10%"><button class="btn-hover color-6">3480,3471</button></td>                    <td width="10%"><button class="btn-hover color-7">3583</button></td>                    <td width="10%"><button class="btn-hover color-8">3634</button></td>                    <td width="10%"><button class="btn-hover color-9">3749,3707</button></td>                    <td width="10%"><button class="btn-hover color-10">3867</button></td>                    <td width="10%"><button class="btn-hover color-11">3995</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4037</button></td>                    <td width="10%"><button class="btn-hover color-3">4145</button></td>                    <td width="10%"><button class="btn-hover color-4">4229,4213</button></td>                    <td width="10%"><button class="btn-hover color-5">4370</button></td>                    <td width="10%"><button class="btn-hover color-6">4452</button></td>                    <td width="10%"><button class="btn-hover color-7">4594</button></td>                    <td width="10%"><button class="btn-hover color-8">4624</button></td>                    <td width="10%"><button class="btn-hover color-9">4774</button></td>                    <td width="10%"><button class="btn-hover color-10">4884,4862</button></td>                    <td width="10%"><button class="btn-hover color-11">4985</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5042</button></td>                    <td width="10%"><button class="btn-hover color-3">5101,5189</button></td>                    <td width="10%"><button class="btn-hover color-4">5262</button></td>                    <td width="10%"><button class="btn-hover color-5">5350</button></td>                    <td width="10%"><button class="btn-hover color-6">5463</button></td>                    <td width="10%"><button class="btn-hover color-7">5521</button></td>                    <td width="10%"><button class="btn-hover color-8">5689</button></td>                    <td width="10%"><button class="btn-hover color-9">5700,5742</button></td>                    <td width="10%"><button class="btn-hover color-10">5854</button></td>                    <td width="10%"><button class="btn-hover color-11">5914</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6027</button></td>                    <td width="10%"><button class="btn-hover color-3">6188,6180</button></td>                    <td width="10%"><button class="btn-hover color-4">6285</button></td>                    <td width="10%"><button class="btn-hover color-5">6375</button></td>                    <td width="10%"><button class="btn-hover color-6">6491</button></td>                    <td width="10%"><button class="btn-hover color-7">6549</button></td>                    <td width="10%"><button class="btn-hover color-8">6690</button></td>                    <td width="10%"><button class="btn-hover color-9">6798</button></td>                    <td width="10%"><button class="btn-hover color-10">6844</button></td>                    <td width="10%"><button class="btn-hover color-11">6961,6965</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7089</button></td>                    <td width="10%"><button class="btn-hover color-3">7160</button></td>                    <td width="10%"><button class="btn-hover color-4">7232</button></td>                    <td width="10%"><button class="btn-hover color-5">7331</button></td>                    <td width="10%"><button class="btn-hover color-6">7406</button></td>                    <td width="10%"><button class="btn-hover color-7">7551,7552</button></td>                    <td width="10%"><button class="btn-hover color-8">7673,7605</button></td>                    <td width="10%"><button class="btn-hover color-9">7792</button></td>                    <td width="10%"><button class="btn-hover color-10">7889</button></td>                    <td width="10%"><button class="btn-hover color-11">7978</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8098</button></td>                    <td width="10%"><button class="btn-hover color-3">8162</button></td>                    <td width="10%"><button class="btn-hover color-4">8297</button></td>                    <td width="10%"><button class="btn-hover color-5">8335</button></td>                    <td width="10%"><button class="btn-hover color-6">8495</button></td>                    <td width="10%"><button class="btn-hover color-7">8509</button></td>                    <td width="10%"><button class="btn-hover color-8">8681</button></td>                    <td width="10%"><button class="btn-hover color-9">8740</button></td>                    <td width="10%"><button class="btn-hover color-10">8835,8836</button></td>                    <td width="10%"><button class="btn-hover color-11">8961,8908</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9075,9032</button></td>                    <td width="10%"><button class="btn-hover color-3">9123</button></td>                    <td width="10%"><button class="btn-hover color-4">9272</button></td>                    <td width="10%"><button class="btn-hover color-5">9312</button></td>                    <td width="10%"><button class="btn-hover color-6">9487</button></td>                    <td width="10%"><button class="btn-hover color-7">9546,9585</button></td>                    <td width="10%"><button class="btn-hover color-8">9669</button></td>                    <td width="10%"><button class="btn-hover color-9">9760</button></td>                    <td width="10%"><button class="btn-hover color-10">9889</button></td>                    <td width="10%"><button class="btn-hover color-11">9918</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;10:45 am &nbsp;<a href="print_current_result.php?id=7&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;11:45 am &nbsp;<a href="print_current_result.php?id=11&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -6849,21 +6829,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0094</button></td>                    <td width="10%"><button class="btn-hover color-3">0141</button></td>                    <td width="10%"><button class="btn-hover color-4">0229</button></td>                    <td width="10%"><button class="btn-hover color-5">0319</button></td>                    <td width="10%"><button class="btn-hover color-6">0419</button></td>                    <td width="10%"><button class="btn-hover color-7">0586</button></td>                    <td width="10%"><button class="btn-hover color-8">0612</button></td>                    <td width="10%"><button class="btn-hover color-9">0774</button></td>                    <td width="10%"><button class="btn-hover color-10">0896</button></td>                    <td width="10%"><button class="btn-hover color-11">0931,0949</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1041</button></td>                    <td width="10%"><button class="btn-hover color-3">1138</button></td>                    <td width="10%"><button class="btn-hover color-4">1291</button></td>                    <td width="10%"><button class="btn-hover color-5">1317,1391</button></td>                    <td width="10%"><button class="btn-hover color-6">1488,1432</button></td>                    <td width="10%"><button class="btn-hover color-7">1586</button></td>                    <td width="10%"><button class="btn-hover color-8">1666</button></td>                    <td width="10%"><button class="btn-hover color-9">1767</button></td>                    <td width="10%"><button class="btn-hover color-10">1872</button></td>                    <td width="10%"><button class="btn-hover color-11">1924</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2037</button></td>                    <td width="10%"><button class="btn-hover color-3">2181</button></td>                    <td width="10%"><button class="btn-hover color-4">2276</button></td>                    <td width="10%"><button class="btn-hover color-5">2311</button></td>                    <td width="10%"><button class="btn-hover color-6">2471,2474</button></td>                    <td width="10%"><button class="btn-hover color-7">2524</button></td>                    <td width="10%"><button class="btn-hover color-8">2641</button></td>                    <td width="10%"><button class="btn-hover color-9">2798,2763</button></td>                    <td width="10%"><button class="btn-hover color-10">2816</button></td>                    <td width="10%"><button class="btn-hover color-11">2959</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3018</button></td>                    <td width="10%"><button class="btn-hover color-3">3158</button></td>                    <td width="10%"><button class="btn-hover color-4">3218</button></td>                    <td width="10%"><button class="btn-hover color-5">3387</button></td>                    <td width="10%"><button class="btn-hover color-6">3430,3442,3483</button></td>                    <td width="10%"><button class="btn-hover color-7">3528</button></td>                    <td width="10%"><button class="btn-hover color-8">3654</button></td>                    <td width="10%"><button class="btn-hover color-9">3708</button></td>                    <td width="10%"><button class="btn-hover color-10">3831</button></td>                    <td width="10%"><button class="btn-hover color-11">3960</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4064</button></td>                    <td width="10%"><button class="btn-hover color-3">4143</button></td>                    <td width="10%"><button class="btn-hover color-4">4291,4218</button></td>                    <td width="10%"><button class="btn-hover color-5">4307</button></td>                    <td width="10%"><button class="btn-hover color-6">4415</button></td>                    <td width="10%"><button class="btn-hover color-7">4510</button></td>                    <td width="10%"><button class="btn-hover color-8">4621,4674</button></td>                    <td width="10%"><button class="btn-hover color-9">4700</button></td>                    <td width="10%"><button class="btn-hover color-10">4870</button></td>                    <td width="10%"><button class="btn-hover color-11">4959</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5065,5025</button></td>                    <td width="10%"><button class="btn-hover color-3">5143</button></td>                    <td width="10%"><button class="btn-hover color-4">5295</button></td>                    <td width="10%"><button class="btn-hover color-5">5336</button></td>                    <td width="10%"><button class="btn-hover color-6">5472,5455</button></td>                    <td width="10%"><button class="btn-hover color-7">5566</button></td>                    <td width="10%"><button class="btn-hover color-8">5679</button></td>                    <td width="10%"><button class="btn-hover color-9">5766</button></td>                    <td width="10%"><button class="btn-hover color-10">5878</button></td>                    <td width="10%"><button class="btn-hover color-11">5933</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6081,6031</button></td>                    <td width="10%"><button class="btn-hover color-3">6120,6115</button></td>                    <td width="10%"><button class="btn-hover color-4">6294</button></td>                    <td width="10%"><button class="btn-hover color-5">6380</button></td>                    <td width="10%"><button class="btn-hover color-6">6405</button></td>                    <td width="10%"><button class="btn-hover color-7">6586</button></td>                    <td width="10%"><button class="btn-hover color-8">6660</button></td>                    <td width="10%"><button class="btn-hover color-9">6783</button></td>                    <td width="10%"><button class="btn-hover color-10">6828</button></td>                    <td width="10%"><button class="btn-hover color-11">6977</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7024</button></td>                    <td width="10%"><button class="btn-hover color-3">7111</button></td>                    <td width="10%"><button class="btn-hover color-4">7221</button></td>                    <td width="10%"><button class="btn-hover color-5">7323</button></td>                    <td width="10%"><button class="btn-hover color-6">7485</button></td>                    <td width="10%"><button class="btn-hover color-7">7550</button></td>                    <td width="10%"><button class="btn-hover color-8">7680</button></td>                    <td width="10%"><button class="btn-hover color-9">7756,7719,7706</button></td>                    <td width="10%"><button class="btn-hover color-10">7874</button></td>                    <td width="10%"><button class="btn-hover color-11">7989</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8057</button></td>                    <td width="10%"><button class="btn-hover color-3">8128,8118</button></td>                    <td width="10%"><button class="btn-hover color-4">8290</button></td>                    <td width="10%"><button class="btn-hover color-5">8366,8327</button></td>                    <td width="10%"><button class="btn-hover color-6">8451</button></td>                    <td width="10%"><button class="btn-hover color-7">8592</button></td>                    <td width="10%"><button class="btn-hover color-8">8624</button></td>                    <td width="10%"><button class="btn-hover color-9">8711</button></td>                    <td width="10%"><button class="btn-hover color-10">8828</button></td>                    <td width="10%"><button class="btn-hover color-11">8997</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9064</button></td>                    <td width="10%"><button class="btn-hover color-3">9185</button></td>                    <td width="10%"><button class="btn-hover color-4">9260,9262</button></td>                    <td width="10%"><button class="btn-hover color-5">9344</button></td>                    <td width="10%"><button class="btn-hover color-6">9468</button></td>                    <td width="10%"><button class="btn-hover color-7">9579</button></td>                    <td width="10%"><button class="btn-hover color-8">9651</button></td>                    <td width="10%"><button class="btn-hover color-9">9797</button></td>                    <td width="10%"><button class="btn-hover color-10">9831</button></td>                    <td width="10%"><button class="btn-hover color-11">9908,9959</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0095</button></td>                    <td width="10%"><button class="btn-hover color-3">0104</button></td>                    <td width="10%"><button class="btn-hover color-4">0200</button></td>                    <td width="10%"><button class="btn-hover color-5">0372</button></td>                    <td width="10%"><button class="btn-hover color-6">0432</button></td>                    <td width="10%"><button class="btn-hover color-7">0541</button></td>                    <td width="10%"><button class="btn-hover color-8">0635</button></td>                    <td width="10%"><button class="btn-hover color-9">0769</button></td>                    <td width="10%"><button class="btn-hover color-10">0869,0840</button></td>                    <td width="10%"><button class="btn-hover color-11">0967</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1059</button></td>                    <td width="10%"><button class="btn-hover color-3">1162</button></td>                    <td width="10%"><button class="btn-hover color-4">1258</button></td>                    <td width="10%"><button class="btn-hover color-5">1391</button></td>                    <td width="10%"><button class="btn-hover color-6">1482,1412</button></td>                    <td width="10%"><button class="btn-hover color-7">1557,1511</button></td>                    <td width="10%"><button class="btn-hover color-8">1699</button></td>                    <td width="10%"><button class="btn-hover color-9">1711</button></td>                    <td width="10%"><button class="btn-hover color-10">1830</button></td>                    <td width="10%"><button class="btn-hover color-11">1960</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2054</button></td>                    <td width="10%"><button class="btn-hover color-3">2144</button></td>                    <td width="10%"><button class="btn-hover color-4">2264</button></td>                    <td width="10%"><button class="btn-hover color-5">2380,2390</button></td>                    <td width="10%"><button class="btn-hover color-6">2485,2493</button></td>                    <td width="10%"><button class="btn-hover color-7">2511</button></td>                    <td width="10%"><button class="btn-hover color-8">2607</button></td>                    <td width="10%"><button class="btn-hover color-9">2781</button></td>                    <td width="10%"><button class="btn-hover color-10">2839</button></td>                    <td width="10%"><button class="btn-hover color-11">2937</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3057</button></td>                    <td width="10%"><button class="btn-hover color-3">3139</button></td>                    <td width="10%"><button class="btn-hover color-4">3271</button></td>                    <td width="10%"><button class="btn-hover color-5">3361,3390</button></td>                    <td width="10%"><button class="btn-hover color-6">3499</button></td>                    <td width="10%"><button class="btn-hover color-7">3535</button></td>                    <td width="10%"><button class="btn-hover color-8">3603,3602</button></td>                    <td width="10%"><button class="btn-hover color-9">3784</button></td>                    <td width="10%"><button class="btn-hover color-10">3840</button></td>                    <td width="10%"><button class="btn-hover color-11">3949</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4094</button></td>                    <td width="10%"><button class="btn-hover color-3">4167,4172</button></td>                    <td width="10%"><button class="btn-hover color-4">4219</button></td>                    <td width="10%"><button class="btn-hover color-5">4379</button></td>                    <td width="10%"><button class="btn-hover color-6">4479</button></td>                    <td width="10%"><button class="btn-hover color-7">4503,4578</button></td>                    <td width="10%"><button class="btn-hover color-8">4601</button></td>                    <td width="10%"><button class="btn-hover color-9">4726</button></td>                    <td width="10%"><button class="btn-hover color-10">4860</button></td>                    <td width="10%"><button class="btn-hover color-11">4981</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5052</button></td>                    <td width="10%"><button class="btn-hover color-3">5153</button></td>                    <td width="10%"><button class="btn-hover color-4">5297</button></td>                    <td width="10%"><button class="btn-hover color-5">5311</button></td>                    <td width="10%"><button class="btn-hover color-6">5452,5477</button></td>                    <td width="10%"><button class="btn-hover color-7">5520</button></td>                    <td width="10%"><button class="btn-hover color-8">5624,5600</button></td>                    <td width="10%"><button class="btn-hover color-9">5744</button></td>                    <td width="10%"><button class="btn-hover color-10">5886</button></td>                    <td width="10%"><button class="btn-hover color-11">5965</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6044,6096</button></td>                    <td width="10%"><button class="btn-hover color-3">6103,6137</button></td>                    <td width="10%"><button class="btn-hover color-4">6230</button></td>                    <td width="10%"><button class="btn-hover color-5">6391</button></td>                    <td width="10%"><button class="btn-hover color-6">6469</button></td>                    <td width="10%"><button class="btn-hover color-7">6590</button></td>                    <td width="10%"><button class="btn-hover color-8">6642</button></td>                    <td width="10%"><button class="btn-hover color-9">6780</button></td>                    <td width="10%"><button class="btn-hover color-10">6835</button></td>                    <td width="10%"><button class="btn-hover color-11">6942</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7058</button></td>                    <td width="10%"><button class="btn-hover color-3">7121</button></td>                    <td width="10%"><button class="btn-hover color-4">7245</button></td>                    <td width="10%"><button class="btn-hover color-5">7348</button></td>                    <td width="10%"><button class="btn-hover color-6">7403,7421</button></td>                    <td width="10%"><button class="btn-hover color-7">7535</button></td>                    <td width="10%"><button class="btn-hover color-8">7606</button></td>                    <td width="10%"><button class="btn-hover color-9">7738</button></td>                    <td width="10%"><button class="btn-hover color-10">7857,7839</button></td>                    <td width="10%"><button class="btn-hover color-11">7992</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8026</button></td>                    <td width="10%"><button class="btn-hover color-3">8172,8164,8157</button></td>                    <td width="10%"><button class="btn-hover color-4">8288</button></td>                    <td width="10%"><button class="btn-hover color-5">8322</button></td>                    <td width="10%"><button class="btn-hover color-6">8408</button></td>                    <td width="10%"><button class="btn-hover color-7">8507</button></td>                    <td width="10%"><button class="btn-hover color-8">8600</button></td>                    <td width="10%"><button class="btn-hover color-9">8732</button></td>                    <td width="10%"><button class="btn-hover color-10">8872</button></td>                    <td width="10%"><button class="btn-hover color-11">8969</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9013</button></td>                    <td width="10%"><button class="btn-hover color-3">9103</button></td>                    <td width="10%"><button class="btn-hover color-4">9236</button></td>                    <td width="10%"><button class="btn-hover color-5">9300</button></td>                    <td width="10%"><button class="btn-hover color-6">9452</button></td>                    <td width="10%"><button class="btn-hover color-7">9547,9584</button></td>                    <td width="10%"><button class="btn-hover color-8">9655</button></td>                    <td width="10%"><button class="btn-hover color-9">9795</button></td>                    <td width="10%"><button class="btn-hover color-10">9856,9884</button></td>                    <td width="10%"><button class="btn-hover color-11">9980</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;10:30 am &nbsp;<a href="print_current_result.php?id=6&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;11:30 am &nbsp;<a href="print_current_result.php?id=10&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -6986,21 +6966,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0008</button></td>                    <td width="10%"><button class="btn-hover color-3">0125</button></td>                    <td width="10%"><button class="btn-hover color-4">0221</button></td>                    <td width="10%"><button class="btn-hover color-5">0336</button></td>                    <td width="10%"><button class="btn-hover color-6">0453</button></td>                    <td width="10%"><button class="btn-hover color-7">0523</button></td>                    <td width="10%"><button class="btn-hover color-8">0628,0684</button></td>                    <td width="10%"><button class="btn-hover color-9">0735</button></td>                    <td width="10%"><button class="btn-hover color-10">0884</button></td>                    <td width="10%"><button class="btn-hover color-11">0907</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1012,1067</button></td>                    <td width="10%"><button class="btn-hover color-3">1143</button></td>                    <td width="10%"><button class="btn-hover color-4">1274</button></td>                    <td width="10%"><button class="btn-hover color-5">1364</button></td>                    <td width="10%"><button class="btn-hover color-6">1444</button></td>                    <td width="10%"><button class="btn-hover color-7">1571</button></td>                    <td width="10%"><button class="btn-hover color-8">1661</button></td>                    <td width="10%"><button class="btn-hover color-9">1740</button></td>                    <td width="10%"><button class="btn-hover color-10">1813</button></td>                    <td width="10%"><button class="btn-hover color-11">1961,1974</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2092</button></td>                    <td width="10%"><button class="btn-hover color-3">2161</button></td>                    <td width="10%"><button class="btn-hover color-4">2285</button></td>                    <td width="10%"><button class="btn-hover color-5">2395</button></td>                    <td width="10%"><button class="btn-hover color-6">2425</button></td>                    <td width="10%"><button class="btn-hover color-7">2522,2586</button></td>                    <td width="10%"><button class="btn-hover color-8">2658</button></td>                    <td width="10%"><button class="btn-hover color-9">2745</button></td>                    <td width="10%"><button class="btn-hover color-10">2898</button></td>                    <td width="10%"><button class="btn-hover color-11">2947,2935</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3050</button></td>                    <td width="10%"><button class="btn-hover color-3">3175</button></td>                    <td width="10%"><button class="btn-hover color-4">3249</button></td>                    <td width="10%"><button class="btn-hover color-5">3332</button></td>                    <td width="10%"><button class="btn-hover color-6">3466</button></td>                    <td width="10%"><button class="btn-hover color-7">3530</button></td>                    <td width="10%"><button class="btn-hover color-8">3655,3601</button></td>                    <td width="10%"><button class="btn-hover color-9">3777,3713</button></td>                    <td width="10%"><button class="btn-hover color-10">3833</button></td>                    <td width="10%"><button class="btn-hover color-11">3978</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4062</button></td>                    <td width="10%"><button class="btn-hover color-3">4152</button></td>                    <td width="10%"><button class="btn-hover color-4">4241</button></td>                    <td width="10%"><button class="btn-hover color-5">4305</button></td>                    <td width="10%"><button class="btn-hover color-6">4464,4482</button></td>                    <td width="10%"><button class="btn-hover color-7">4526</button></td>                    <td width="10%"><button class="btn-hover color-8">4638</button></td>                    <td width="10%"><button class="btn-hover color-9">4712</button></td>                    <td width="10%"><button class="btn-hover color-10">4854</button></td>                    <td width="10%"><button class="btn-hover color-11">4944,4904</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5097</button></td>                    <td width="10%"><button class="btn-hover color-3">5102</button></td>                    <td width="10%"><button class="btn-hover color-4">5265</button></td>                    <td width="10%"><button class="btn-hover color-5">5320,5310</button></td>                    <td width="10%"><button class="btn-hover color-6">5466</button></td>                    <td width="10%"><button class="btn-hover color-7">5536,5584</button></td>                    <td width="10%"><button class="btn-hover color-8">5632</button></td>                    <td width="10%"><button class="btn-hover color-9">5718</button></td>                    <td width="10%"><button class="btn-hover color-10">5857</button></td>                    <td width="10%"><button class="btn-hover color-11">5958</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6078</button></td>                    <td width="10%"><button class="btn-hover color-3">6162</button></td>                    <td width="10%"><button class="btn-hover color-4">6235,6290,6237</button></td>                    <td width="10%"><button class="btn-hover color-5">6312</button></td>                    <td width="10%"><button class="btn-hover color-6">6412</button></td>                    <td width="10%"><button class="btn-hover color-7">6593</button></td>                    <td width="10%"><button class="btn-hover color-8">6666</button></td>                    <td width="10%"><button class="btn-hover color-9">6743</button></td>                    <td width="10%"><button class="btn-hover color-10">6854</button></td>                    <td width="10%"><button class="btn-hover color-11">6901</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7090</button></td>                    <td width="10%"><button class="btn-hover color-3">7174,7164</button></td>                    <td width="10%"><button class="btn-hover color-4">7231</button></td>                    <td width="10%"><button class="btn-hover color-5">7300</button></td>                    <td width="10%"><button class="btn-hover color-6">7423</button></td>                    <td width="10%"><button class="btn-hover color-7">7563</button></td>                    <td width="10%"><button class="btn-hover color-8">7620</button></td>                    <td width="10%"><button class="btn-hover color-9">7777</button></td>                    <td width="10%"><button class="btn-hover color-10">7835,7867</button></td>                    <td width="10%"><button class="btn-hover color-11">7948</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8064,8061</button></td>                    <td width="10%"><button class="btn-hover color-3">8128</button></td>                    <td width="10%"><button class="btn-hover color-4">8275</button></td>                    <td width="10%"><button class="btn-hover color-5">8380</button></td>                    <td width="10%"><button class="btn-hover color-6">8463</button></td>                    <td width="10%"><button class="btn-hover color-7">8558</button></td>                    <td width="10%"><button class="btn-hover color-8">8644,8670</button></td>                    <td width="10%"><button class="btn-hover color-9">8797</button></td>                    <td width="10%"><button class="btn-hover color-10">8833</button></td>                    <td width="10%"><button class="btn-hover color-11">8960</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9058</button></td>                    <td width="10%"><button class="btn-hover color-3">9100</button></td>                    <td width="10%"><button class="btn-hover color-4">9216</button></td>                    <td width="10%"><button class="btn-hover color-5">9389,9305</button></td>                    <td width="10%"><button class="btn-hover color-6">9474</button></td>                    <td width="10%"><button class="btn-hover color-7">9545</button></td>                    <td width="10%"><button class="btn-hover color-8">9638,9626</button></td>                    <td width="10%"><button class="btn-hover color-9">9785</button></td>                    <td width="10%"><button class="btn-hover color-10">9853</button></td>                    <td width="10%"><button class="btn-hover color-11">9904</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0051</button></td>                    <td width="10%"><button class="btn-hover color-3">0100</button></td>                    <td width="10%"><button class="btn-hover color-4">0257</button></td>                    <td width="10%"><button class="btn-hover color-5">0335</button></td>                    <td width="10%"><button class="btn-hover color-6">0439</button></td>                    <td width="10%"><button class="btn-hover color-7">0520</button></td>                    <td width="10%"><button class="btn-hover color-8">0600,0606</button></td>                    <td width="10%"><button class="btn-hover color-9">0720</button></td>                    <td width="10%"><button class="btn-hover color-10">0868</button></td>                    <td width="10%"><button class="btn-hover color-11">0905</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1068</button></td>                    <td width="10%"><button class="btn-hover color-3">1127</button></td>                    <td width="10%"><button class="btn-hover color-4">1209</button></td>                    <td width="10%"><button class="btn-hover color-5">1310</button></td>                    <td width="10%"><button class="btn-hover color-6">1433</button></td>                    <td width="10%"><button class="btn-hover color-7">1557</button></td>                    <td width="10%"><button class="btn-hover color-8">1691,1605</button></td>                    <td width="10%"><button class="btn-hover color-9">1714,1772</button></td>                    <td width="10%"><button class="btn-hover color-10">1872</button></td>                    <td width="10%"><button class="btn-hover color-11">1927</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2099</button></td>                    <td width="10%"><button class="btn-hover color-3">2102</button></td>                    <td width="10%"><button class="btn-hover color-4">2222,2220</button></td>                    <td width="10%"><button class="btn-hover color-5">2348</button></td>                    <td width="10%"><button class="btn-hover color-6">2402</button></td>                    <td width="10%"><button class="btn-hover color-7">2553</button></td>                    <td width="10%"><button class="btn-hover color-8">2667,2600</button></td>                    <td width="10%"><button class="btn-hover color-9">2734</button></td>                    <td width="10%"><button class="btn-hover color-10">2851</button></td>                    <td width="10%"><button class="btn-hover color-11">2942</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3059</button></td>                    <td width="10%"><button class="btn-hover color-3">3138</button></td>                    <td width="10%"><button class="btn-hover color-4">3221</button></td>                    <td width="10%"><button class="btn-hover color-5">3356</button></td>                    <td width="10%"><button class="btn-hover color-6">3494</button></td>                    <td width="10%"><button class="btn-hover color-7">3528</button></td>                    <td width="10%"><button class="btn-hover color-8">3697</button></td>                    <td width="10%"><button class="btn-hover color-9">3764</button></td>                    <td width="10%"><button class="btn-hover color-10">3886,3850,3881</button></td>                    <td width="10%"><button class="btn-hover color-11">3971</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4001,4097</button></td>                    <td width="10%"><button class="btn-hover color-3">4120</button></td>                    <td width="10%"><button class="btn-hover color-4">4204</button></td>                    <td width="10%"><button class="btn-hover color-5">4311,4379</button></td>                    <td width="10%"><button class="btn-hover color-6">4476</button></td>                    <td width="10%"><button class="btn-hover color-7">4552</button></td>                    <td width="10%"><button class="btn-hover color-8">4646</button></td>                    <td width="10%"><button class="btn-hover color-9">4734</button></td>                    <td width="10%"><button class="btn-hover color-10">4800</button></td>                    <td width="10%"><button class="btn-hover color-11">4906</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5088,5028</button></td>                    <td width="10%"><button class="btn-hover color-3">5165</button></td>                    <td width="10%"><button class="btn-hover color-4">5219</button></td>                    <td width="10%"><button class="btn-hover color-5">5363</button></td>                    <td width="10%"><button class="btn-hover color-6">5437</button></td>                    <td width="10%"><button class="btn-hover color-7">5577</button></td>                    <td width="10%"><button class="btn-hover color-8">5622</button></td>                    <td width="10%"><button class="btn-hover color-9">5724,5783</button></td>                    <td width="10%"><button class="btn-hover color-10">5844</button></td>                    <td width="10%"><button class="btn-hover color-11">5948</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6065</button></td>                    <td width="10%"><button class="btn-hover color-3">6177</button></td>                    <td width="10%"><button class="btn-hover color-4">6271</button></td>                    <td width="10%"><button class="btn-hover color-5">6311,6348</button></td>                    <td width="10%"><button class="btn-hover color-6">6415</button></td>                    <td width="10%"><button class="btn-hover color-7">6552</button></td>                    <td width="10%"><button class="btn-hover color-8">6698,6647</button></td>                    <td width="10%"><button class="btn-hover color-9">6716</button></td>                    <td width="10%"><button class="btn-hover color-10">6832</button></td>                    <td width="10%"><button class="btn-hover color-11">6992</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7095</button></td>                    <td width="10%"><button class="btn-hover color-3">7104</button></td>                    <td width="10%"><button class="btn-hover color-4">7268</button></td>                    <td width="10%"><button class="btn-hover color-5">7379,7376</button></td>                    <td width="10%"><button class="btn-hover color-6">7446</button></td>                    <td width="10%"><button class="btn-hover color-7">7593,7555</button></td>                    <td width="10%"><button class="btn-hover color-8">7606</button></td>                    <td width="10%"><button class="btn-hover color-9">7749</button></td>                    <td width="10%"><button class="btn-hover color-10">7859</button></td>                    <td width="10%"><button class="btn-hover color-11">7970</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8010</button></td>                    <td width="10%"><button class="btn-hover color-3">8145</button></td>                    <td width="10%"><button class="btn-hover color-4">8205</button></td>                    <td width="10%"><button class="btn-hover color-5">8312</button></td>                    <td width="10%"><button class="btn-hover color-6">8482</button></td>                    <td width="10%"><button class="btn-hover color-7">8501</button></td>                    <td width="10%"><button class="btn-hover color-8">8606</button></td>                    <td width="10%"><button class="btn-hover color-9">8783,8700</button></td>                    <td width="10%"><button class="btn-hover color-10">8807</button></td>                    <td width="10%"><button class="btn-hover color-11">8982,8972</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9022</button></td>                    <td width="10%"><button class="btn-hover color-3">9157</button></td>                    <td width="10%"><button class="btn-hover color-4">9218</button></td>                    <td width="10%"><button class="btn-hover color-5">9337,9342</button></td>                    <td width="10%"><button class="btn-hover color-6">9429,9461</button></td>                    <td width="10%"><button class="btn-hover color-7">9560</button></td>                    <td width="10%"><button class="btn-hover color-8">9687</button></td>                    <td width="10%"><button class="btn-hover color-9">9769</button></td>                    <td width="10%"><button class="btn-hover color-10">9832</button></td>                    <td width="10%"><button class="btn-hover color-11">9971</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;10:15 am &nbsp;<a href="print_current_result.php?id=5&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;11:15 am &nbsp;<a href="print_current_result.php?id=9&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -7123,21 +7103,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0087</button></td>                    <td width="10%"><button class="btn-hover color-3">0114</button></td>                    <td width="10%"><button class="btn-hover color-4">0222</button></td>                    <td width="10%"><button class="btn-hover color-5">0337</button></td>                    <td width="10%"><button class="btn-hover color-6">0487</button></td>                    <td width="10%"><button class="btn-hover color-7">0565</button></td>                    <td width="10%"><button class="btn-hover color-8">0687</button></td>                    <td width="10%"><button class="btn-hover color-9">0733</button></td>                    <td width="10%"><button class="btn-hover color-10">0865,0857</button></td>                    <td width="10%"><button class="btn-hover color-11">0971</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1069</button></td>                    <td width="10%"><button class="btn-hover color-3">1175</button></td>                    <td width="10%"><button class="btn-hover color-4">1258</button></td>                    <td width="10%"><button class="btn-hover color-5">1333</button></td>                    <td width="10%"><button class="btn-hover color-6">1464</button></td>                    <td width="10%"><button class="btn-hover color-7">1588</button></td>                    <td width="10%"><button class="btn-hover color-8">1662</button></td>                    <td width="10%"><button class="btn-hover color-9">1779</button></td>                    <td width="10%"><button class="btn-hover color-10">1853,1808,1818</button></td>                    <td width="10%"><button class="btn-hover color-11">1918</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2085,2033</button></td>                    <td width="10%"><button class="btn-hover color-3">2133</button></td>                    <td width="10%"><button class="btn-hover color-4">2257</button></td>                    <td width="10%"><button class="btn-hover color-5">2323</button></td>                    <td width="10%"><button class="btn-hover color-6">2409</button></td>                    <td width="10%"><button class="btn-hover color-7">2565</button></td>                    <td width="10%"><button class="btn-hover color-8">2622,2691</button></td>                    <td width="10%"><button class="btn-hover color-9">2717</button></td>                    <td width="10%"><button class="btn-hover color-10">2837</button></td>                    <td width="10%"><button class="btn-hover color-11">2924</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3081</button></td>                    <td width="10%"><button class="btn-hover color-3">3183</button></td>                    <td width="10%"><button class="btn-hover color-4">3200,3265</button></td>                    <td width="10%"><button class="btn-hover color-5">3396</button></td>                    <td width="10%"><button class="btn-hover color-6">3446</button></td>                    <td width="10%"><button class="btn-hover color-7">3543</button></td>                    <td width="10%"><button class="btn-hover color-8">3658</button></td>                    <td width="10%"><button class="btn-hover color-9">3719</button></td>                    <td width="10%"><button class="btn-hover color-10">3889</button></td>                    <td width="10%"><button class="btn-hover color-11">3925,3928</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4070</button></td>                    <td width="10%"><button class="btn-hover color-3">4141,4186</button></td>                    <td width="10%"><button class="btn-hover color-4">4281</button></td>                    <td width="10%"><button class="btn-hover color-5">4394</button></td>                    <td width="10%"><button class="btn-hover color-6">4466</button></td>                    <td width="10%"><button class="btn-hover color-7">4508</button></td>                    <td width="10%"><button class="btn-hover color-8">4634</button></td>                    <td width="10%"><button class="btn-hover color-9">4765,4727</button></td>                    <td width="10%"><button class="btn-hover color-10">4819</button></td>                    <td width="10%"><button class="btn-hover color-11">4929</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5085</button></td>                    <td width="10%"><button class="btn-hover color-3">5166</button></td>                    <td width="10%"><button class="btn-hover color-4">5261,5289</button></td>                    <td width="10%"><button class="btn-hover color-5">5398</button></td>                    <td width="10%"><button class="btn-hover color-6">5423</button></td>                    <td width="10%"><button class="btn-hover color-7">5522</button></td>                    <td width="10%"><button class="btn-hover color-8">5636</button></td>                    <td width="10%"><button class="btn-hover color-9">5715</button></td>                    <td width="10%"><button class="btn-hover color-10">5815</button></td>                    <td width="10%"><button class="btn-hover color-11">5953,5970</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6086,6057</button></td>                    <td width="10%"><button class="btn-hover color-3">6100</button></td>                    <td width="10%"><button class="btn-hover color-4">6228</button></td>                    <td width="10%"><button class="btn-hover color-5">6349</button></td>                    <td width="10%"><button class="btn-hover color-6">6425</button></td>                    <td width="10%"><button class="btn-hover color-7">6593</button></td>                    <td width="10%"><button class="btn-hover color-8">6625</button></td>                    <td width="10%"><button class="btn-hover color-9">6710</button></td>                    <td width="10%"><button class="btn-hover color-10">6821</button></td>                    <td width="10%"><button class="btn-hover color-11">6989,6907</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7041,7003</button></td>                    <td width="10%"><button class="btn-hover color-3">7179</button></td>                    <td width="10%"><button class="btn-hover color-4">7230</button></td>                    <td width="10%"><button class="btn-hover color-5">7300</button></td>                    <td width="10%"><button class="btn-hover color-6">7479</button></td>                    <td width="10%"><button class="btn-hover color-7">7572</button></td>                    <td width="10%"><button class="btn-hover color-8">7695</button></td>                    <td width="10%"><button class="btn-hover color-9">7717,7796</button></td>                    <td width="10%"><button class="btn-hover color-10">7878</button></td>                    <td width="10%"><button class="btn-hover color-11">7920</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8048,8077</button></td>                    <td width="10%"><button class="btn-hover color-3">8112</button></td>                    <td width="10%"><button class="btn-hover color-4">8246</button></td>                    <td width="10%"><button class="btn-hover color-5">8307</button></td>                    <td width="10%"><button class="btn-hover color-6">8427</button></td>                    <td width="10%"><button class="btn-hover color-7">8547</button></td>                    <td width="10%"><button class="btn-hover color-8">8606</button></td>                    <td width="10%"><button class="btn-hover color-9">8762</button></td>                    <td width="10%"><button class="btn-hover color-10">8842,8807</button></td>                    <td width="10%"><button class="btn-hover color-11">8926</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9036</button></td>                    <td width="10%"><button class="btn-hover color-3">9191</button></td>                    <td width="10%"><button class="btn-hover color-4">9214</button></td>                    <td width="10%"><button class="btn-hover color-5">9370,9327,9377</button></td>                    <td width="10%"><button class="btn-hover color-6">9473</button></td>                    <td width="10%"><button class="btn-hover color-7">9540</button></td>                    <td width="10%"><button class="btn-hover color-8">9672</button></td>                    <td width="10%"><button class="btn-hover color-9">9795</button></td>                    <td width="10%"><button class="btn-hover color-10">9814</button></td>                    <td width="10%"><button class="btn-hover color-11">9969</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0043</button></td>                    <td width="10%"><button class="btn-hover color-3">0112</button></td>                    <td width="10%"><button class="btn-hover color-4">0275</button></td>                    <td width="10%"><button class="btn-hover color-5">0313</button></td>                    <td width="10%"><button class="btn-hover color-6">0425</button></td>                    <td width="10%"><button class="btn-hover color-7">0542</button></td>                    <td width="10%"><button class="btn-hover color-8">0678</button></td>                    <td width="10%"><button class="btn-hover color-9">0786</button></td>                    <td width="10%"><button class="btn-hover color-10">0891,0828</button></td>                    <td width="10%"><button class="btn-hover color-11">0984</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1003</button></td>                    <td width="10%"><button class="btn-hover color-3">1141</button></td>                    <td width="10%"><button class="btn-hover color-4">1202,1244</button></td>                    <td width="10%"><button class="btn-hover color-5">1394</button></td>                    <td width="10%"><button class="btn-hover color-6">1459</button></td>                    <td width="10%"><button class="btn-hover color-7">1548</button></td>                    <td width="10%"><button class="btn-hover color-8">1613,1617</button></td>                    <td width="10%"><button class="btn-hover color-9">1735</button></td>                    <td width="10%"><button class="btn-hover color-10">1862</button></td>                    <td width="10%"><button class="btn-hover color-11">1918</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2028,2068</button></td>                    <td width="10%"><button class="btn-hover color-3">2189</button></td>                    <td width="10%"><button class="btn-hover color-4">2279,2248</button></td>                    <td width="10%"><button class="btn-hover color-5">2333</button></td>                    <td width="10%"><button class="btn-hover color-6">2454</button></td>                    <td width="10%"><button class="btn-hover color-7">2527</button></td>                    <td width="10%"><button class="btn-hover color-8">2600</button></td>                    <td width="10%"><button class="btn-hover color-9">2748</button></td>                    <td width="10%"><button class="btn-hover color-10">2857</button></td>                    <td width="10%"><button class="btn-hover color-11">2916</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3040</button></td>                    <td width="10%"><button class="btn-hover color-3">3160</button></td>                    <td width="10%"><button class="btn-hover color-4">3258</button></td>                    <td width="10%"><button class="btn-hover color-5">3392</button></td>                    <td width="10%"><button class="btn-hover color-6">3453,3471</button></td>                    <td width="10%"><button class="btn-hover color-7">3506,3540</button></td>                    <td width="10%"><button class="btn-hover color-8">3686</button></td>                    <td width="10%"><button class="btn-hover color-9">3789</button></td>                    <td width="10%"><button class="btn-hover color-10">3803</button></td>                    <td width="10%"><button class="btn-hover color-11">3908</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4059</button></td>                    <td width="10%"><button class="btn-hover color-3">4152</button></td>                    <td width="10%"><button class="btn-hover color-4">4251,4261,4217</button></td>                    <td width="10%"><button class="btn-hover color-5">4354</button></td>                    <td width="10%"><button class="btn-hover color-6">4499</button></td>                    <td width="10%"><button class="btn-hover color-7">4591</button></td>                    <td width="10%"><button class="btn-hover color-8">4633</button></td>                    <td width="10%"><button class="btn-hover color-9">4760</button></td>                    <td width="10%"><button class="btn-hover color-10">4834</button></td>                    <td width="10%"><button class="btn-hover color-11">4925</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5039</button></td>                    <td width="10%"><button class="btn-hover color-3">5198,5117</button></td>                    <td width="10%"><button class="btn-hover color-4">5286</button></td>                    <td width="10%"><button class="btn-hover color-5">5363</button></td>                    <td width="10%"><button class="btn-hover color-6">5497</button></td>                    <td width="10%"><button class="btn-hover color-7">5535</button></td>                    <td width="10%"><button class="btn-hover color-8">5631</button></td>                    <td width="10%"><button class="btn-hover color-9">5714,5734</button></td>                    <td width="10%"><button class="btn-hover color-10">5823</button></td>                    <td width="10%"><button class="btn-hover color-11">5930</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6089</button></td>                    <td width="10%"><button class="btn-hover color-3">6166</button></td>                    <td width="10%"><button class="btn-hover color-4">6255</button></td>                    <td width="10%"><button class="btn-hover color-5">6330,6300</button></td>                    <td width="10%"><button class="btn-hover color-6">6418</button></td>                    <td width="10%"><button class="btn-hover color-7">6597</button></td>                    <td width="10%"><button class="btn-hover color-8">6618</button></td>                    <td width="10%"><button class="btn-hover color-9">6754,6746</button></td>                    <td width="10%"><button class="btn-hover color-10">6885</button></td>                    <td width="10%"><button class="btn-hover color-11">6917</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7066</button></td>                    <td width="10%"><button class="btn-hover color-3">7164</button></td>                    <td width="10%"><button class="btn-hover color-4">7220</button></td>                    <td width="10%"><button class="btn-hover color-5">7399</button></td>                    <td width="10%"><button class="btn-hover color-6">7430</button></td>                    <td width="10%"><button class="btn-hover color-7">7509,7580,7548</button></td>                    <td width="10%"><button class="btn-hover color-8">7673</button></td>                    <td width="10%"><button class="btn-hover color-9">7773</button></td>                    <td width="10%"><button class="btn-hover color-10">7844</button></td>                    <td width="10%"><button class="btn-hover color-11">7957</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8038</button></td>                    <td width="10%"><button class="btn-hover color-3">8151</button></td>                    <td width="10%"><button class="btn-hover color-4">8218</button></td>                    <td width="10%"><button class="btn-hover color-5">8383,8341</button></td>                    <td width="10%"><button class="btn-hover color-6">8443</button></td>                    <td width="10%"><button class="btn-hover color-7">8566</button></td>                    <td width="10%"><button class="btn-hover color-8">8637</button></td>                    <td width="10%"><button class="btn-hover color-9">8728</button></td>                    <td width="10%"><button class="btn-hover color-10">8809,8875</button></td>                    <td width="10%"><button class="btn-hover color-11">8925</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9002</button></td>                    <td width="10%"><button class="btn-hover color-3">9154</button></td>                    <td width="10%"><button class="btn-hover color-4">9205</button></td>                    <td width="10%"><button class="btn-hover color-5">9374</button></td>                    <td width="10%"><button class="btn-hover color-6">9445</button></td>                    <td width="10%"><button class="btn-hover color-7">9517</button></td>                    <td width="10%"><button class="btn-hover color-8">9626</button></td>                    <td width="10%"><button class="btn-hover color-9">9797,9777</button></td>                    <td width="10%"><button class="btn-hover color-10">9855,9864</button></td>                    <td width="10%"><button class="btn-hover color-11">9930</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;10:00 am &nbsp;<a href="print_current_result.php?id=4&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;11:00 am &nbsp;<a href="print_current_result.php?id=8&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -7260,21 +7240,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0064</button></td>                    <td width="10%"><button class="btn-hover color-3">0171</button></td>                    <td width="10%"><button class="btn-hover color-4">0299</button></td>                    <td width="10%"><button class="btn-hover color-5">0386</button></td>                    <td width="10%"><button class="btn-hover color-6">0400,0493</button></td>                    <td width="10%"><button class="btn-hover color-7">0555</button></td>                    <td width="10%"><button class="btn-hover color-8">0699</button></td>                    <td width="10%"><button class="btn-hover color-9">0792</button></td>                    <td width="10%"><button class="btn-hover color-10">0817</button></td>                    <td width="10%"><button class="btn-hover color-11">0996</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1048</button></td>                    <td width="10%"><button class="btn-hover color-3">1137,1132</button></td>                    <td width="10%"><button class="btn-hover color-4">1210</button></td>                    <td width="10%"><button class="btn-hover color-5">1341,1376</button></td>                    <td width="10%"><button class="btn-hover color-6">1432</button></td>                    <td width="10%"><button class="btn-hover color-7">1592</button></td>                    <td width="10%"><button class="btn-hover color-8">1633</button></td>                    <td width="10%"><button class="btn-hover color-9">1748</button></td>                    <td width="10%"><button class="btn-hover color-10">1876</button></td>                    <td width="10%"><button class="btn-hover color-11">1901</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2078</button></td>                    <td width="10%"><button class="btn-hover color-3">2112</button></td>                    <td width="10%"><button class="btn-hover color-4">2280</button></td>                    <td width="10%"><button class="btn-hover color-5">2332</button></td>                    <td width="10%"><button class="btn-hover color-6">2443</button></td>                    <td width="10%"><button class="btn-hover color-7">2597</button></td>                    <td width="10%"><button class="btn-hover color-8">2609</button></td>                    <td width="10%"><button class="btn-hover color-9">2773</button></td>                    <td width="10%"><button class="btn-hover color-10">2840,2880</button></td>                    <td width="10%"><button class="btn-hover color-11">2950,2994</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3073</button></td>                    <td width="10%"><button class="btn-hover color-3">3136</button></td>                    <td width="10%"><button class="btn-hover color-4">3283</button></td>                    <td width="10%"><button class="btn-hover color-5">3340</button></td>                    <td width="10%"><button class="btn-hover color-6">3405,3490</button></td>                    <td width="10%"><button class="btn-hover color-7">3543</button></td>                    <td width="10%"><button class="btn-hover color-8">3621</button></td>                    <td width="10%"><button class="btn-hover color-9">3728</button></td>                    <td width="10%"><button class="btn-hover color-10">3870,3801</button></td>                    <td width="10%"><button class="btn-hover color-11">3957</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4067,4012</button></td>                    <td width="10%"><button class="btn-hover color-3">4155</button></td>                    <td width="10%"><button class="btn-hover color-4">4292</button></td>                    <td width="10%"><button class="btn-hover color-5">4374</button></td>                    <td width="10%"><button class="btn-hover color-6">4449</button></td>                    <td width="10%"><button class="btn-hover color-7">4561</button></td>                    <td width="10%"><button class="btn-hover color-8">4642</button></td>                    <td width="10%"><button class="btn-hover color-9">4728</button></td>                    <td width="10%"><button class="btn-hover color-10">4831,4808</button></td>                    <td width="10%"><button class="btn-hover color-11">4983</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5005</button></td>                    <td width="10%"><button class="btn-hover color-3">5132</button></td>                    <td width="10%"><button class="btn-hover color-4">5269</button></td>                    <td width="10%"><button class="btn-hover color-5">5305,5310</button></td>                    <td width="10%"><button class="btn-hover color-6">5471</button></td>                    <td width="10%"><button class="btn-hover color-7">5510</button></td>                    <td width="10%"><button class="btn-hover color-8">5663</button></td>                    <td width="10%"><button class="btn-hover color-9">5764,5761</button></td>                    <td width="10%"><button class="btn-hover color-10">5808</button></td>                    <td width="10%"><button class="btn-hover color-11">5945</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6003</button></td>                    <td width="10%"><button class="btn-hover color-3">6180,6156</button></td>                    <td width="10%"><button class="btn-hover color-4">6203</button></td>                    <td width="10%"><button class="btn-hover color-5">6302</button></td>                    <td width="10%"><button class="btn-hover color-6">6433</button></td>                    <td width="10%"><button class="btn-hover color-7">6543</button></td>                    <td width="10%"><button class="btn-hover color-8">6635</button></td>                    <td width="10%"><button class="btn-hover color-9">6740</button></td>                    <td width="10%"><button class="btn-hover color-10">6874</button></td>                    <td width="10%"><button class="btn-hover color-11">6965,6967</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7038</button></td>                    <td width="10%"><button class="btn-hover color-3">7132,7138</button></td>                    <td width="10%"><button class="btn-hover color-4">7270</button></td>                    <td width="10%"><button class="btn-hover color-5">7336</button></td>                    <td width="10%"><button class="btn-hover color-6">7454</button></td>                    <td width="10%"><button class="btn-hover color-7">7508</button></td>                    <td width="10%"><button class="btn-hover color-8">7637</button></td>                    <td width="10%"><button class="btn-hover color-9">7798,7744</button></td>                    <td width="10%"><button class="btn-hover color-10">7847</button></td>                    <td width="10%"><button class="btn-hover color-11">7984</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8007</button></td>                    <td width="10%"><button class="btn-hover color-3">8106</button></td>                    <td width="10%"><button class="btn-hover color-4">8285,8269,8259</button></td>                    <td width="10%"><button class="btn-hover color-5">8368</button></td>                    <td width="10%"><button class="btn-hover color-6">8439</button></td>                    <td width="10%"><button class="btn-hover color-7">8528</button></td>                    <td width="10%"><button class="btn-hover color-8">8626</button></td>                    <td width="10%"><button class="btn-hover color-9">8749</button></td>                    <td width="10%"><button class="btn-hover color-10">8882</button></td>                    <td width="10%"><button class="btn-hover color-11">8927</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9011</button></td>                    <td width="10%"><button class="btn-hover color-3">9198</button></td>                    <td width="10%"><button class="btn-hover color-4">9285,9247</button></td>                    <td width="10%"><button class="btn-hover color-5">9391</button></td>                    <td width="10%"><button class="btn-hover color-6">9416</button></td>                    <td width="10%"><button class="btn-hover color-7">9517,9500</button></td>                    <td width="10%"><button class="btn-hover color-8">9615</button></td>                    <td width="10%"><button class="btn-hover color-9">9726</button></td>                    <td width="10%"><button class="btn-hover color-10">9817</button></td>                    <td width="10%"><button class="btn-hover color-11">9925</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0084,0067</button></td>                    <td width="10%"><button class="btn-hover color-3">0177</button></td>                    <td width="10%"><button class="btn-hover color-4">0293</button></td>                    <td width="10%"><button class="btn-hover color-5">0392</button></td>                    <td width="10%"><button class="btn-hover color-6">0478</button></td>                    <td width="10%"><button class="btn-hover color-7">0569</button></td>                    <td width="10%"><button class="btn-hover color-8">0645</button></td>                    <td width="10%"><button class="btn-hover color-9">0746</button></td>                    <td width="10%"><button class="btn-hover color-10">0833</button></td>                    <td width="10%"><button class="btn-hover color-11">0925</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1083</button></td>                    <td width="10%"><button class="btn-hover color-3">1176</button></td>                    <td width="10%"><button class="btn-hover color-4">1286</button></td>                    <td width="10%"><button class="btn-hover color-5">1394</button></td>                    <td width="10%"><button class="btn-hover color-6">1488</button></td>                    <td width="10%"><button class="btn-hover color-7">1584</button></td>                    <td width="10%"><button class="btn-hover color-8">1647,1645</button></td>                    <td width="10%"><button class="btn-hover color-9">1772</button></td>                    <td width="10%"><button class="btn-hover color-10">1860</button></td>                    <td width="10%"><button class="btn-hover color-11">1906,1915</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2086</button></td>                    <td width="10%"><button class="btn-hover color-3">2178</button></td>                    <td width="10%"><button class="btn-hover color-4">2208</button></td>                    <td width="10%"><button class="btn-hover color-5">2387,2320</button></td>                    <td width="10%"><button class="btn-hover color-6">2407,2486</button></td>                    <td width="10%"><button class="btn-hover color-7">2524</button></td>                    <td width="10%"><button class="btn-hover color-8">2689</button></td>                    <td width="10%"><button class="btn-hover color-9">2794</button></td>                    <td width="10%"><button class="btn-hover color-10">2836</button></td>                    <td width="10%"><button class="btn-hover color-11">2939</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3057</button></td>                    <td width="10%"><button class="btn-hover color-3">3116,3143</button></td>                    <td width="10%"><button class="btn-hover color-4">3286</button></td>                    <td width="10%"><button class="btn-hover color-5">3347</button></td>                    <td width="10%"><button class="btn-hover color-6">3474</button></td>                    <td width="10%"><button class="btn-hover color-7">3523</button></td>                    <td width="10%"><button class="btn-hover color-8">3610</button></td>                    <td width="10%"><button class="btn-hover color-9">3762</button></td>                    <td width="10%"><button class="btn-hover color-10">3886,3826</button></td>                    <td width="10%"><button class="btn-hover color-11">3988</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4041</button></td>                    <td width="10%"><button class="btn-hover color-3">4110</button></td>                    <td width="10%"><button class="btn-hover color-4">4242,4264</button></td>                    <td width="10%"><button class="btn-hover color-5">4356</button></td>                    <td width="10%"><button class="btn-hover color-6">4486</button></td>                    <td width="10%"><button class="btn-hover color-7">4579,4584</button></td>                    <td width="10%"><button class="btn-hover color-8">4621</button></td>                    <td width="10%"><button class="btn-hover color-9">4793</button></td>                    <td width="10%"><button class="btn-hover color-10">4846</button></td>                    <td width="10%"><button class="btn-hover color-11">4990</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5008</button></td>                    <td width="10%"><button class="btn-hover color-3">5113</button></td>                    <td width="10%"><button class="btn-hover color-4">5235</button></td>                    <td width="10%"><button class="btn-hover color-5">5384,5367</button></td>                    <td width="10%"><button class="btn-hover color-6">5454,5415</button></td>                    <td width="10%"><button class="btn-hover color-7">5593</button></td>                    <td width="10%"><button class="btn-hover color-8">5671</button></td>                    <td width="10%"><button class="btn-hover color-9">5764</button></td>                    <td width="10%"><button class="btn-hover color-10">5824</button></td>                    <td width="10%"><button class="btn-hover color-11">5903</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6064</button></td>                    <td width="10%"><button class="btn-hover color-3">6100</button></td>                    <td width="10%"><button class="btn-hover color-4">6207,6240,6249</button></td>                    <td width="10%"><button class="btn-hover color-5">6313</button></td>                    <td width="10%"><button class="btn-hover color-6">6448</button></td>                    <td width="10%"><button class="btn-hover color-7">6567</button></td>                    <td width="10%"><button class="btn-hover color-8">6605</button></td>                    <td width="10%"><button class="btn-hover color-9">6793</button></td>                    <td width="10%"><button class="btn-hover color-10">6813</button></td>                    <td width="10%"><button class="btn-hover color-11">6926</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7092</button></td>                    <td width="10%"><button class="btn-hover color-3">7118</button></td>                    <td width="10%"><button class="btn-hover color-4">7299</button></td>                    <td width="10%"><button class="btn-hover color-5">7305</button></td>                    <td width="10%"><button class="btn-hover color-6">7427,7476,7499</button></td>                    <td width="10%"><button class="btn-hover color-7">7582</button></td>                    <td width="10%"><button class="btn-hover color-8">7645</button></td>                    <td width="10%"><button class="btn-hover color-9">7759</button></td>                    <td width="10%"><button class="btn-hover color-10">7805</button></td>                    <td width="10%"><button class="btn-hover color-11">7984</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8059</button></td>                    <td width="10%"><button class="btn-hover color-3">8134</button></td>                    <td width="10%"><button class="btn-hover color-4">8299</button></td>                    <td width="10%"><button class="btn-hover color-5">8309,8327</button></td>                    <td width="10%"><button class="btn-hover color-6">8429</button></td>                    <td width="10%"><button class="btn-hover color-7">8571</button></td>                    <td width="10%"><button class="btn-hover color-8">8632</button></td>                    <td width="10%"><button class="btn-hover color-9">8792</button></td>                    <td width="10%"><button class="btn-hover color-10">8892,8810</button></td>                    <td width="10%"><button class="btn-hover color-11">8904</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9062</button></td>                    <td width="10%"><button class="btn-hover color-3">9110</button></td>                    <td width="10%"><button class="btn-hover color-4">9221</button></td>                    <td width="10%"><button class="btn-hover color-5">9385</button></td>                    <td width="10%"><button class="btn-hover color-6">9400</button></td>                    <td width="10%"><button class="btn-hover color-7">9586</button></td>                    <td width="10%"><button class="btn-hover color-8">9612</button></td>                    <td width="10%"><button class="btn-hover color-9">9752</button></td>                    <td width="10%"><button class="btn-hover color-10">9860,9856</button></td>                    <td width="10%"><button class="btn-hover color-11">9982,9988</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;09:45 am &nbsp;<a href="print_current_result.php?id=3&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;10:45 am &nbsp;<a href="print_current_result.php?id=7&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -7397,21 +7377,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0089</button></td>                    <td width="10%"><button class="btn-hover color-3">0173,0145</button></td>                    <td width="10%"><button class="btn-hover color-4">0215</button></td>                    <td width="10%"><button class="btn-hover color-5">0381</button></td>                    <td width="10%"><button class="btn-hover color-6">0432</button></td>                    <td width="10%"><button class="btn-hover color-7">0572</button></td>                    <td width="10%"><button class="btn-hover color-8">0679</button></td>                    <td width="10%"><button class="btn-hover color-9">0738,0725</button></td>                    <td width="10%"><button class="btn-hover color-10">0846</button></td>                    <td width="10%"><button class="btn-hover color-11">0972</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1018</button></td>                    <td width="10%"><button class="btn-hover color-3">1190</button></td>                    <td width="10%"><button class="btn-hover color-4">1203</button></td>                    <td width="10%"><button class="btn-hover color-5">1315</button></td>                    <td width="10%"><button class="btn-hover color-6">1451</button></td>                    <td width="10%"><button class="btn-hover color-7">1554</button></td>                    <td width="10%"><button class="btn-hover color-8">1623,1608</button></td>                    <td width="10%"><button class="btn-hover color-9">1760</button></td>                    <td width="10%"><button class="btn-hover color-10">1885,1830</button></td>                    <td width="10%"><button class="btn-hover color-11">1962</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2052,2024</button></td>                    <td width="10%"><button class="btn-hover color-3">2144</button></td>                    <td width="10%"><button class="btn-hover color-4">2225,2205</button></td>                    <td width="10%"><button class="btn-hover color-5">2350</button></td>                    <td width="10%"><button class="btn-hover color-6">2419</button></td>                    <td width="10%"><button class="btn-hover color-7">2501</button></td>                    <td width="10%"><button class="btn-hover color-8">2608</button></td>                    <td width="10%"><button class="btn-hover color-9">2740</button></td>                    <td width="10%"><button class="btn-hover color-10">2842</button></td>                    <td width="10%"><button class="btn-hover color-11">2976</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3068</button></td>                    <td width="10%"><button class="btn-hover color-3">3164</button></td>                    <td width="10%"><button class="btn-hover color-4">3296</button></td>                    <td width="10%"><button class="btn-hover color-5">3365,3310</button></td>                    <td width="10%"><button class="btn-hover color-6">3448</button></td>                    <td width="10%"><button class="btn-hover color-7">3580</button></td>                    <td width="10%"><button class="btn-hover color-8">3688</button></td>                    <td width="10%"><button class="btn-hover color-9">3736,3789</button></td>                    <td width="10%"><button class="btn-hover color-10">3884</button></td>                    <td width="10%"><button class="btn-hover color-11">3950</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4001</button></td>                    <td width="10%"><button class="btn-hover color-3">4151</button></td>                    <td width="10%"><button class="btn-hover color-4">4280</button></td>                    <td width="10%"><button class="btn-hover color-5">4315</button></td>                    <td width="10%"><button class="btn-hover color-6">4484</button></td>                    <td width="10%"><button class="btn-hover color-7">4561</button></td>                    <td width="10%"><button class="btn-hover color-8">4685,4686</button></td>                    <td width="10%"><button class="btn-hover color-9">4756</button></td>                    <td width="10%"><button class="btn-hover color-10">4844</button></td>                    <td width="10%"><button class="btn-hover color-11">4970,4961</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5054</button></td>                    <td width="10%"><button class="btn-hover color-3">5155,5160</button></td>                    <td width="10%"><button class="btn-hover color-4">5201</button></td>                    <td width="10%"><button class="btn-hover color-5">5307</button></td>                    <td width="10%"><button class="btn-hover color-6">5444</button></td>                    <td width="10%"><button class="btn-hover color-7">5597</button></td>                    <td width="10%"><button class="btn-hover color-8">5686</button></td>                    <td width="10%"><button class="btn-hover color-9">5743</button></td>                    <td width="10%"><button class="btn-hover color-10">5879,5852</button></td>                    <td width="10%"><button class="btn-hover color-11">5973</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6090,6047</button></td>                    <td width="10%"><button class="btn-hover color-3">6117</button></td>                    <td width="10%"><button class="btn-hover color-4">6291</button></td>                    <td width="10%"><button class="btn-hover color-5">6304</button></td>                    <td width="10%"><button class="btn-hover color-6">6472</button></td>                    <td width="10%"><button class="btn-hover color-7">6587</button></td>                    <td width="10%"><button class="btn-hover color-8">6680,6698</button></td>                    <td width="10%"><button class="btn-hover color-9">6721</button></td>                    <td width="10%"><button class="btn-hover color-10">6850</button></td>                    <td width="10%"><button class="btn-hover color-11">6929</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7013</button></td>                    <td width="10%"><button class="btn-hover color-3">7113</button></td>                    <td width="10%"><button class="btn-hover color-4">7278</button></td>                    <td width="10%"><button class="btn-hover color-5">7376</button></td>                    <td width="10%"><button class="btn-hover color-6">7488,7468</button></td>                    <td width="10%"><button class="btn-hover color-7">7541</button></td>                    <td width="10%"><button class="btn-hover color-8">7622</button></td>                    <td width="10%"><button class="btn-hover color-9">7734</button></td>                    <td width="10%"><button class="btn-hover color-10">7892,7832</button></td>                    <td width="10%"><button class="btn-hover color-11">7950</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8074</button></td>                    <td width="10%"><button class="btn-hover color-3">8194,8108</button></td>                    <td width="10%"><button class="btn-hover color-4">8206</button></td>                    <td width="10%"><button class="btn-hover color-5">8359</button></td>                    <td width="10%"><button class="btn-hover color-6">8425</button></td>                    <td width="10%"><button class="btn-hover color-7">8546</button></td>                    <td width="10%"><button class="btn-hover color-8">8692</button></td>                    <td width="10%"><button class="btn-hover color-9">8770</button></td>                    <td width="10%"><button class="btn-hover color-10">8883,8858</button></td>                    <td width="10%"><button class="btn-hover color-11">8977</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9036</button></td>                    <td width="10%"><button class="btn-hover color-3">9196</button></td>                    <td width="10%"><button class="btn-hover color-4">9270,9284</button></td>                    <td width="10%"><button class="btn-hover color-5">9320</button></td>                    <td width="10%"><button class="btn-hover color-6">9458</button></td>                    <td width="10%"><button class="btn-hover color-7">9597</button></td>                    <td width="10%"><button class="btn-hover color-8">9692</button></td>                    <td width="10%"><button class="btn-hover color-9">9744</button></td>                    <td width="10%"><button class="btn-hover color-10">9842</button></td>                    <td width="10%"><button class="btn-hover color-11">9948,9917</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0060</button></td>                    <td width="10%"><button class="btn-hover color-3">0142</button></td>                    <td width="10%"><button class="btn-hover color-4">0296</button></td>                    <td width="10%"><button class="btn-hover color-5">0368</button></td>                    <td width="10%"><button class="btn-hover color-6">0459</button></td>                    <td width="10%"><button class="btn-hover color-7">0527</button></td>                    <td width="10%"><button class="btn-hover color-8">0612</button></td>                    <td width="10%"><button class="btn-hover color-9">0711,0740</button></td>                    <td width="10%"><button class="btn-hover color-10">0878</button></td>                    <td width="10%"><button class="btn-hover color-11">0959</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1051</button></td>                    <td width="10%"><button class="btn-hover color-3">1160</button></td>                    <td width="10%"><button class="btn-hover color-4">1228</button></td>                    <td width="10%"><button class="btn-hover color-5">1343</button></td>                    <td width="10%"><button class="btn-hover color-6">1442</button></td>                    <td width="10%"><button class="btn-hover color-7">1522</button></td>                    <td width="10%"><button class="btn-hover color-8">1651</button></td>                    <td width="10%"><button class="btn-hover color-9">1700</button></td>                    <td width="10%"><button class="btn-hover color-10">1815,1801</button></td>                    <td width="10%"><button class="btn-hover color-11">1911,1903</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2064</button></td>                    <td width="10%"><button class="btn-hover color-3">2183</button></td>                    <td width="10%"><button class="btn-hover color-4">2280</button></td>                    <td width="10%"><button class="btn-hover color-5">2364,2358</button></td>                    <td width="10%"><button class="btn-hover color-6">2461</button></td>                    <td width="10%"><button class="btn-hover color-7">2545</button></td>                    <td width="10%"><button class="btn-hover color-8">2626</button></td>                    <td width="10%"><button class="btn-hover color-9">2792</button></td>                    <td width="10%"><button class="btn-hover color-10">2806</button></td>                    <td width="10%"><button class="btn-hover color-11">2982,2902</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3017,3070</button></td>                    <td width="10%"><button class="btn-hover color-3">3197</button></td>                    <td width="10%"><button class="btn-hover color-4">3243</button></td>                    <td width="10%"><button class="btn-hover color-5">3307</button></td>                    <td width="10%"><button class="btn-hover color-6">3483</button></td>                    <td width="10%"><button class="btn-hover color-7">3562</button></td>                    <td width="10%"><button class="btn-hover color-8">3661</button></td>                    <td width="10%"><button class="btn-hover color-9">3705</button></td>                    <td width="10%"><button class="btn-hover color-10">3864,3839</button></td>                    <td width="10%"><button class="btn-hover color-11">3998</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4010</button></td>                    <td width="10%"><button class="btn-hover color-3">4194</button></td>                    <td width="10%"><button class="btn-hover color-4">4245</button></td>                    <td width="10%"><button class="btn-hover color-5">4303</button></td>                    <td width="10%"><button class="btn-hover color-6">4463,4487</button></td>                    <td width="10%"><button class="btn-hover color-7">4528</button></td>                    <td width="10%"><button class="btn-hover color-8">4691</button></td>                    <td width="10%"><button class="btn-hover color-9">4783</button></td>                    <td width="10%"><button class="btn-hover color-10">4811,4821</button></td>                    <td width="10%"><button class="btn-hover color-11">4934</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5048</button></td>                    <td width="10%"><button class="btn-hover color-3">5175,5144</button></td>                    <td width="10%"><button class="btn-hover color-4">5268</button></td>                    <td width="10%"><button class="btn-hover color-5">5388</button></td>                    <td width="10%"><button class="btn-hover color-6">5413</button></td>                    <td width="10%"><button class="btn-hover color-7">5540</button></td>                    <td width="10%"><button class="btn-hover color-8">5647,5601</button></td>                    <td width="10%"><button class="btn-hover color-9">5730</button></td>                    <td width="10%"><button class="btn-hover color-10">5877</button></td>                    <td width="10%"><button class="btn-hover color-11">5912</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6051</button></td>                    <td width="10%"><button class="btn-hover color-3">6139</button></td>                    <td width="10%"><button class="btn-hover color-4">6283,6261</button></td>                    <td width="10%"><button class="btn-hover color-5">6301</button></td>                    <td width="10%"><button class="btn-hover color-6">6490</button></td>                    <td width="10%"><button class="btn-hover color-7">6546</button></td>                    <td width="10%"><button class="btn-hover color-8">6621,6627</button></td>                    <td width="10%"><button class="btn-hover color-9">6795</button></td>                    <td width="10%"><button class="btn-hover color-10">6881</button></td>                    <td width="10%"><button class="btn-hover color-11">6926</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7041</button></td>                    <td width="10%"><button class="btn-hover color-3">7123</button></td>                    <td width="10%"><button class="btn-hover color-4">7245</button></td>                    <td width="10%"><button class="btn-hover color-5">7337</button></td>                    <td width="10%"><button class="btn-hover color-6">7418</button></td>                    <td width="10%"><button class="btn-hover color-7">7542,7521</button></td>                    <td width="10%"><button class="btn-hover color-8">7609,7675</button></td>                    <td width="10%"><button class="btn-hover color-9">7765</button></td>                    <td width="10%"><button class="btn-hover color-10">7821</button></td>                    <td width="10%"><button class="btn-hover color-11">7966</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8059</button></td>                    <td width="10%"><button class="btn-hover color-3">8156</button></td>                    <td width="10%"><button class="btn-hover color-4">8295</button></td>                    <td width="10%"><button class="btn-hover color-5">8392</button></td>                    <td width="10%"><button class="btn-hover color-6">8427,8437</button></td>                    <td width="10%"><button class="btn-hover color-7">8561</button></td>                    <td width="10%"><button class="btn-hover color-8">8685</button></td>                    <td width="10%"><button class="btn-hover color-9">8759</button></td>                    <td width="10%"><button class="btn-hover color-10">8807</button></td>                    <td width="10%"><button class="btn-hover color-11">8982,8932</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9060</button></td>                    <td width="10%"><button class="btn-hover color-3">9191</button></td>                    <td width="10%"><button class="btn-hover color-4">9274</button></td>                    <td width="10%"><button class="btn-hover color-5">9384</button></td>                    <td width="10%"><button class="btn-hover color-6">9465,9413</button></td>                    <td width="10%"><button class="btn-hover color-7">9598</button></td>                    <td width="10%"><button class="btn-hover color-8">9635</button></td>                    <td width="10%"><button class="btn-hover color-9">9785</button></td>                    <td width="10%"><button class="btn-hover color-10">9843,9812</button></td>                    <td width="10%"><button class="btn-hover color-11">9979</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;09:30 am &nbsp;<a href="print_current_result.php?id=2&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;10:30 am &nbsp;<a href="print_current_result.php?id=6&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -7534,21 +7514,21 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0084</button></td>                    <td width="10%"><button class="btn-hover color-3">0108</button></td>                    <td width="10%"><button class="btn-hover color-4">0205</button></td>                    <td width="10%"><button class="btn-hover color-5">0399,0360,0349</button></td>                    <td width="10%"><button class="btn-hover color-6">0439</button></td>                    <td width="10%"><button class="btn-hover color-7">0592</button></td>                    <td width="10%"><button class="btn-hover color-8">0684</button></td>                    <td width="10%"><button class="btn-hover color-9">0755</button></td>                    <td width="10%"><button class="btn-hover color-10">0884</button></td>                    <td width="10%"><button class="btn-hover color-11">0992</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1037,1073,1077</button></td>                    <td width="10%"><button class="btn-hover color-3">1130</button></td>                    <td width="10%"><button class="btn-hover color-4">1265</button></td>                    <td width="10%"><button class="btn-hover color-5">1395</button></td>                    <td width="10%"><button class="btn-hover color-6">1497</button></td>                    <td width="10%"><button class="btn-hover color-7">1560</button></td>                    <td width="10%"><button class="btn-hover color-8">1628</button></td>                    <td width="10%"><button class="btn-hover color-9">1779</button></td>                    <td width="10%"><button class="btn-hover color-10">1891</button></td>                    <td width="10%"><button class="btn-hover color-11">1919</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2039</button></td>                    <td width="10%"><button class="btn-hover color-3">2196,2182</button></td>                    <td width="10%"><button class="btn-hover color-4">2275</button></td>                    <td width="10%"><button class="btn-hover color-5">2354,2367</button></td>                    <td width="10%"><button class="btn-hover color-6">2488</button></td>                    <td width="10%"><button class="btn-hover color-7">2543</button></td>                    <td width="10%"><button class="btn-hover color-8">2694</button></td>                    <td width="10%"><button class="btn-hover color-9">2747</button></td>                    <td width="10%"><button class="btn-hover color-10">2800</button></td>                    <td width="10%"><button class="btn-hover color-11">2978</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3057</button></td>                    <td width="10%"><button class="btn-hover color-3">3195</button></td>                    <td width="10%"><button class="btn-hover color-4">3239</button></td>                    <td width="10%"><button class="btn-hover color-5">3324</button></td>                    <td width="10%"><button class="btn-hover color-6">3446,3415</button></td>                    <td width="10%"><button class="btn-hover color-7">3501</button></td>                    <td width="10%"><button class="btn-hover color-8">3602,3661</button></td>                    <td width="10%"><button class="btn-hover color-9">3743</button></td>                    <td width="10%"><button class="btn-hover color-10">3812</button></td>                    <td width="10%"><button class="btn-hover color-11">3965</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4069</button></td>                    <td width="10%"><button class="btn-hover color-3">4192</button></td>                    <td width="10%"><button class="btn-hover color-4">4229</button></td>                    <td width="10%"><button class="btn-hover color-5">4331</button></td>                    <td width="10%"><button class="btn-hover color-6">4409</button></td>                    <td width="10%"><button class="btn-hover color-7">4597,4507</button></td>                    <td width="10%"><button class="btn-hover color-8">4659,4611</button></td>                    <td width="10%"><button class="btn-hover color-9">4753</button></td>                    <td width="10%"><button class="btn-hover color-10">4899</button></td>                    <td width="10%"><button class="btn-hover color-11">4927</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5037,5057</button></td>                    <td width="10%"><button class="btn-hover color-3">5171</button></td>                    <td width="10%"><button class="btn-hover color-4">5270</button></td>                    <td width="10%"><button class="btn-hover color-5">5337</button></td>                    <td width="10%"><button class="btn-hover color-6">5493</button></td>                    <td width="10%"><button class="btn-hover color-7">5562</button></td>                    <td width="10%"><button class="btn-hover color-8">5670</button></td>                    <td width="10%"><button class="btn-hover color-9">5704,5715</button></td>                    <td width="10%"><button class="btn-hover color-10">5864</button></td>                    <td width="10%"><button class="btn-hover color-11">5965</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6089,6073</button></td>                    <td width="10%"><button class="btn-hover color-3">6122</button></td>                    <td width="10%"><button class="btn-hover color-4">6201</button></td>                    <td width="10%"><button class="btn-hover color-5">6333</button></td>                    <td width="10%"><button class="btn-hover color-6">6439</button></td>                    <td width="10%"><button class="btn-hover color-7">6560</button></td>                    <td width="10%"><button class="btn-hover color-8">6602</button></td>                    <td width="10%"><button class="btn-hover color-9">6798</button></td>                    <td width="10%"><button class="btn-hover color-10">6836</button></td>                    <td width="10%"><button class="btn-hover color-11">6917,6991</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7004</button></td>                    <td width="10%"><button class="btn-hover color-3">7157</button></td>                    <td width="10%"><button class="btn-hover color-4">7217</button></td>                    <td width="10%"><button class="btn-hover color-5">7357,7390</button></td>                    <td width="10%"><button class="btn-hover color-6">7445</button></td>                    <td width="10%"><button class="btn-hover color-7">7575</button></td>                    <td width="10%"><button class="btn-hover color-8">7679</button></td>                    <td width="10%"><button class="btn-hover color-9">7798</button></td>                    <td width="10%"><button class="btn-hover color-10">7875</button></td>                    <td width="10%"><button class="btn-hover color-11">7967,7902</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8072</button></td>                    <td width="10%"><button class="btn-hover color-3">8182</button></td>                    <td width="10%"><button class="btn-hover color-4">8224</button></td>                    <td width="10%"><button class="btn-hover color-5">8301</button></td>                    <td width="10%"><button class="btn-hover color-6">8424</button></td>                    <td width="10%"><button class="btn-hover color-7">8588</button></td>                    <td width="10%"><button class="btn-hover color-8">8613,8651,8615</button></td>                    <td width="10%"><button class="btn-hover color-9">8742</button></td>                    <td width="10%"><button class="btn-hover color-10">8826</button></td>                    <td width="10%"><button class="btn-hover color-11">8979</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9011</button></td>                    <td width="10%"><button class="btn-hover color-3">9182</button></td>                    <td width="10%"><button class="btn-hover color-4">9203</button></td>                    <td width="10%"><button class="btn-hover color-5">9354</button></td>                    <td width="10%"><button class="btn-hover color-6">9442</button></td>                    <td width="10%"><button class="btn-hover color-7">9572,9566</button></td>                    <td width="10%"><button class="btn-hover color-8">9677,9607</button></td>                    <td width="10%"><button class="btn-hover color-9">9711</button></td>                    <td width="10%"><button class="btn-hover color-10">9841</button></td>                    <td width="10%"><button class="btn-hover color-11">9902</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0092</button></td>                    <td width="10%"><button class="btn-hover color-3">0189</button></td>                    <td width="10%"><button class="btn-hover color-4">0239</button></td>                    <td width="10%"><button class="btn-hover color-5">0312</button></td>                    <td width="10%"><button class="btn-hover color-6">0439,0416</button></td>                    <td width="10%"><button class="btn-hover color-7">0544</button></td>                    <td width="10%"><button class="btn-hover color-8">0694</button></td>                    <td width="10%"><button class="btn-hover color-9">0723</button></td>                    <td width="10%"><button class="btn-hover color-10">0807</button></td>                    <td width="10%"><button class="btn-hover color-11">0936</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1086</button></td>                    <td width="10%"><button class="btn-hover color-3">1136</button></td>                    <td width="10%"><button class="btn-hover color-4">1235,1293</button></td>                    <td width="10%"><button class="btn-hover color-5">1320</button></td>                    <td width="10%"><button class="btn-hover color-6">1469</button></td>                    <td width="10%"><button class="btn-hover color-7">1569,1529</button></td>                    <td width="10%"><button class="btn-hover color-8">1685</button></td>                    <td width="10%"><button class="btn-hover color-9">1788</button></td>                    <td width="10%"><button class="btn-hover color-10">1866</button></td>                    <td width="10%"><button class="btn-hover color-11">1933</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2067</button></td>                    <td width="10%"><button class="btn-hover color-3">2181,2173</button></td>                    <td width="10%"><button class="btn-hover color-4">2227</button></td>                    <td width="10%"><button class="btn-hover color-5">2339</button></td>                    <td width="10%"><button class="btn-hover color-6">2403</button></td>                    <td width="10%"><button class="btn-hover color-7">2551,2573</button></td>                    <td width="10%"><button class="btn-hover color-8">2688</button></td>                    <td width="10%"><button class="btn-hover color-9">2728</button></td>                    <td width="10%"><button class="btn-hover color-10">2831</button></td>                    <td width="10%"><button class="btn-hover color-11">2971</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3096</button></td>                    <td width="10%"><button class="btn-hover color-3">3190,3106</button></td>                    <td width="10%"><button class="btn-hover color-4">3247</button></td>                    <td width="10%"><button class="btn-hover color-5">3376</button></td>                    <td width="10%"><button class="btn-hover color-6">3425</button></td>                    <td width="10%"><button class="btn-hover color-7">3547</button></td>                    <td width="10%"><button class="btn-hover color-8">3609,3601</button></td>                    <td width="10%"><button class="btn-hover color-9">3777</button></td>                    <td width="10%"><button class="btn-hover color-10">3890</button></td>                    <td width="10%"><button class="btn-hover color-11">3981</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4004</button></td>                    <td width="10%"><button class="btn-hover color-3">4135</button></td>                    <td width="10%"><button class="btn-hover color-4">4274</button></td>                    <td width="10%"><button class="btn-hover color-5">4309</button></td>                    <td width="10%"><button class="btn-hover color-6">4438</button></td>                    <td width="10%"><button class="btn-hover color-7">4525</button></td>                    <td width="10%"><button class="btn-hover color-8">4678,4601</button></td>                    <td width="10%"><button class="btn-hover color-9">4785</button></td>                    <td width="10%"><button class="btn-hover color-10">4833,4842</button></td>                    <td width="10%"><button class="btn-hover color-11">4903</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5008</button></td>                    <td width="10%"><button class="btn-hover color-3">5120,5110</button></td>                    <td width="10%"><button class="btn-hover color-4">5262</button></td>                    <td width="10%"><button class="btn-hover color-5">5395</button></td>                    <td width="10%"><button class="btn-hover color-6">5405</button></td>                    <td width="10%"><button class="btn-hover color-7">5596,5586</button></td>                    <td width="10%"><button class="btn-hover color-8">5691</button></td>                    <td width="10%"><button class="btn-hover color-9">5789</button></td>                    <td width="10%"><button class="btn-hover color-10">5842</button></td>                    <td width="10%"><button class="btn-hover color-11">5935</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6003</button></td>                    <td width="10%"><button class="btn-hover color-3">6109</button></td>                    <td width="10%"><button class="btn-hover color-4">6203</button></td>                    <td width="10%"><button class="btn-hover color-5">6313</button></td>                    <td width="10%"><button class="btn-hover color-6">6415</button></td>                    <td width="10%"><button class="btn-hover color-7">6528</button></td>                    <td width="10%"><button class="btn-hover color-8">6661</button></td>                    <td width="10%"><button class="btn-hover color-9">6738,6713,6720</button></td>                    <td width="10%"><button class="btn-hover color-10">6880</button></td>                    <td width="10%"><button class="btn-hover color-11">6981</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7052</button></td>                    <td width="10%"><button class="btn-hover color-3">7140</button></td>                    <td width="10%"><button class="btn-hover color-4">7267</button></td>                    <td width="10%"><button class="btn-hover color-5">7312</button></td>                    <td width="10%"><button class="btn-hover color-6">7459,7431</button></td>                    <td width="10%"><button class="btn-hover color-7">7537</button></td>                    <td width="10%"><button class="btn-hover color-8">7662</button></td>                    <td width="10%"><button class="btn-hover color-9">7721</button></td>                    <td width="10%"><button class="btn-hover color-10">7809</button></td>                    <td width="10%"><button class="btn-hover color-11">7913,7920</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8064</button></td>                    <td width="10%"><button class="btn-hover color-3">8148</button></td>                    <td width="10%"><button class="btn-hover color-4">8286</button></td>                    <td width="10%"><button class="btn-hover color-5">8396</button></td>                    <td width="10%"><button class="btn-hover color-6">8471</button></td>                    <td width="10%"><button class="btn-hover color-7">8514,8513</button></td>                    <td width="10%"><button class="btn-hover color-8">8655</button></td>                    <td width="10%"><button class="btn-hover color-9">8727</button></td>                    <td width="10%"><button class="btn-hover color-10">8825,8821</button></td>                    <td width="10%"><button class="btn-hover color-11">8936</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9045</button></td>                    <td width="10%"><button class="btn-hover color-3">9176</button></td>                    <td width="10%"><button class="btn-hover color-4">9201</button></td>                    <td width="10%"><button class="btn-hover color-5">9366</button></td>                    <td width="10%"><button class="btn-hover color-6">9463,9424</button></td>                    <td width="10%"><button class="btn-hover color-7">9529</button></td>                    <td width="10%"><button class="btn-hover color-8">9600,9674</button></td>                    <td width="10%"><button class="btn-hover color-9">9775</button></td>                    <td width="10%"><button class="btn-hover color-10">9809</button></td>                    <td width="10%"><button class="btn-hover color-11">9987</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>    
                            
-                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;25-01-2023&nbsp;09:15 am &nbsp;<a href="print_current_result.php?id=1&amp;start_date=2023-01-25" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;10:15 am &nbsp;<a href="print_current_result.php?id=5&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
                 <div class="table-responsive">
                                     <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
                                         <tbody>
@@ -7671,16 +7651,564 @@ function wait(ms) {
         
         
         
-                    <tr>                    <td width="10%"><button class="btn-hover color-2">0097</button></td>                    <td width="10%"><button class="btn-hover color-3">0177</button></td>                    <td width="10%"><button class="btn-hover color-4">0219</button></td>                    <td width="10%"><button class="btn-hover color-5">0372,0362</button></td>                    <td width="10%"><button class="btn-hover color-6">0419</button></td>                    <td width="10%"><button class="btn-hover color-7">0560</button></td>                    <td width="10%"><button class="btn-hover color-8">0677</button></td>                    <td width="10%"><button class="btn-hover color-9">0731</button></td>                    <td width="10%"><button class="btn-hover color-10">0866,0870</button></td>                    <td width="10%"><button class="btn-hover color-11">0954</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1075,1073</button></td>                    <td width="10%"><button class="btn-hover color-3">1177</button></td>                    <td width="10%"><button class="btn-hover color-4">1294</button></td>                    <td width="10%"><button class="btn-hover color-5">1382</button></td>                    <td width="10%"><button class="btn-hover color-6">1402</button></td>                    <td width="10%"><button class="btn-hover color-7">1566</button></td>                    <td width="10%"><button class="btn-hover color-8">1645</button></td>                    <td width="10%"><button class="btn-hover color-9">1757,1739</button></td>                    <td width="10%"><button class="btn-hover color-10">1874</button></td>                    <td width="10%"><button class="btn-hover color-11">1974</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2031</button></td>                    <td width="10%"><button class="btn-hover color-3">2175,2155</button></td>                    <td width="10%"><button class="btn-hover color-4">2284</button></td>                    <td width="10%"><button class="btn-hover color-5">2389</button></td>                    <td width="10%"><button class="btn-hover color-6">2447</button></td>                    <td width="10%"><button class="btn-hover color-7">2527</button></td>                    <td width="10%"><button class="btn-hover color-8">2635</button></td>                    <td width="10%"><button class="btn-hover color-9">2776</button></td>                    <td width="10%"><button class="btn-hover color-10">2802,2803</button></td>                    <td width="10%"><button class="btn-hover color-11">2972</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3028</button></td>                    <td width="10%"><button class="btn-hover color-3">3183</button></td>                    <td width="10%"><button class="btn-hover color-4">3243</button></td>                    <td width="10%"><button class="btn-hover color-5">3349</button></td>                    <td width="10%"><button class="btn-hover color-6">3462,3480,3422</button></td>                    <td width="10%"><button class="btn-hover color-7">3547</button></td>                    <td width="10%"><button class="btn-hover color-8">3606</button></td>                    <td width="10%"><button class="btn-hover color-9">3743</button></td>                    <td width="10%"><button class="btn-hover color-10">3855</button></td>                    <td width="10%"><button class="btn-hover color-11">3910</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4024</button></td>                    <td width="10%"><button class="btn-hover color-3">4147</button></td>                    <td width="10%"><button class="btn-hover color-4">4286,4296</button></td>                    <td width="10%"><button class="btn-hover color-5">4386</button></td>                    <td width="10%"><button class="btn-hover color-6">4449,4465</button></td>                    <td width="10%"><button class="btn-hover color-7">4549</button></td>                    <td width="10%"><button class="btn-hover color-8">4652</button></td>                    <td width="10%"><button class="btn-hover color-9">4782</button></td>                    <td width="10%"><button class="btn-hover color-10">4801</button></td>                    <td width="10%"><button class="btn-hover color-11">4922</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5032</button></td>                    <td width="10%"><button class="btn-hover color-3">5141</button></td>                    <td width="10%"><button class="btn-hover color-4">5279</button></td>                    <td width="10%"><button class="btn-hover color-5">5369</button></td>                    <td width="10%"><button class="btn-hover color-6">5485</button></td>                    <td width="10%"><button class="btn-hover color-7">5524</button></td>                    <td width="10%"><button class="btn-hover color-8">5627</button></td>                    <td width="10%"><button class="btn-hover color-9">5775</button></td>                    <td width="10%"><button class="btn-hover color-10">5841,5814,5857</button></td>                    <td width="10%"><button class="btn-hover color-11">5917</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6006</button></td>                    <td width="10%"><button class="btn-hover color-3">6152</button></td>                    <td width="10%"><button class="btn-hover color-4">6203,6232</button></td>                    <td width="10%"><button class="btn-hover color-5">6325</button></td>                    <td width="10%"><button class="btn-hover color-6">6408</button></td>                    <td width="10%"><button class="btn-hover color-7">6553</button></td>                    <td width="10%"><button class="btn-hover color-8">6607</button></td>                    <td width="10%"><button class="btn-hover color-9">6731</button></td>                    <td width="10%"><button class="btn-hover color-10">6884</button></td>                    <td width="10%"><button class="btn-hover color-11">6939,6942</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7030</button></td>                    <td width="10%"><button class="btn-hover color-3">7191</button></td>                    <td width="10%"><button class="btn-hover color-4">7290</button></td>                    <td width="10%"><button class="btn-hover color-5">7398</button></td>                    <td width="10%"><button class="btn-hover color-6">7413</button></td>                    <td width="10%"><button class="btn-hover color-7">7574</button></td>                    <td width="10%"><button class="btn-hover color-8">7684</button></td>                    <td width="10%"><button class="btn-hover color-9">7792,7761</button></td>                    <td width="10%"><button class="btn-hover color-10">7859,7893</button></td>                    <td width="10%"><button class="btn-hover color-11">7920</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8008</button></td>                    <td width="10%"><button class="btn-hover color-3">8158,8151</button></td>                    <td width="10%"><button class="btn-hover color-4">8257</button></td>                    <td width="10%"><button class="btn-hover color-5">8378</button></td>                    <td width="10%"><button class="btn-hover color-6">8489</button></td>                    <td width="10%"><button class="btn-hover color-7">8568</button></td>                    <td width="10%"><button class="btn-hover color-8">8647</button></td>                    <td width="10%"><button class="btn-hover color-9">8739,8704</button></td>                    <td width="10%"><button class="btn-hover color-10">8878</button></td>                    <td width="10%"><button class="btn-hover color-11">8903</button></td>                   
-                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9043</button></td>                    <td width="10%"><button class="btn-hover color-3">9169</button></td>                    <td width="10%"><button class="btn-hover color-4">9270</button></td>                    <td width="10%"><button class="btn-hover color-5">9381</button></td>                    <td width="10%"><button class="btn-hover color-6">9488</button></td>                    <td width="10%"><button class="btn-hover color-7">9532,9548</button></td>                    <td width="10%"><button class="btn-hover color-8">9678</button></td>                    <td width="10%"><button class="btn-hover color-9">9752,9795</button></td>                    <td width="10%"><button class="btn-hover color-10">9816</button></td>                    <td width="10%"><button class="btn-hover color-11">9912</button></td>                   
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0030</button></td>                    <td width="10%"><button class="btn-hover color-3">0180</button></td>                    <td width="10%"><button class="btn-hover color-4">0285</button></td>                    <td width="10%"><button class="btn-hover color-5">0374</button></td>                    <td width="10%"><button class="btn-hover color-6">0446,0460</button></td>                    <td width="10%"><button class="btn-hover color-7">0578</button></td>                    <td width="10%"><button class="btn-hover color-8">0607</button></td>                    <td width="10%"><button class="btn-hover color-9">0741</button></td>                    <td width="10%"><button class="btn-hover color-10">0809</button></td>                    <td width="10%"><button class="btn-hover color-11">0917</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1033</button></td>                    <td width="10%"><button class="btn-hover color-3">1193</button></td>                    <td width="10%"><button class="btn-hover color-4">1276</button></td>                    <td width="10%"><button class="btn-hover color-5">1302</button></td>                    <td width="10%"><button class="btn-hover color-6">1407,1487</button></td>                    <td width="10%"><button class="btn-hover color-7">1504</button></td>                    <td width="10%"><button class="btn-hover color-8">1640</button></td>                    <td width="10%"><button class="btn-hover color-9">1760</button></td>                    <td width="10%"><button class="btn-hover color-10">1883,1877</button></td>                    <td width="10%"><button class="btn-hover color-11">1916</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2016</button></td>                    <td width="10%"><button class="btn-hover color-3">2185</button></td>                    <td width="10%"><button class="btn-hover color-4">2266</button></td>                    <td width="10%"><button class="btn-hover color-5">2304</button></td>                    <td width="10%"><button class="btn-hover color-6">2479,2472</button></td>                    <td width="10%"><button class="btn-hover color-7">2550</button></td>                    <td width="10%"><button class="btn-hover color-8">2636,2665</button></td>                    <td width="10%"><button class="btn-hover color-9">2757</button></td>                    <td width="10%"><button class="btn-hover color-10">2864</button></td>                    <td width="10%"><button class="btn-hover color-11">2990</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3019</button></td>                    <td width="10%"><button class="btn-hover color-3">3136</button></td>                    <td width="10%"><button class="btn-hover color-4">3237,3207</button></td>                    <td width="10%"><button class="btn-hover color-5">3371</button></td>                    <td width="10%"><button class="btn-hover color-6">3425</button></td>                    <td width="10%"><button class="btn-hover color-7">3578</button></td>                    <td width="10%"><button class="btn-hover color-8">3636</button></td>                    <td width="10%"><button class="btn-hover color-9">3722,3749</button></td>                    <td width="10%"><button class="btn-hover color-10">3869</button></td>                    <td width="10%"><button class="btn-hover color-11">3950</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4096</button></td>                    <td width="10%"><button class="btn-hover color-3">4146</button></td>                    <td width="10%"><button class="btn-hover color-4">4277</button></td>                    <td width="10%"><button class="btn-hover color-5">4342</button></td>                    <td width="10%"><button class="btn-hover color-6">4419,4411</button></td>                    <td width="10%"><button class="btn-hover color-7">4554</button></td>                    <td width="10%"><button class="btn-hover color-8">4669</button></td>                    <td width="10%"><button class="btn-hover color-9">4750</button></td>                    <td width="10%"><button class="btn-hover color-10">4848</button></td>                    <td width="10%"><button class="btn-hover color-11">4948,4944</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5086</button></td>                    <td width="10%"><button class="btn-hover color-3">5129,5118</button></td>                    <td width="10%"><button class="btn-hover color-4">5259</button></td>                    <td width="10%"><button class="btn-hover color-5">5337</button></td>                    <td width="10%"><button class="btn-hover color-6">5449</button></td>                    <td width="10%"><button class="btn-hover color-7">5531</button></td>                    <td width="10%"><button class="btn-hover color-8">5676</button></td>                    <td width="10%"><button class="btn-hover color-9">5765</button></td>                    <td width="10%"><button class="btn-hover color-10">5881</button></td>                    <td width="10%"><button class="btn-hover color-11">5950,5910</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6023</button></td>                    <td width="10%"><button class="btn-hover color-3">6163</button></td>                    <td width="10%"><button class="btn-hover color-4">6261</button></td>                    <td width="10%"><button class="btn-hover color-5">6329</button></td>                    <td width="10%"><button class="btn-hover color-6">6430</button></td>                    <td width="10%"><button class="btn-hover color-7">6536</button></td>                    <td width="10%"><button class="btn-hover color-8">6651,6625,6674</button></td>                    <td width="10%"><button class="btn-hover color-9">6706</button></td>                    <td width="10%"><button class="btn-hover color-10">6866</button></td>                    <td width="10%"><button class="btn-hover color-11">6960</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7044</button></td>                    <td width="10%"><button class="btn-hover color-3">7103</button></td>                    <td width="10%"><button class="btn-hover color-4">7250</button></td>                    <td width="10%"><button class="btn-hover color-5">7327</button></td>                    <td width="10%"><button class="btn-hover color-6">7430,7414</button></td>                    <td width="10%"><button class="btn-hover color-7">7532</button></td>                    <td width="10%"><button class="btn-hover color-8">7602</button></td>                    <td width="10%"><button class="btn-hover color-9">7790,7759</button></td>                    <td width="10%"><button class="btn-hover color-10">7860</button></td>                    <td width="10%"><button class="btn-hover color-11">7964</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8050,8024</button></td>                    <td width="10%"><button class="btn-hover color-3">8199</button></td>                    <td width="10%"><button class="btn-hover color-4">8249</button></td>                    <td width="10%"><button class="btn-hover color-5">8384</button></td>                    <td width="10%"><button class="btn-hover color-6">8456</button></td>                    <td width="10%"><button class="btn-hover color-7">8566</button></td>                    <td width="10%"><button class="btn-hover color-8">8633</button></td>                    <td width="10%"><button class="btn-hover color-9">8712,8782</button></td>                    <td width="10%"><button class="btn-hover color-10">8817</button></td>                    <td width="10%"><button class="btn-hover color-11">8947</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9084</button></td>                    <td width="10%"><button class="btn-hover color-3">9126</button></td>                    <td width="10%"><button class="btn-hover color-4">9255</button></td>                    <td width="10%"><button class="btn-hover color-5">9389</button></td>                    <td width="10%"><button class="btn-hover color-6">9466</button></td>                    <td width="10%"><button class="btn-hover color-7">9567,9538</button></td>                    <td width="10%"><button class="btn-hover color-8">9683,9618</button></td>                    <td width="10%"><button class="btn-hover color-9">9764</button></td>                    <td width="10%"><button class="btn-hover color-10">9820</button></td>                    <td width="10%"><button class="btn-hover color-11">9998</button></td>                   
+                </tr>  </tbody>
+                                    </table>
+                                </div>    
+                           
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;10:00 am &nbsp;<a href="print_current_result.php?id=4&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <div class="table-responsive">
+                                    <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
+                                        <tbody>
+                     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0075,0020</button></td>                    <td width="10%"><button class="btn-hover color-3">0132,0105</button></td>                    <td width="10%"><button class="btn-hover color-4">0203</button></td>                    <td width="10%"><button class="btn-hover color-5">0317</button></td>                    <td width="10%"><button class="btn-hover color-6">0422</button></td>                    <td width="10%"><button class="btn-hover color-7">0522</button></td>                    <td width="10%"><button class="btn-hover color-8">0673</button></td>                    <td width="10%"><button class="btn-hover color-9">0766</button></td>                    <td width="10%"><button class="btn-hover color-10">0869</button></td>                    <td width="10%"><button class="btn-hover color-11">0929</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1085,1033</button></td>                    <td width="10%"><button class="btn-hover color-3">1196</button></td>                    <td width="10%"><button class="btn-hover color-4">1217</button></td>                    <td width="10%"><button class="btn-hover color-5">1354</button></td>                    <td width="10%"><button class="btn-hover color-6">1472</button></td>                    <td width="10%"><button class="btn-hover color-7">1535,1577</button></td>                    <td width="10%"><button class="btn-hover color-8">1652</button></td>                    <td width="10%"><button class="btn-hover color-9">1734</button></td>                    <td width="10%"><button class="btn-hover color-10">1871</button></td>                    <td width="10%"><button class="btn-hover color-11">1927</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2046</button></td>                    <td width="10%"><button class="btn-hover color-3">2128</button></td>                    <td width="10%"><button class="btn-hover color-4">2261</button></td>                    <td width="10%"><button class="btn-hover color-5">2320</button></td>                    <td width="10%"><button class="btn-hover color-6">2462</button></td>                    <td width="10%"><button class="btn-hover color-7">2521</button></td>                    <td width="10%"><button class="btn-hover color-8">2624</button></td>                    <td width="10%"><button class="btn-hover color-9">2703,2702</button></td>                    <td width="10%"><button class="btn-hover color-10">2841</button></td>                    <td width="10%"><button class="btn-hover color-11">2931,2971</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3000</button></td>                    <td width="10%"><button class="btn-hover color-3">3109</button></td>                    <td width="10%"><button class="btn-hover color-4">3233</button></td>                    <td width="10%"><button class="btn-hover color-5">3360</button></td>                    <td width="10%"><button class="btn-hover color-6">3457</button></td>                    <td width="10%"><button class="btn-hover color-7">3591</button></td>                    <td width="10%"><button class="btn-hover color-8">3635,3680</button></td>                    <td width="10%"><button class="btn-hover color-9">3724,3726</button></td>                    <td width="10%"><button class="btn-hover color-10">3837</button></td>                    <td width="10%"><button class="btn-hover color-11">3986</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4081</button></td>                    <td width="10%"><button class="btn-hover color-3">4116</button></td>                    <td width="10%"><button class="btn-hover color-4">4299</button></td>                    <td width="10%"><button class="btn-hover color-5">4366</button></td>                    <td width="10%"><button class="btn-hover color-6">4486</button></td>                    <td width="10%"><button class="btn-hover color-7">4547</button></td>                    <td width="10%"><button class="btn-hover color-8">4684,4647</button></td>                    <td width="10%"><button class="btn-hover color-9">4759,4769</button></td>                    <td width="10%"><button class="btn-hover color-10">4824</button></td>                    <td width="10%"><button class="btn-hover color-11">4974</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5053</button></td>                    <td width="10%"><button class="btn-hover color-3">5181</button></td>                    <td width="10%"><button class="btn-hover color-4">5233</button></td>                    <td width="10%"><button class="btn-hover color-5">5320,5316</button></td>                    <td width="10%"><button class="btn-hover color-6">5474</button></td>                    <td width="10%"><button class="btn-hover color-7">5524</button></td>                    <td width="10%"><button class="btn-hover color-8">5623,5656</button></td>                    <td width="10%"><button class="btn-hover color-9">5720</button></td>                    <td width="10%"><button class="btn-hover color-10">5888</button></td>                    <td width="10%"><button class="btn-hover color-11">5950</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6018</button></td>                    <td width="10%"><button class="btn-hover color-3">6188</button></td>                    <td width="10%"><button class="btn-hover color-4">6276</button></td>                    <td width="10%"><button class="btn-hover color-5">6394</button></td>                    <td width="10%"><button class="btn-hover color-6">6402</button></td>                    <td width="10%"><button class="btn-hover color-7">6503</button></td>                    <td width="10%"><button class="btn-hover color-8">6689,6615</button></td>                    <td width="10%"><button class="btn-hover color-9">6725,6710</button></td>                    <td width="10%"><button class="btn-hover color-10">6823</button></td>                    <td width="10%"><button class="btn-hover color-11">6915</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7051</button></td>                    <td width="10%"><button class="btn-hover color-3">7194</button></td>                    <td width="10%"><button class="btn-hover color-4">7268,7253,7248</button></td>                    <td width="10%"><button class="btn-hover color-5">7362</button></td>                    <td width="10%"><button class="btn-hover color-6">7416</button></td>                    <td width="10%"><button class="btn-hover color-7">7517</button></td>                    <td width="10%"><button class="btn-hover color-8">7628</button></td>                    <td width="10%"><button class="btn-hover color-9">7747</button></td>                    <td width="10%"><button class="btn-hover color-10">7871</button></td>                    <td width="10%"><button class="btn-hover color-11">7957</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8061</button></td>                    <td width="10%"><button class="btn-hover color-3">8161</button></td>                    <td width="10%"><button class="btn-hover color-4">8210,8275</button></td>                    <td width="10%"><button class="btn-hover color-5">8392</button></td>                    <td width="10%"><button class="btn-hover color-6">8498</button></td>                    <td width="10%"><button class="btn-hover color-7">8582</button></td>                    <td width="10%"><button class="btn-hover color-8">8638</button></td>                    <td width="10%"><button class="btn-hover color-9">8717</button></td>                    <td width="10%"><button class="btn-hover color-10">8807,8805</button></td>                    <td width="10%"><button class="btn-hover color-11">8908</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9040</button></td>                    <td width="10%"><button class="btn-hover color-3">9146</button></td>                    <td width="10%"><button class="btn-hover color-4">9251</button></td>                    <td width="10%"><button class="btn-hover color-5">9398,9355</button></td>                    <td width="10%"><button class="btn-hover color-6">9477</button></td>                    <td width="10%"><button class="btn-hover color-7">9528</button></td>                    <td width="10%"><button class="btn-hover color-8">9667,9670</button></td>                    <td width="10%"><button class="btn-hover color-9">9759</button></td>                    <td width="10%"><button class="btn-hover color-10">9860</button></td>                    <td width="10%"><button class="btn-hover color-11">9900</button></td>                   
+                </tr>  </tbody>
+                                    </table>
+                                </div>    
+                           
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;09:45 am &nbsp;<a href="print_current_result.php?id=3&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <div class="table-responsive">
+                                    <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
+                                        <tbody>
+                     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0023</button></td>                    <td width="10%"><button class="btn-hover color-3">0107</button></td>                    <td width="10%"><button class="btn-hover color-4">0267,0289</button></td>                    <td width="10%"><button class="btn-hover color-5">0398</button></td>                    <td width="10%"><button class="btn-hover color-6">0409</button></td>                    <td width="10%"><button class="btn-hover color-7">0548</button></td>                    <td width="10%"><button class="btn-hover color-8">0621</button></td>                    <td width="10%"><button class="btn-hover color-9">0793,0764</button></td>                    <td width="10%"><button class="btn-hover color-10">0890</button></td>                    <td width="10%"><button class="btn-hover color-11">0987</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1014</button></td>                    <td width="10%"><button class="btn-hover color-3">1114</button></td>                    <td width="10%"><button class="btn-hover color-4">1297</button></td>                    <td width="10%"><button class="btn-hover color-5">1303</button></td>                    <td width="10%"><button class="btn-hover color-6">1494,1454</button></td>                    <td width="10%"><button class="btn-hover color-7">1573</button></td>                    <td width="10%"><button class="btn-hover color-8">1691,1615</button></td>                    <td width="10%"><button class="btn-hover color-9">1712</button></td>                    <td width="10%"><button class="btn-hover color-10">1891</button></td>                    <td width="10%"><button class="btn-hover color-11">1997</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2077</button></td>                    <td width="10%"><button class="btn-hover color-3">2130,2188</button></td>                    <td width="10%"><button class="btn-hover color-4">2222</button></td>                    <td width="10%"><button class="btn-hover color-5">2388,2380</button></td>                    <td width="10%"><button class="btn-hover color-6">2466</button></td>                    <td width="10%"><button class="btn-hover color-7">2543</button></td>                    <td width="10%"><button class="btn-hover color-8">2672</button></td>                    <td width="10%"><button class="btn-hover color-9">2788</button></td>                    <td width="10%"><button class="btn-hover color-10">2896</button></td>                    <td width="10%"><button class="btn-hover color-11">2986</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3028</button></td>                    <td width="10%"><button class="btn-hover color-3">3130</button></td>                    <td width="10%"><button class="btn-hover color-4">3293,3224</button></td>                    <td width="10%"><button class="btn-hover color-5">3322</button></td>                    <td width="10%"><button class="btn-hover color-6">3443</button></td>                    <td width="10%"><button class="btn-hover color-7">3582</button></td>                    <td width="10%"><button class="btn-hover color-8">3649</button></td>                    <td width="10%"><button class="btn-hover color-9">3739,3743</button></td>                    <td width="10%"><button class="btn-hover color-10">3835</button></td>                    <td width="10%"><button class="btn-hover color-11">3942</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4000</button></td>                    <td width="10%"><button class="btn-hover color-3">4188</button></td>                    <td width="10%"><button class="btn-hover color-4">4212</button></td>                    <td width="10%"><button class="btn-hover color-5">4366,4332</button></td>                    <td width="10%"><button class="btn-hover color-6">4404</button></td>                    <td width="10%"><button class="btn-hover color-7">4560</button></td>                    <td width="10%"><button class="btn-hover color-8">4657,4605</button></td>                    <td width="10%"><button class="btn-hover color-9">4752</button></td>                    <td width="10%"><button class="btn-hover color-10">4824</button></td>                    <td width="10%"><button class="btn-hover color-11">4971</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5056,5072</button></td>                    <td width="10%"><button class="btn-hover color-3">5159</button></td>                    <td width="10%"><button class="btn-hover color-4">5269</button></td>                    <td width="10%"><button class="btn-hover color-5">5359</button></td>                    <td width="10%"><button class="btn-hover color-6">5452</button></td>                    <td width="10%"><button class="btn-hover color-7">5550</button></td>                    <td width="10%"><button class="btn-hover color-8">5635,5605</button></td>                    <td width="10%"><button class="btn-hover color-9">5723</button></td>                    <td width="10%"><button class="btn-hover color-10">5863</button></td>                    <td width="10%"><button class="btn-hover color-11">5925</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6033</button></td>                    <td width="10%"><button class="btn-hover color-3">6141</button></td>                    <td width="10%"><button class="btn-hover color-4">6253</button></td>                    <td width="10%"><button class="btn-hover color-5">6320</button></td>                    <td width="10%"><button class="btn-hover color-6">6435</button></td>                    <td width="10%"><button class="btn-hover color-7">6517</button></td>                    <td width="10%"><button class="btn-hover color-8">6663,6687</button></td>                    <td width="10%"><button class="btn-hover color-9">6755</button></td>                    <td width="10%"><button class="btn-hover color-10">6808</button></td>                    <td width="10%"><button class="btn-hover color-11">6948,6937</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7087</button></td>                    <td width="10%"><button class="btn-hover color-3">7181</button></td>                    <td width="10%"><button class="btn-hover color-4">7212</button></td>                    <td width="10%"><button class="btn-hover color-5">7324</button></td>                    <td width="10%"><button class="btn-hover color-6">7412</button></td>                    <td width="10%"><button class="btn-hover color-7">7595,7538</button></td>                    <td width="10%"><button class="btn-hover color-8">7607</button></td>                    <td width="10%"><button class="btn-hover color-9">7735</button></td>                    <td width="10%"><button class="btn-hover color-10">7831</button></td>                    <td width="10%"><button class="btn-hover color-11">7968,7987</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8095</button></td>                    <td width="10%"><button class="btn-hover color-3">8120</button></td>                    <td width="10%"><button class="btn-hover color-4">8287</button></td>                    <td width="10%"><button class="btn-hover color-5">8324</button></td>                    <td width="10%"><button class="btn-hover color-6">8463</button></td>                    <td width="10%"><button class="btn-hover color-7">8593</button></td>                    <td width="10%"><button class="btn-hover color-8">8621</button></td>                    <td width="10%"><button class="btn-hover color-9">8792</button></td>                    <td width="10%"><button class="btn-hover color-10">8868,8894</button></td>                    <td width="10%"><button class="btn-hover color-11">8905,8957</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9091</button></td>                    <td width="10%"><button class="btn-hover color-3">9115</button></td>                    <td width="10%"><button class="btn-hover color-4">9226,9239</button></td>                    <td width="10%"><button class="btn-hover color-5">9386</button></td>                    <td width="10%"><button class="btn-hover color-6">9497</button></td>                    <td width="10%"><button class="btn-hover color-7">9502</button></td>                    <td width="10%"><button class="btn-hover color-8">9608</button></td>                    <td width="10%"><button class="btn-hover color-9">9748</button></td>                    <td width="10%"><button class="btn-hover color-10">9823</button></td>                    <td width="10%"><button class="btn-hover color-11">9988,9987</button></td>                   
+                </tr>  </tbody>
+                                    </table>
+                                </div>    
+                           
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;09:30 am &nbsp;<a href="print_current_result.php?id=2&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <div class="table-responsive">
+                                    <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
+                                        <tbody>
+                     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0076,0068</button></td>                    <td width="10%"><button class="btn-hover color-3">0174</button></td>                    <td width="10%"><button class="btn-hover color-4">0214</button></td>                    <td width="10%"><button class="btn-hover color-5">0379</button></td>                    <td width="10%"><button class="btn-hover color-6">0408</button></td>                    <td width="10%"><button class="btn-hover color-7">0525</button></td>                    <td width="10%"><button class="btn-hover color-8">0692</button></td>                    <td width="10%"><button class="btn-hover color-9">0728</button></td>                    <td width="10%"><button class="btn-hover color-10">0849</button></td>                    <td width="10%"><button class="btn-hover color-11">0999,0912</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1043</button></td>                    <td width="10%"><button class="btn-hover color-3">1160,1112</button></td>                    <td width="10%"><button class="btn-hover color-4">1210</button></td>                    <td width="10%"><button class="btn-hover color-5">1384</button></td>                    <td width="10%"><button class="btn-hover color-6">1463</button></td>                    <td width="10%"><button class="btn-hover color-7">1521</button></td>                    <td width="10%"><button class="btn-hover color-8">1676</button></td>                    <td width="10%"><button class="btn-hover color-9">1765,1783</button></td>                    <td width="10%"><button class="btn-hover color-10">1879</button></td>                    <td width="10%"><button class="btn-hover color-11">1949</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2001</button></td>                    <td width="10%"><button class="btn-hover color-3">2152</button></td>                    <td width="10%"><button class="btn-hover color-4">2276</button></td>                    <td width="10%"><button class="btn-hover color-5">2368</button></td>                    <td width="10%"><button class="btn-hover color-6">2443,2459</button></td>                    <td width="10%"><button class="btn-hover color-7">2570</button></td>                    <td width="10%"><button class="btn-hover color-8">2639</button></td>                    <td width="10%"><button class="btn-hover color-9">2703</button></td>                    <td width="10%"><button class="btn-hover color-10">2879,2874</button></td>                    <td width="10%"><button class="btn-hover color-11">2942</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3069</button></td>                    <td width="10%"><button class="btn-hover color-3">3112</button></td>                    <td width="10%"><button class="btn-hover color-4">3299</button></td>                    <td width="10%"><button class="btn-hover color-5">3395</button></td>                    <td width="10%"><button class="btn-hover color-6">3490,3440</button></td>                    <td width="10%"><button class="btn-hover color-7">3540</button></td>                    <td width="10%"><button class="btn-hover color-8">3650</button></td>                    <td width="10%"><button class="btn-hover color-9">3793</button></td>                    <td width="10%"><button class="btn-hover color-10">3849</button></td>                    <td width="10%"><button class="btn-hover color-11">3904,3907</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4085</button></td>                    <td width="10%"><button class="btn-hover color-3">4141</button></td>                    <td width="10%"><button class="btn-hover color-4">4216</button></td>                    <td width="10%"><button class="btn-hover color-5">4363,4319</button></td>                    <td width="10%"><button class="btn-hover color-6">4452</button></td>                    <td width="10%"><button class="btn-hover color-7">4520</button></td>                    <td width="10%"><button class="btn-hover color-8">4680</button></td>                    <td width="10%"><button class="btn-hover color-9">4731,4780</button></td>                    <td width="10%"><button class="btn-hover color-10">4804</button></td>                    <td width="10%"><button class="btn-hover color-11">4971</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5047</button></td>                    <td width="10%"><button class="btn-hover color-3">5165</button></td>                    <td width="10%"><button class="btn-hover color-4">5202</button></td>                    <td width="10%"><button class="btn-hover color-5">5369,5380</button></td>                    <td width="10%"><button class="btn-hover color-6">5455</button></td>                    <td width="10%"><button class="btn-hover color-7">5566</button></td>                    <td width="10%"><button class="btn-hover color-8">5696,5604</button></td>                    <td width="10%"><button class="btn-hover color-9">5738</button></td>                    <td width="10%"><button class="btn-hover color-10">5800</button></td>                    <td width="10%"><button class="btn-hover color-11">5956</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6020</button></td>                    <td width="10%"><button class="btn-hover color-3">6194</button></td>                    <td width="10%"><button class="btn-hover color-4">6253</button></td>                    <td width="10%"><button class="btn-hover color-5">6344</button></td>                    <td width="10%"><button class="btn-hover color-6">6437</button></td>                    <td width="10%"><button class="btn-hover color-7">6529,6578</button></td>                    <td width="10%"><button class="btn-hover color-8">6667</button></td>                    <td width="10%"><button class="btn-hover color-9">6743</button></td>                    <td width="10%"><button class="btn-hover color-10">6827,6844</button></td>                    <td width="10%"><button class="btn-hover color-11">6909</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7030</button></td>                    <td width="10%"><button class="btn-hover color-3">7138</button></td>                    <td width="10%"><button class="btn-hover color-4">7273</button></td>                    <td width="10%"><button class="btn-hover color-5">7370</button></td>                    <td width="10%"><button class="btn-hover color-6">7413</button></td>                    <td width="10%"><button class="btn-hover color-7">7557</button></td>                    <td width="10%"><button class="btn-hover color-8">7640</button></td>                    <td width="10%"><button class="btn-hover color-9">7737,7791,7788</button></td>                    <td width="10%"><button class="btn-hover color-10">7828</button></td>                    <td width="10%"><button class="btn-hover color-11">7972</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8056</button></td>                    <td width="10%"><button class="btn-hover color-3">8189</button></td>                    <td width="10%"><button class="btn-hover color-4">8235</button></td>                    <td width="10%"><button class="btn-hover color-5">8357</button></td>                    <td width="10%"><button class="btn-hover color-6">8485</button></td>                    <td width="10%"><button class="btn-hover color-7">8584</button></td>                    <td width="10%"><button class="btn-hover color-8">8699</button></td>                    <td width="10%"><button class="btn-hover color-9">8700,8702</button></td>                    <td width="10%"><button class="btn-hover color-10">8824,8809</button></td>                    <td width="10%"><button class="btn-hover color-11">8975</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9083,9056</button></td>                    <td width="10%"><button class="btn-hover color-3">9189</button></td>                    <td width="10%"><button class="btn-hover color-4">9299</button></td>                    <td width="10%"><button class="btn-hover color-5">9345</button></td>                    <td width="10%"><button class="btn-hover color-6">9478</button></td>                    <td width="10%"><button class="btn-hover color-7">9576</button></td>                    <td width="10%"><button class="btn-hover color-8">9618,9683</button></td>                    <td width="10%"><button class="btn-hover color-9">9737</button></td>                    <td width="10%"><button class="btn-hover color-10">9885</button></td>                    <td width="10%"><button class="btn-hover color-11">9911</button></td>                   
+                </tr>  </tbody>
+                                    </table>
+                                </div>    
+                           
+                <center> <h6 style="margin-top:20px;">Game Session:-&nbsp;&nbsp;13-02-2023&nbsp;09:15 am &nbsp;<a href="print_current_result.php?id=1&amp;start_date=2023-02-13" type="button" style="background:navy; padding:5px 10px; color:#fff;">Print</a></h6></center>
+                <div class="table-responsive">
+                                    <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
+                                        <tbody>
+                     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                    <tr>                    <td width="10%"><button class="btn-hover color-2">0065</button></td>                    <td width="10%"><button class="btn-hover color-3">0196</button></td>                    <td width="10%"><button class="btn-hover color-4">0258,0295</button></td>                    <td width="10%"><button class="btn-hover color-5">0372</button></td>                    <td width="10%"><button class="btn-hover color-6">0401</button></td>                    <td width="10%"><button class="btn-hover color-7">0506</button></td>                    <td width="10%"><button class="btn-hover color-8">0622</button></td>                    <td width="10%"><button class="btn-hover color-9">0755</button></td>                    <td width="10%"><button class="btn-hover color-10">0803</button></td>                    <td width="10%"><button class="btn-hover color-11">0939,0954</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">1094</button></td>                    <td width="10%"><button class="btn-hover color-3">1191</button></td>                    <td width="10%"><button class="btn-hover color-4">1241,1242</button></td>                    <td width="10%"><button class="btn-hover color-5">1335</button></td>                    <td width="10%"><button class="btn-hover color-6">1461</button></td>                    <td width="10%"><button class="btn-hover color-7">1527,1541</button></td>                    <td width="10%"><button class="btn-hover color-8">1690</button></td>                    <td width="10%"><button class="btn-hover color-9">1771</button></td>                    <td width="10%"><button class="btn-hover color-10">1878</button></td>                    <td width="10%"><button class="btn-hover color-11">1927</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">2058</button></td>                    <td width="10%"><button class="btn-hover color-3">2101</button></td>                    <td width="10%"><button class="btn-hover color-4">2261</button></td>                    <td width="10%"><button class="btn-hover color-5">2358</button></td>                    <td width="10%"><button class="btn-hover color-6">2449</button></td>                    <td width="10%"><button class="btn-hover color-7">2536,2523,2526</button></td>                    <td width="10%"><button class="btn-hover color-8">2666</button></td>                    <td width="10%"><button class="btn-hover color-9">2783</button></td>                    <td width="10%"><button class="btn-hover color-10">2898</button></td>                    <td width="10%"><button class="btn-hover color-11">2976</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">3064</button></td>                    <td width="10%"><button class="btn-hover color-3">3104</button></td>                    <td width="10%"><button class="btn-hover color-4">3281</button></td>                    <td width="10%"><button class="btn-hover color-5">3339</button></td>                    <td width="10%"><button class="btn-hover color-6">3406</button></td>                    <td width="10%"><button class="btn-hover color-7">3530,3508</button></td>                    <td width="10%"><button class="btn-hover color-8">3672</button></td>                    <td width="10%"><button class="btn-hover color-9">3767,3771</button></td>                    <td width="10%"><button class="btn-hover color-10">3881</button></td>                    <td width="10%"><button class="btn-hover color-11">3928</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">4010</button></td>                    <td width="10%"><button class="btn-hover color-3">4157</button></td>                    <td width="10%"><button class="btn-hover color-4">4204</button></td>                    <td width="10%"><button class="btn-hover color-5">4352</button></td>                    <td width="10%"><button class="btn-hover color-6">4405</button></td>                    <td width="10%"><button class="btn-hover color-7">4550</button></td>                    <td width="10%"><button class="btn-hover color-8">4668</button></td>                    <td width="10%"><button class="btn-hover color-9">4791,4732</button></td>                    <td width="10%"><button class="btn-hover color-10">4821,4894</button></td>                    <td width="10%"><button class="btn-hover color-11">4910</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">5007</button></td>                    <td width="10%"><button class="btn-hover color-3">5186</button></td>                    <td width="10%"><button class="btn-hover color-4">5268</button></td>                    <td width="10%"><button class="btn-hover color-5">5366,5322</button></td>                    <td width="10%"><button class="btn-hover color-6">5436</button></td>                    <td width="10%"><button class="btn-hover color-7">5559</button></td>                    <td width="10%"><button class="btn-hover color-8">5653</button></td>                    <td width="10%"><button class="btn-hover color-9">5700,5702</button></td>                    <td width="10%"><button class="btn-hover color-10">5842</button></td>                    <td width="10%"><button class="btn-hover color-11">5981</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">6093</button></td>                    <td width="10%"><button class="btn-hover color-3">6145,6106</button></td>                    <td width="10%"><button class="btn-hover color-4">6210</button></td>                    <td width="10%"><button class="btn-hover color-5">6359</button></td>                    <td width="10%"><button class="btn-hover color-6">6423</button></td>                    <td width="10%"><button class="btn-hover color-7">6554,6525</button></td>                    <td width="10%"><button class="btn-hover color-8">6672</button></td>                    <td width="10%"><button class="btn-hover color-9">6736</button></td>                    <td width="10%"><button class="btn-hover color-10">6896</button></td>                    <td width="10%"><button class="btn-hover color-11">6963</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">7098</button></td>                    <td width="10%"><button class="btn-hover color-3">7140</button></td>                    <td width="10%"><button class="btn-hover color-4">7291</button></td>                    <td width="10%"><button class="btn-hover color-5">7365</button></td>                    <td width="10%"><button class="btn-hover color-6">7467</button></td>                    <td width="10%"><button class="btn-hover color-7">7507,7580</button></td>                    <td width="10%"><button class="btn-hover color-8">7652</button></td>                    <td width="10%"><button class="btn-hover color-9">7758,7766</button></td>                    <td width="10%"><button class="btn-hover color-10">7826</button></td>                    <td width="10%"><button class="btn-hover color-11">7920</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">8056</button></td>                    <td width="10%"><button class="btn-hover color-3">8182</button></td>                    <td width="10%"><button class="btn-hover color-4">8296</button></td>                    <td width="10%"><button class="btn-hover color-5">8304,8309,8343</button></td>                    <td width="10%"><button class="btn-hover color-6">8430</button></td>                    <td width="10%"><button class="btn-hover color-7">8589</button></td>                    <td width="10%"><button class="btn-hover color-8">8676</button></td>                    <td width="10%"><button class="btn-hover color-9">8704</button></td>                    <td width="10%"><button class="btn-hover color-10">8812</button></td>                    <td width="10%"><button class="btn-hover color-11">8980</button></td>                   
+                </tr>                <tr>                    <td width="10%"><button class="btn-hover color-2">9055,9015</button></td>                    <td width="10%"><button class="btn-hover color-3">9149</button></td>                    <td width="10%"><button class="btn-hover color-4">9288,9262</button></td>                    <td width="10%"><button class="btn-hover color-5">9319</button></td>                    <td width="10%"><button class="btn-hover color-6">9428</button></td>                    <td width="10%"><button class="btn-hover color-7">9519</button></td>                    <td width="10%"><button class="btn-hover color-8">9646</button></td>                    <td width="10%"><button class="btn-hover color-9">9769</button></td>                    <td width="10%"><button class="btn-hover color-10">9811</button></td>                    <td width="10%"><button class="btn-hover color-11">9954</button></td>                   
                 </tr>  </tbody>
                                     </table>
                                 </div>
@@ -7699,11 +8227,11 @@ function wait(ms) {
                     <br>
                                         <div class="row">
                         <div class="col-3">
-                            <input type="date" value="2023-01-25" max="2023-01-25" class="form-control" id="reportstkdtids">
+                            <input type="date" value="{{date('Y-m-d')}}" max="{{date('Y-m-d')}}" class="form-control" id="reportstkdtids">
                         </div>
 
                         <div class="col-3">
-                            <input type="date" value="2023-01-25" max="2023-01-25" class="form-control" id="reportstkdtide">
+                            <input type="date" value="{{date('Y-m-d')}}" max="{{date('Y-m-d')}}" class="form-control" id="reportstkdtide">
                         </div>
                         <div class="col-3" style="display:none;">
                             <select id="reportstkdtidese" class="form-control">
@@ -7729,55 +8257,12 @@ function wait(ms) {
                     <div id="reportmypop" style="font-size:25px;">
 
 
-<div class="table-responsive">
-        <table id="example" class="table-striped table-bordered table-hover" style="width:100%">
-                            <thead>
-                                 <tr>
-                                 <th>SN.</th>
-                                                <th>Sale Pt</th>
-                                                <th>Winning</th>
-                                                <th>Commission</th>
-                                                <th>Net Pt</th>
-                                                <th>Date</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                                                
 
-                              <tr>
- <td>
-                      1                  </td>
+                                                  
 
-              <td>120</td>
-              <td>0</td>
-              <td>12</td>
-              <td>108</td>
-              <td>2023-01-25</td>
-  </tr>
-   
-<tr>
-  <th>
-  Total:
-              </th>
-
-              <th>120</th>
-              <th>0</th>
-              <th>12</th>
-              <th>108</th>
-              <th><a class="btn btn-primary" style="width:70px !important;" href="report_print.php?total=120&amp;total1=0&amp;total2=12&amp;total3=108&amp;total4=2023-01-25&amp;total5=2023-01-25">Print</a>
-  </th></tr>
-
-  
-</tbody>
-</table>
-</div>
-
-
-       
-
-  
-
-  
-</div>
+                                                  
+                    </div>
                 </div>
                 <div id="fade9" class="black_overlay"></div>
 
@@ -7789,7 +8274,8 @@ function wait(ms) {
 
 
 
-                                                        <form class="col s12" method="post" enctype="multipart/form-data">
+                        <form class="col s12" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="col-md-12">
                                     <h4><u>Add User</u></h4>
                                 </div>
@@ -8540,13 +9026,15 @@ function wait(ms) {
         // alert('jjj');
 
         $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             type: "POST",
-            url: "ajaxforrrtime",
+            url: "{{URL('/')}}/ajaxforrrtime",
             data: {
 
             },
             success: function(datas) {
-                //  alert(datas);
                 if (datas.trim() == "") {
                     document.getElementById("buystop").innerHTML =
                         '<i class="fa fa-spinner fa-pulse font-size-24" style="color:red"></i>';
@@ -8579,8 +9067,11 @@ function wait(ms) {
                         var val = 3;
                         //document.cookie = "tickpriceids = " + tickpriceids;
                         $.ajax({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
                             type: "POST",
-                            url: "buytickets",
+                            url: "{{URL('/')}}/buytickets",
                             data: {
                                 lttrynumsss: pId,
                                 lttrynumsqntss: sId,
@@ -8589,15 +9080,15 @@ function wait(ms) {
                                 advancegamess: advancegames
                             },
                             success: function(data) {
-                                // alert(data);
+                               console.log(data);
                                 if (data.trim() == "") {
                                     document.getElementById("buybutton").innerHTML =
                                         '<i class="fa fa-spinner fa-pulse font-size-24" style="color:red"></i>';
                                 } else {
                                     var id_numbers = JSON.parse(data);
-                                    var sizenum = id_numbers.length;
+                                    var sizenum = 1;
                                     // alert(id_numbers[0]);
-                                    window.location.replace("buy_reciept.php?id=" + id_numbers +
+                                    window.location.replace("buy_reciept?id=" + id_numbers +
                                         "&length=" + sizenum + "&returnhousee=" +
                                         returnhousee);
                                     // window.location.reload(true);
@@ -32933,8 +33424,11 @@ function wait(ms) {
 
 
         $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             type: "POST",
-            url: "checkresulttt",
+            url: "{{URL('/')}}/checkresulttt",
             data: {
 
             },
@@ -32949,10 +33443,10 @@ function wait(ms) {
 
                     $.ajax({
                     type: "GET",
-                    url: "result_refresh",
+                    url: "{{URL('/')}}/result_refresh",
                     data: {},
                     success: function(data) {
-                        //  alert(data);
+                         console.log(data);
                        // document.getElementById("resultrefreshid").innerHTML = "";
                         document.getElementById("resultrefreshid").innerHTML = data;
 
@@ -32980,8 +33474,11 @@ function wait(ms) {
 
 
         $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             type: "POST",
-            url: "ajaxfortime",
+            url: "{{ URL('/') }}/ajaxfortime",
             data: {
 
             },
@@ -32995,7 +33492,7 @@ function wait(ms) {
 
 
                 document.getElementById('transaction_time').value =
-                    h + ":" + m + ":" + s + newtime;
+                    h + ":" + m + ":" + s ;
 
 
 
@@ -33011,7 +33508,6 @@ function wait(ms) {
         var t = setTimeout(startTime, 500);
     }
     </script>
-
     <script>
     //  alert();
     var positionnnn = 1;
@@ -33022,8 +33518,11 @@ function wait(ms) {
             if (keycode == 117) {
                 // alert();
                 $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
                     type: "POST",
-                    url: "ajaxforrrtime",
+                    url: "{{URL('/')}}/ajaxforrrtime",
                     data: {
 
                     },
@@ -33063,8 +33562,11 @@ function wait(ms) {
                                 var val = 3;
                                 //document.cookie = "tickpriceids = " + tickpriceids;
                                 $.ajax({
+                                    headers: {
+                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                    },
                                     type: "POST",
-                                    url: "buytickets",
+                                    url: "{{URL('/')}}/buytickets",
                                     data: {
                                         lttrynumsss: pId,
                                         lttrynumsqntss: sId,
@@ -33073,17 +33575,17 @@ function wait(ms) {
                                         advancegamess: advancegames
                                     },
                                     success: function(data) {
-                                        //  alert(data);
+                                         alert(data);
                                         if (data.trim() == "") {
                                             document.getElementById("buybutton")
                                                 .innerHTML =
                                                 '<i class="fa fa-spinner fa-pulse font-size-24" style="color:red"></i>';
                                         } else {
                                             var id_numbers = JSON.parse(data);
-                                            var sizenum = id_numbers.length;
+                                            var sizenum = 1;
                                             // alert(id_numbers[0]);
                                             window.location.replace(
-                                                "buy_reciept.php?id=" +
+                                                "buy_reciept?id=" +
                                                 id_numbers +
                                                 "&length=" + sizenum +
                                                 "&returnhousee=" +
@@ -34284,7 +34786,7 @@ function wait(ms) {
 
         $.ajax({
             type: "GET",
-            url: "reprint",
+            url: "{{URL('/')}}/reprint",
             data: {
                 transactionnumber: transactionnumber,
             },
@@ -34309,7 +34811,7 @@ function wait(ms) {
 
         $.ajax({
             type: "GET",
-            url: "cancle_ticket",
+            url: "{{URL('/')}}/cancle_ticket",
             data: {
                 transactionnumber: transactionnumber,
             },
@@ -34326,11 +34828,9 @@ function wait(ms) {
 
 
     }
-
-        callcancelledticklist('2023-01-25');
-    callpreviousresultpop('2023-01-25');
-    callmyreportspop('2023-01-25', '2023-01-25');
-
+    callcancelledticklist("{{date('Y-m-d')}}");
+    callpreviousresultpop("{{date('Y-m-d')}}");
+    callmyreportspop("{{date('Y-m-d')}}", "{{date('Y-m-d')}}");
     //callcancelledticklist('2021-09-17');
     function callcancelledticklist(transactionnumber) {
         // alert('dhbfh');
@@ -34339,7 +34839,7 @@ function wait(ms) {
 
         $.ajax({
             type: "GET",
-            url: "cancelled_ticket",
+            url: "{{URL('/')}}/cancelled_ticket",
             data: {
                 transactionnumber: transactionnumber,
             },
@@ -34363,7 +34863,7 @@ function wait(ms) {
 
         $.ajax({
             type: "GET",
-            url: "previous_result",
+            url: "{{URL('/')}}/previous_result",
             data: {
                 transactionnumber: transactionnumber,
             },
@@ -34383,7 +34883,7 @@ function wait(ms) {
 
 
     function callmyreportspop() {
-        //alert('dhbfh');
+        // alert('dhbfh');
 
         //  var transactionnumber = 0;
         var reportstkdtids = document.getElementById('reportstkdtids').value;
@@ -34399,7 +34899,7 @@ function wait(ms) {
                 reportstkdtidese: reportstkdtidese,
             },
             success: function(data) {
-                // alert(data);
+                console.log(data);
 
                 document.getElementById('reportmypop').innerHTML = data;
                 // document.getElementById('light2').style.display='block';document.getElementById('fade2').style.display='block';
@@ -34433,232 +34933,279 @@ function wait(ms) {
         }
     });
     </script>
-
-
 <script>
-		function returnCommentSymbol(language = "javascript") {
-			const languageObject = {
-				bat: "@REM",
-				c: "//",
-				csharp: "//",
-				cpp: "//",
-				closure: ";;",
-				coffeescript: "#",
-				dockercompose: "#",
-				css: "/*DELIMITER*/",
-				"cuda-cpp": "//",
-				dart: "//",
-				diff: "#",
-				dockerfile: "#",
-				fsharp: "//",
-				"git-commit": "//",
-				"git-rebase": "#",
-				go: "//",
-				groovy: "//",
-				handlebars: "{{!--DELIMITER--}}",
-				hlsl: "//",
-				html: "<!--DELIMITER-->",
-				ignore: "#",
-				ini: ";",
-				java: "//",
-				javascript: "//",
-				javascriptreact: "//",
-				json: "//",
-				jsonc: "//",
-				julia: "#",
-				latex: "%",
-				less: "//",
-				lua: "--",
-				makefile: "#",
-				markdown: "<!--DELIMITER-->",
-				"objective-c": "//",
-				"objective-cpp": "//",
-				perl: "#",
-				perl6: "#",
-				php: "<!--DELIMITER-->",
-				powershell: "#",
-				properties: ";",
-				jade: "//-",
-				python: "#",
-				r: "#",
-				razor: "<!--DELIMITER-->",
-				restructuredtext: "..",
-				ruby: "#",
-				rust: "//",
-				scss: "//",
-				shaderlab: "//",
-				shellscript: "#",
-				sql: "--",
-				svg: "<!--DELIMITER-->",
-				swift: "//",
-				tex: "%",
-				typescript: "//",
-				typescriptreact: "//",
-				vb: "'",
-				xml: "<!--DELIMITER-->",
-				xsl: "<!--DELIMITER-->",
-				yaml: "#"
-			}
-			return languageObject[language].split("DELIMITER")
-		}
-		var savedChPos = 0
-		var returnedSuggestion = ''
-		let editor, doc, cursor, line, pos
-		pos = {line: 0, ch: 0}
-		var suggestionsStatus = false
-		var docLang = "python"
-		var suggestionDisplayed = false
-		var isReturningSuggestion = false
-		document.addEventListener("keydown", (event) => {
-		setTimeout(()=>{
-			editor = event.target.closest('.CodeMirror');
-			if (editor){
-				const codeEditor = editor.CodeMirror
-				if(!editor.classList.contains("added-tab-function")){
-					editor.classList.add("added-tab-function")
-					codeEditor.removeKeyMap("Tab")
-					codeEditor.setOption("extraKeys", {Tab: (cm)=>{
+        function returnCommentSymbol(language = "javascript") {
+            const languageObject = {
+                bat: "@REM",
+                c: "//",
+                csharp: "//",
+                cpp: "//",
+                closure: ";;",
+                coffeescript: "#",
+                dockercompose: "#",
+                css: "/*DELIMITER*/",
+                "cuda-cpp": "//",
+                dart: "//",
+                diff: "#",
+                dockerfile: "#",
+                fsharp: "//",
+                "git-commit": "//",
+                "git-rebase": "#",
+                go: "//",
+                groovy: "//",
+                handlebars: "",
+                hlsl: "//",
+                html: "",
+                ignore: "#",
+                ini: ";",
+                java: "//",
+                javascript: "//",
+                javascriptreact: "//",
+                json: "//",
+                jsonc: "//",
+                julia: "#",
+                latex: "%",
+                less: "//",
+                lua: "--",
+                makefile: "#",
+                markdown: "",
+                "objective-c": "//",
+                "objective-cpp": "//",
+                perl: "#",
+                perl6: "#",
+                php: "",
+                powershell: "#",
+                properties: ";",
+                jade: "//-",
+                python: "#",
+                r: "#",
+                razor: "",
+                restructuredtext: "..",
+                ruby: "#",
+                rust: "//",
+                scss: "//",
+                shaderlab: "//",
+                shellscript: "#",
+                sql: "--",
+                svg: "",
+                swift: "//",
+                tex: "%",
+                typescript: "//",
+                typescriptreact: "//",
+                vb: "'",
+                xml: "",
+                xsl: "",
+                yaml: "#"
+            }
+            return languageObject[language].split("DELIMITER")
+        }
+        var savedChPos = 0
+        var returnedSuggestion = ''
+        let editor, doc, cursor, line, pos
+        pos = {line: 0, ch: 0}
+        var suggestionsStatus = false
+        var docLang = "python"
+        var suggestionDisplayed = false
+        var isReturningSuggestion = false
+        document.addEventListener("keydown", (event) => {
+        setTimeout(()=>{
+            editor = event.target.closest('.CodeMirror');
+            if (editor){
+                const codeEditor = editor.CodeMirror
+                if(!editor.classList.contains("added-tab-function")){
+                    editor.classList.add("added-tab-function")
+                    codeEditor.removeKeyMap("Tab")
+                    codeEditor.setOption("extraKeys", {Tab: (cm)=>{
 
-						if(returnedSuggestion){
-							acceptTab(returnedSuggestion)
-						}
-						else{
-							cm.execCommand("defaultTab")
-						}
-					}})
-				}
-				doc = editor.CodeMirror.getDoc()
-				cursor = doc.getCursor()
-				line = doc.getLine(cursor.line)
-				pos = {line: cursor.line, ch: line.length}
+                        if(returnedSuggestion){
+                            acceptTab(returnedSuggestion)
+                        }
+                        else{
+                            cm.execCommand("defaultTab")
+                        }
+                    }})
+                }
+                doc = editor.CodeMirror.getDoc()
+                cursor = doc.getCursor()
+                line = doc.getLine(cursor.line)
+                pos = {line: cursor.line, ch: line.length}
 
-				if(cursor.ch > 0){
-					savedChPos = cursor.ch
-				}
+                if(cursor.ch > 0){
+                    savedChPos = cursor.ch
+                }
 
-				const fileLang = doc.getMode().name
-				docLang = fileLang
-				const commentSymbol = returnCommentSymbol(fileLang)
-				if (event.key == "?"){
-					var lastLine = line
-					lastLine = lastLine.slice(0, savedChPos - 1)
+                const fileLang = doc.getMode().name
+                docLang = fileLang
+                const commentSymbol = returnCommentSymbol(fileLang)
+                if (event.key == "?"){
+                    var lastLine = line
+                    lastLine = lastLine.slice(0, savedChPos - 1)
 
-					if(lastLine.trim().startsWith(commentSymbol[0])){
-						lastLine += " "+fileLang
-						lastLine = lastLine.split(commentSymbol[0])[1]
-						window.postMessage({source: 'getQuery', payload: { data: lastLine } } )
-						isReturningSuggestion = true
-						displayGrey("\nBlackbox loading...")
-					}
-				}else if(event.key === "Enter" && suggestionsStatus && !isReturningSuggestion){
-					var query = doc.getRange({ line: Math.max(0,cursor.line-10), ch: 0 }, { line: cursor.line, ch: line.length })
-					window.postMessage({source: 'getSuggestion', payload: { data: query, language: docLang } } )
-					displayGrey("Blackbox loading...")
-				}else if(event.key === "ArrowRight" && returnedSuggestion){
-					acceptTab(returnedSuggestion)
-				}else if(event.key === "Enter" && isReturningSuggestion){
-					displayGrey("\nBlackbox loading...")
-				}else if(event.key === "Escape"){
-					displayGrey("")
-				}
-			}
-		}, 0)
-		})
+                    if(lastLine.trim().startsWith(commentSymbol[0])){
+                        lastLine += " "+fileLang
+                        lastLine = lastLine.split(commentSymbol[0])[1]
+                        window.postMessage({source: 'getQuery', payload: { data: lastLine } } )
+                        isReturningSuggestion = true
+                        displayGrey("\nBlackbox loading...")
+                    }
+                }else if(event.key === "Enter" && suggestionsStatus && !isReturningSuggestion){
+                    var query = doc.getRange({ line: Math.max(0,cursor.line-10), ch: 0 }, { line: cursor.line, ch: line.length })
+                    window.postMessage({source: 'getSuggestion', payload: { data: query, language: docLang } } )
+                    displayGrey("Blackbox loading...")
+                }else if(event.key === "ArrowRight" && returnedSuggestion){
+                    acceptTab(returnedSuggestion)
+                }else if(event.key === "Enter" && isReturningSuggestion){
+                    displayGrey("\nBlackbox loading...")
+                }else if(event.key === "Escape"){
+                    displayGrey("")
+                }
+            }
+        }, 0)
+        })
 
-		function acceptTab(text){
-		if (suggestionDisplayed){
-			displayGrey("")
-			doc.replaceRange(text, pos)
-			returnedSuggestion = ""
-			updateSuggestionStatus(false)
-		}
-		}
-		function acceptSuggestion(text){
-			displayGrey("")
-			doc.replaceRange(text, pos)
-			returnedSuggestion = ""
-			updateSuggestionStatus(false)
-		}
-		function displayGrey(text){
-			if(!text){
-				document.querySelector(".blackbox-suggestion").remove()
-				return
-			}
-			var el = document.querySelector(".blackbox-suggestion")
-			if(!el){
-				el = document.createElement('span')
-				el.classList.add("blackbox-suggestion")
-				el.style = 'color:grey'
-				el.innerText = text
-			}
-			else{
-				el.innerText = text
-			}
-			
-			var lineIndex = pos.line;
-			editor.getElementsByClassName('CodeMirror-line')[lineIndex].appendChild(el)
-		}
-		function updateSuggestionStatus(s){
-			suggestionDisplayed = s
-			window.postMessage({source: 'updateSuggestionStatus', status: suggestionDisplayed, suggestion: returnedSuggestion})
-		}
-		window.addEventListener('message', (event)=>{
-		if (event.source !== window ) return
-		if (event.data.source == 'return'){
-			isReturningSuggestion = false
-			const formattedCode = formatCode(event.data.payload.data)
-			returnedSuggestion = formattedCode
-			displayGrey(formattedCode)
-			updateSuggestionStatus(true)
-		}
-		if(event.data.source == 'suggestReturn'){
-			returnedSuggestion = event.data.payload.data
-			displayGrey(event.data.payload.data)
-			updateSuggestionStatus(true)
-		}
-		if(event.data.source == 'suggestionsStatus'){
-			suggestionsStatus = event.data.payload.enabled
-		}
-		if(event.data.source == 'acceptSuggestion'){
-			
-			acceptSuggestion(event.data.suggestion)
-		}
-		})
-		document.addEventListener("keyup", function(){
-			returnedSuggestion = ""
-			updateSuggestionStatus(false)
-		})
-		function formatCode(data) {
-			if (Array.isArray(data)) {
-				var finalCode = ""
-				var pairs = []
-		
-				const commentSymbol = returnCommentSymbol(docLang)
-				data.forEach((codeArr, idx) => {
-					const code = codeArr[0]
-					var desc = codeArr[1]
-					const descArr = desc.split("\n")
-					var finalDesc = ""
-					descArr.forEach((descLine, idx) => {
-						const whiteSpace = descLine.search(/\S/)
-						if (commentSymbol.length < 2 || idx === 0) {
-							finalDesc += insert(descLine, whiteSpace, commentSymbol[0])
-						}
-						if (commentSymbol.length > 1 && idx === descArr.length - 1) {
-							finalDesc = finalDesc + commentSymbol[1] + "\n"
-						}
-					})
-		
-					finalCode += finalDesc + "\n\n" + code
-					pairs.push(finalCode)
-				})
-				return "\n"+pairs.join("\n")
-			}
-		
-			return "\n"+data
-		}
-		
-		function insert(str, index, value) {
-			return str.substr(0, index) + value + str.substr(index)
-		}
-	</script></body></html>
+        function acceptTab(text){
+        if (suggestionDisplayed){
+            displayGrey("")
+            doc.replaceRange(text, pos)
+            returnedSuggestion = ""
+            updateSuggestionStatus(false)
+        }
+        }
+        function acceptSuggestion(text){
+            displayGrey("")
+            doc.replaceRange(text, pos)
+            returnedSuggestion = ""
+            updateSuggestionStatus(false)
+        }
+        function displayGrey(text){
+            if(!text){
+                document.querySelector(".blackbox-suggestion").remove()
+                return
+            }
+            var el = document.querySelector(".blackbox-suggestion")
+            if(!el){
+                el = document.createElement('span')
+                el.classList.add("blackbox-suggestion")
+                el.style = 'color:grey'
+                el.innerText = text
+            }
+            else{
+                el.innerText = text
+            }
+            
+            var lineIndex = pos.line;
+            editor.getElementsByClassName('CodeMirror-line')[lineIndex].appendChild(el)
+        }
+        function updateSuggestionStatus(s){
+            suggestionDisplayed = s
+            window.postMessage({source: 'updateSuggestionStatus', status: suggestionDisplayed, suggestion: returnedSuggestion})
+        }
+        window.addEventListener('message', (event)=>{
+        if (event.source !== window ) return
+        if (event.data.source == 'return'){
+            isReturningSuggestion = false
+            const formattedCode = formatCode(event.data.payload.data)
+            returnedSuggestion = formattedCode
+            displayGrey(formattedCode)
+            updateSuggestionStatus(true)
+        }
+        if(event.data.source == 'suggestReturn'){
+            returnedSuggestion = event.data.payload.data
+            displayGrey(event.data.payload.data)
+            updateSuggestionStatus(true)
+        }
+        if(event.data.source == 'suggestionsStatus'){
+            suggestionsStatus = event.data.payload.enabled
+        }
+        if(event.data.source == 'acceptSuggestion'){
+            
+            acceptSuggestion(event.data.suggestion)
+        }
+        })
+        document.addEventListener("keyup", function(){
+            returnedSuggestion = ""
+            updateSuggestionStatus(false)
+        })
+        function formatCode(data) {
+            if (Array.isArray(data)) {
+                var finalCode = ""
+                var pairs = []
+        
+                const commentSymbol = returnCommentSymbol(docLang)
+                data.forEach((codeArr, idx) => {
+                    const code = codeArr[0]
+                    var desc = codeArr[1]
+                    const descArr = desc.split("\n")
+                    var finalDesc = ""
+                    descArr.forEach((descLine, idx) => {
+                        const whiteSpace = descLine.search(/\S/)
+                        if (commentSymbol.length < 2 || idx === 0) {
+                            finalDesc += insert(descLine, whiteSpace, commentSymbol[0])
+                        }
+                        if (commentSymbol.length > 1 && idx === descArr.length - 1) {
+                            finalDesc = finalDesc + commentSymbol[1] + "\n"
+                        }
+                    })
+        
+                    finalCode += finalDesc + "\n\n" + code
+                    pairs.push(finalCode)
+                })
+                return "\n"+pairs.join("\n")
+            }
+        
+            return "\n"+data
+        }
+        
+        function insert(str, index, value) {
+            return str.substr(0, index) + value + str.substr(index)
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).on('click','#changepassword',function(e){
+            e.preventDefault();
+            var old_pass = $('#old_pass').val();
+            var password = $('#password').val();
+            var confirm_password = $('#confirm_password').val();
+            if(password != ''){
+            if(confirm_password != ''){   
+            if(password  ==confirm_password ) {
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url:"{{route('change-update')}}",
+                type:'post',
+                data:{old_pass:old_pass,password:password,confirm_password:confirm_password},
+                success:function(res){
+                    console.log(res);
+                    if(res == 'success'){
+                   
+                        $('#old_pass').val('');
+                        $('#password').val('');
+                        $('#confirm_password').val('');
+                       $('#closechangep').trigger('click');
+                       alert('Your Password Change Successfully');
+                    }else{
+
+                       alert('Please Enter Valid OLD Password');
+
+                    }
+                }
+            })
+          }else{
+            alert('Confirm Password Not Same to Password!')
+          }
+
+
+         }else{
+            alert('Please Enter Confirm Password!')
+          }
+          }else{
+            alert('Please Enter Password!')
+          }
+
+         
+
+        })
+    </script>
+    </body></html>

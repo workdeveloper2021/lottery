@@ -4075,7 +4075,7 @@ function wait(ms) {
                                     <input type="hidden" id="tickseriesbbasev" value="3000">
                                     <input type="hidden" id="tickseriescbasev" value="5000">
                                     <input type="hidden" id="useriddd" value="{{$user->id}}">
-                                    <input type="hidden" id="tickpriceid" value="{{ DB::table('buytickets')->count()+1 }}">
+                                    <input type="hidden" id="tickpriceid" value="2100{{ DB::table('buytickets')->count()+1 }}">
                                     <input type="hidden" id="zindexvalue" value="30">
                                                                         <tr width="100%">
                                         <th width="6%"><input id="qntrow0" oninput="if(this.value<0)this.value=this.min;calcuqar(this.id,0,event)" onkeyup="if(this.value<0)this.value=this.min;if((event.keyCode==37) || (event.keyCode==38) || (event.keyCode==39) || (event.keyCode==40)){ calcuqar(this.id,0,event) }" type="number" autocomplete="off" pattern="/^-?\d+\.?\d*$/" onkeypress="if(this.value.length==3) return false;" style="width:100%; border: none;color:red;background-color:#686ccf; font-weight: bold; border:#000 solid 1px; border-radius:1px;" class="third" onfocus="$(this).select();" min="0"></th>
@@ -4441,9 +4441,6 @@ function wait(ms) {
 </tbody>
 </table>
 
-        
-        
-    </div>
    
 
     <script>
@@ -29560,7 +29557,7 @@ function wait(ms) {
 
 
         $.ajax({
-            headers: {
+            headers: {                
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: "POST",
